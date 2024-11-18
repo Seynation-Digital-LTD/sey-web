@@ -1,7 +1,7 @@
 "use-client";
 import { NavbarMenu } from "../"
 import { FaDumbbell } from "react-icons/fa";
-import { MdMenu } from "react-icons/fa";
+// import { MdMenu } from "react-icons/fa";
 import { CiSearch } from "react-icons/ci";
 import { PiShoppingCartThin } from "react-icons/pi";
 export const Navbar2 = () => {
