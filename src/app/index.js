@@ -1,0 +1,1 @@
+export {default as bg } from "../app/assets/images/bg.jpeg"

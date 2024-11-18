@@ -1,5 +1,7 @@
 "use-client";
 import { Button } from "../ui/button";
+import { bg } from "../../app/index.js";
+import Image from "next/image";
 
 export const HeroPage = () => {
   return (
@@ -23,9 +25,9 @@ export const HeroPage = () => {
         {/* Right Content */}
         <div className="flex-1 flex justify-center">
           <div className="bg-black w-96 h-96 rounded-lg">
-            <img
+            <Image
               className="w-full h-full object-cover rounded-lg"
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqZx_g2K2F99ksuxib171hL0hfKx8c8OopjQ&s"
+              src= {bg}
               alt="Hero Image"
             />
           </div>
