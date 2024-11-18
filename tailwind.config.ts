@@ -9,6 +9,16 @@ export default {
   ],
   theme: {
     extend: {
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: "1rem",
+          sm: "2rem",
+          lg: "4rem",
+          xl: "5rem",
+          "2xl": "6rem",
+        },
+      },
       fontFamily: {
         inter: ["Inter", "sans-serif"],
         silk: ["Silkscreen", "sans-serif"],
@@ -19,19 +29,19 @@ export default {
         primaryTwo: "#460000",
         primaryThree: "#DA0000",
         primaryFour: "#54180F",
-		primaryFive: "#740000",
-		primarySix: "#5B0000",
-		primarySeven:"#1A0000",
+        primaryFive: "#740000",
+        primarySix: "#5B0000",
+        primarySeven: "#1A0000",
         secondaryOne: "#982B1C",
         secondaryTwo: "#8A2719",
         secondaryThree: "#BA3521",
         secondaryFour: "#4E0000",
-		secondaryFive: "#6C1F14",
+        secondaryFive: "#6C1F14",
         neutralOne: "#DAD4B5",
         neutralTwo: "#9B9781",
         neutralThree: "#35342C",
-		neutralFour:" #787564",
-		
+        neutralFour: " #787564",
+
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {

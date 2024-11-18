@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export const HeroPage = () => {
   return (
-    <div className="w-screen h-screen flex justify-center items-center bg-gradient-to-r from-primaryOne via-primarySix to-primarySeven">
+    <div className="w-screen h-screen flex justify-center items-center  bg-gradient-to-r from-primaryOne via-primarySix to-primarySeven">
       <div className="flex w-full max-w-6xl flex-row items-center px-2">
         {/* Left Content */}
         <div className="flex-1 text-white space-y-4">
