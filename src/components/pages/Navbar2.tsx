@@ -15,7 +15,7 @@ export const Navbar2 = () => {
 //   const isActive=  (href)=> router.pathname === href;
   return (
     <>
-      <nav className="fixed w-full z-20 top-0 start-0">
+      <nav className=" w-full z-20 top-0 start-0">
         <div className="container flex justify-between items-center  bg-transparent py-8">
           {/* Logo Section */}
           <div className="text-2xl flex items-center gap-1 font-bold uppercase py-8">

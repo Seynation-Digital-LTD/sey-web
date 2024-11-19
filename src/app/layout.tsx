@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 // import localFont from "next/font/local";
 import "./globals.css";
 import { Navbar2 } from "@/components/pages/Navbar2";
-
+import { HeroPage } from "../app/home/page";
+import { Footer } from "@/components/pages/Footer";
 export const metadata: Metadata = {
   title: "Seynation Digital",
   description:
@@ -16,9 +17,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head />
       <body>
         <Navbar2 />
-        {children}</body>
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

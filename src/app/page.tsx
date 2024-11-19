@@ -6,9 +6,7 @@ import { Button } from "@/components/ui/button";
 export default function Home() {
   return (
     <div>
-      <Navbar2 />
-      {/* <Navbar/> */}
-      <HeroPage />
+     
     </div>
   );
 }
