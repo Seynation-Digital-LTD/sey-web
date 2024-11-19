@@ -1,5 +1,5 @@
 "use client";
-import { HeroPage } from "@/components/pages/home/page";
+import { HeroPage } from "@/app/home/page";
 import { Navbar } from "@/components/pages/navbar";
 import { Navbar2 } from "@/components/pages/Navbar2";
 import { Button } from "@/components/ui/button";

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 // import localFont from "next/font/local";
 import "./globals.css";
+import { Navbar2 } from "@/components/pages/Navbar2";
 
 export const metadata: Metadata = {
   title: "Seynation Digital",
@@ -15,7 +16,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Navbar2 />
+        {children}</body>
     </html>
   );
 }

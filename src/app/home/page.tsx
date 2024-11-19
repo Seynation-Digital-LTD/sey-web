@@ -1,6 +1,6 @@
 "use-client";
-import { Button } from "../../ui/button";
-import { bg } from "../../../app/index.js";
+import { Button } from "../../components/ui/button";
+import { bg } from "../index.js";
 import Image from "next/image";
 
 export const HeroPage = () => {
