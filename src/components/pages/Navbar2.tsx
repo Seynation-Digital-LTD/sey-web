@@ -1,10 +1,7 @@
 "use client";
-
-import { useState} from "react";
 import React from "react";
 import { NavbarMenu } from "../../app/mockdata/data";
-import  ResponsiveMenu  from "../../components/pages/ResponsiveMenu";
-import { FaDumbbell } from "react-icons/fa";
+import ResponsiveMenu from "../../components/pages/ResponsiveMenu";
 import { MdMenu } from "react-icons/md";
 import { CiSearch } from "react-icons/ci";
 import { PiShoppingCartThin } from "react-icons/pi";
@@ -17,7 +14,6 @@ export const Navbar2 = () => {
         <div className="container flex justify-between items-center py-8">
           {/* Logo Section */}
           <div className="text-2xl flex items-center gap-1 font-bold uppercase py-8">
-            <FaDumbbell />
             <p>Seynation</p>
             <p className="text-primaryOne">Digital</p>
           </div>
@@ -55,15 +51,13 @@ export const Navbar2 = () => {
           </div>
 
           {/* Mobile Hamburger Menu Section */}
-          <div className="md:hidden" onClick={()=>{
-            setOpen(!open);
-          }}>
-            <MdMenu className="text-4xl" />
+          <div className="md:hidden cursor-pointer" onClick={() => setOpen(!open)}>
+            <MdMenu className="text-4xl"></MdMenu>
           </div>
         </div>
       </nav>
       {/* Mobile Sidebar Section  */}
-      <ResponsiveMenu />
+      <ResponsiveMenu open={open}/>
     </>
   );
 };
