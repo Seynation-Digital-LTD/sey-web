@@ -1,7 +1,9 @@
-"use-client";
+"use client";
+
+import { useState} from "react";
 import React from "react";
 import { NavbarMenu } from "../../app/mockdata/data";
-// import  ResponsiveMenu  from "../../components/pages/ResponsiveMenu";
+import  ResponsiveMenu  from "../../components/pages/ResponsiveMenu";
 import { FaDumbbell } from "react-icons/fa";
 import { MdMenu } from "react-icons/md";
 import { CiSearch } from "react-icons/ci";
@@ -61,7 +63,7 @@ export const Navbar2 = () => {
         </div>
       </nav>
       {/* Mobile Sidebar Section  */}
-      {/* <ResponsiveMenu /> */}
+      <ResponsiveMenu />
     </>
   );
 };

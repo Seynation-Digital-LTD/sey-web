@@ -1,11 +1,10 @@
-"use-client";
+"use client";
 import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { NavbarMenu } from "@/app/mockdata/data";
 
 interface ResponsiveMenuProps {
   open: boolean;
-  items: string[];
 }
 
 const ResponsiveMenu: React.FC<ResponsiveMenuProps> = ({ open }) => {

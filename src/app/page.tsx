@@ -1,4 +1,4 @@
-"use-client";
+"use client";
 import { HeroPage } from "@/components/pages/Hero"
 import { Navbar } from "@/components/pages/navbar"
 import { Navbar2 } from "@/components/pages/Navbar2"
