@@ -51,13 +51,16 @@ export const Navbar2 = () => {
           </div>
 
           {/* Mobile Hamburger Menu Section */}
-          <div className="md:hidden cursor-pointer" onClick={() => setOpen(!open)}>
+          <div
+            className="md:hidden cursor-pointer"
+            onClick={() => setOpen(!open)}
+          >
             <MdMenu className="text-4xl"></MdMenu>
           </div>
         </div>
       </nav>
       {/* Mobile Sidebar Section  */}
-      <ResponsiveMenu open={open}/>
+      <ResponsiveMenu open={open} />
     </>
   );
 };

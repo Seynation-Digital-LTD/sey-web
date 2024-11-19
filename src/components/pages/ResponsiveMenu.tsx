@@ -20,13 +20,10 @@ const ResponsiveMenu: React.FC<ResponsiveMenuProps> = ({ open }) => {
         >
           <div className="text-xl font-semibold uppercase bg-primaryOne text-black py-10 m-6 rounded-3xl">
             <ul className="flex flex-col gap-10 items-center justify-center">
-              {/* {NavbarMenu.map((item) => (
+              {NavbarMenu.map((item) => (
                 <li key={item.id}> <a href={item.link} className=""> {item.title}</a></li>
-              ))} */}
-              <li>Home</li>
-              <li>About</li>
-              <li>Services</li>
-              <li>Contact</li>
+              ))}
+              
             </ul>
           </div>
         </motion.div>
