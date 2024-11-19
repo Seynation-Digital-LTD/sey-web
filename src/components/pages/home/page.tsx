@@ -1,12 +1,12 @@
 "use-client";
-import { Button } from "../ui/button";
-import { bg } from "../../app/index.js";
+import { Button } from "../../ui/button";
+import { bg } from "../../../app/index.js";
 import Image from "next/image";
 
 export const HeroPage = () => {
   return (
-    <div className="w-screen h-screen flex justify-center items-center  bg-gradient-to-r from-primaryOne via-primarySix to-primarySeven">
-      <div className="flex w-full max-w-6xl flex-row items-center px-2">
+    <div className="w-screen h-screen flex justify-center items-center  bg-gradient-to-bl from-primaryOne via-primarySix to-primarySeven">
+      <div className="flex w-full max-w-6xl flex-row items-center px-2 mt-[96px]">
         {/* Left Content */}
         <div className="flex-1 text-white space-y-4">
           <h1 className="font-mina font-extrabold text-5xl">
@@ -19,7 +19,7 @@ export const HeroPage = () => {
           </p>
           <div className="flex gap-4 ml-2">
             <Button variant="primary">About Us</Button>
-            <Button variant="extra">View Portfolio</Button>
+            <Button variant="outline">View Portfolio</Button>
           </div>
         </div>
         {/* Right Content */}

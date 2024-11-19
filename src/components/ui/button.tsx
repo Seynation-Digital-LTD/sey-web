@@ -18,11 +18,11 @@ const buttonVariants = cva(
         default:
           "bg-primaryOne text-white shadow hover:bg-primaryFive pressed:bg-primaryTwo",
         extra:
-          "bg-neutralOne text-black hover:bg-neutralTwo focused:bg-neutralThree",
+          "bg-neutralOne text-black hover:bg-neutralThree hover:text-white focused:bg-neutralThree",
         destructive:
           "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
         outline:
-          "border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground",
+          " hover:border bg-neutralOne hover:text-white shadow-sm hover:bg-accent text-black ",
 
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",

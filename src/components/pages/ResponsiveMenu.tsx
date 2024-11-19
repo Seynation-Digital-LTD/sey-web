@@ -18,8 +18,8 @@ const ResponsiveMenu: React.FC<ResponsiveMenuProps> = ({ open }) => {
           transition={{ duration: 0.3 }}
           className="absolute top-20 left-0 w-full h-screen z-20"
         >
-          <div className="text-xl font-semibold uppercase bg-primaryOne text-black py-10 m-6 rounded-3xl">
-            <ul className="flex flex-col gap-10 items-center justify-center">
+          <div className="font-semibold uppercase bg-gradient-to-bl from-primaryOne via-primarySix to-primarySeven text-white py-10 m-5 rounded-3xl">
+            <ul className="flex flex-col gap-4 items-center justify-center">
               {NavbarMenu.map((item) => (
                 <li key={item.id}> <a href={item.link} className=""> {item.title}</a></li>
               ))}
