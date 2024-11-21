@@ -14,20 +14,20 @@ export const NavbarMenu = [
   {
     id: 2,
     title: "About",
-    link: "/",
+    link: "/about",
   },
   {
     id: 3,
     title: "Services",
-    link: "/",
+    link: "/services",
   },
   {
     id: 4,
     title: "Portfolio",
-    link: "/",
+    link: "/portfolio",
   },
   { 
     id: 5,
    title: "Contact Us",
-   link: "/" },
+   link: "/contact" },
 ];

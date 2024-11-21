@@ -4,12 +4,13 @@ import React, { useState, useEffect } from "react";
 import { NavbarMenu } from "../app/mockdata/data";
 import ResponsiveMenu from "./ResponsiveMenu";
 import { MdMenu } from "react-icons/md";
+import Link from "next/link"
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // Track scroll position
+  // Tracking the scroll position
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -27,7 +28,7 @@ export const Navbar = () => {
     <>
       <nav
         className={`fixed w-full z-20 top-0 left-0 transition-all duration-300 ${
-          scrolled ? "bg-gray-900 shadow-lg" : "bg-transparent"
+          scrolled ? "bg-primaryFive shadow-lg" : "bg-transparent"
         }`}
       >
         <div className="container flex justify-between items-center py-4">
