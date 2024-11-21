@@ -1,6 +1,6 @@
 "use-client";
-import { Button } from "../../components/ui/button";
-import { bg } from "../index.js";
+import { Button } from "./ui/button";
+import { bg } from "../app/index.js";
 import Image from "next/image";
 
 export const HeroPage = () => {
@@ -15,7 +15,7 @@ export const HeroPage = () => {
           <p className="font-inter text-md leading-relaxed ml-2">
             We’re here to shape the future of the digital world. Every problem
             is a chance for us to create smart, simple, and powerful solutions
-            that make life easier and businesses better."
+            that make life easier and businesses better.
           </p>
           <div className="flex gap-4 ml-2">
             <Button variant="primary">About Us</Button>
