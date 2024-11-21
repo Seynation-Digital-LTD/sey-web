@@ -1,9 +1,9 @@
 "use client";
-import { Button } from "../ui/button";
+import { Button } from "./ui/button";
 import React from "react";
 import { useState } from "react";
-import { NavbarMenu } from "../../app/mockdata/data";
-import ResponsiveMenu from "../../components/pages/ResponsiveMenu";
+import { NavbarMenu } from "../app/mockdata/data";
+import ResponsiveMenu from "./ResponsiveMenu";
 import { MdMenu } from "react-icons/md";
 // import { CiSearch } from "react-icons/ci";
 // import { PiShoppingCartThin } from "react-icons/pi";
@@ -11,12 +11,10 @@ import { MdMenu } from "react-icons/md";
 
 export const Navbar2 = () => {
   const [open, setOpen] = useState(false);
-//   const router = useRouter();
-//   const isActive=  (href)=> router.pathname === href;
   return (
     <>
-      <nav className=" w-full z-20 top-0 start-0">
-        <div className="container flex justify-between items-center  bg-transparent py-8">
+      <nav className="fixed w-full z-20 top-0 start-0">
+        <div className="container flex justify-between items-center py-8">
           {/* Logo Section */}
           <div className="text-2xl flex items-center gap-1 font-bold uppercase py-8">
             <p>Seynation</p>

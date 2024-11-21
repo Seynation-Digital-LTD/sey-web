@@ -1,6 +1,5 @@
 "use-client";
-
-import { Button } from "../ui/button";
+import { Button } from "./ui/button";
 export const Navbar = () => {
   return (
     <nav className=" fixed w-full z-20 top-0 start-0">
