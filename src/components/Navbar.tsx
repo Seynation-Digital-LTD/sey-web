@@ -1,22 +1,38 @@
 "use client";
 import { Button } from "./ui/button";
-import React from "react";
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { NavbarMenu } from "../app/mockdata/data";
 import ResponsiveMenu from "./ResponsiveMenu";
 import { MdMenu } from "react-icons/md";
-// import { CiSearch } from "react-icons/ci";
-// import { PiShoppingCartThin } from "react-icons/pi";
-// import {useRouter } from "next/router"
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  // Track scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true); 
+      } else {
+        setScrolled(false); 
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
-      <nav className="fixed w-full z-20 top-0 start-0">
-        <div className="container flex justify-between items-center py-8">
+      <nav
+        className={`fixed w-full z-20 top-0 left-0 transition-all duration-300 ${
+          scrolled ? "bg-gray-900 shadow-lg" : "bg-transparent"
+        }`}
+      >
+        <div className="container flex justify-between items-center py-4">
           {/* Logo Section */}
-          <div className="text-2xl flex items-center gap-1 font-bold uppercase py-8">
+          <div className="text-2xl flex items-center gap-1 font-bold uppercase py-4">
             <p>Seynation</p>
             <p className="text-neutralOne">Digital</p>
           </div>
@@ -28,7 +44,7 @@ export const Navbar = () => {
                 <li key={item.id}>
                   <a
                     href={item.link}
-                    className="inline-block py-1 px-3  hover:text-neutralOne hover:underline-offset-4 font-semibold"
+                    className="inline-block py-1 px-3 hover:text-neutralOne hover:underline-offset-4 font-semibold"
                   >
                     {item.title}
                   </a>
@@ -36,18 +52,10 @@ export const Navbar = () => {
               ))}
             </ul>
           </div>
+
           {/* Icons Section */}
           <div className="flex items-center gap-4">
-            {/* <button className="text-2xl hover:bg-primaryOnehover:text-white rounded-full p-2 duration-200">
-              <CiSearch />
-            </button> */}
-
-            {/* <button className="text-2xl hover:bg-primaryOnehover:text-white rounded-full p-2 duration-200">
-              <PiShoppingCartThin className="text-2xl" />
-            </button> */}
-
-            {/* Button Section */}
-            <Button variant="outline">Get a Qoute</Button>
+            <Button variant="outline">Get a Quote</Button>
           </div>
 
           {/* Mobile Hamburger Menu Section */}
@@ -59,7 +67,8 @@ export const Navbar = () => {
           </div>
         </div>
       </nav>
-      {/* Mobile Sidebar Section  */}
+
+      {/* Mobile Sidebar Section */}
       <ResponsiveMenu open={open} />
     </>
   );
