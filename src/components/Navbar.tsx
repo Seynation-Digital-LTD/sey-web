@@ -12,7 +12,7 @@ export const Navbar = () => {
 
   // Tracking the scroll position
   useEffect(() => {
-    const handleScroll = () => {
+    const handleScroll = () => { 
       if (window.scrollY > 50) {
         setScrolled(true); 
       } else {
