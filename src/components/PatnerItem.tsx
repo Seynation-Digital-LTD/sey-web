@@ -19,7 +19,7 @@ const PatnerItem: React.FC<PatnerItemProps> = ({ images, from, to }) => {
         {images.map((image, index) => {
           return (
             <img
-              className=" w-56 object-contain pr-12"
+              className=" flex flex-row items-center justify-center w-56 object-contain pr-12"
               src={image}
               key={index}
             />
@@ -31,7 +31,7 @@ const PatnerItem: React.FC<PatnerItemProps> = ({ images, from, to }) => {
         initial={{ x: from }}
         animate={{ x: to }}
         transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-        className="flex flex-shrink-0"
+        className="flex flex-shrink-0 "
       >
         {images.map((image, index) => {
           return (

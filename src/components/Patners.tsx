@@ -32,7 +32,7 @@ const Patners = () => {
 
   return (
     <div className="flex flex-col justify-center items-center ">
-      <h6 className="font-mina font-bold mt-6 mb-4">Strategic Patners</h6>
+      <h6 className="font-mina font-bold mt-16 mb-4">Strategic Patners</h6>
       <PatnerItem images={upperPatners} from={0} to={"-100%"} />
       <PatnerItem images={lowerPatners} from={"-100%"} to={0} />
     </div>
