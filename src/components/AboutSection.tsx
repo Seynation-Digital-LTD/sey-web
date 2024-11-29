@@ -23,7 +23,7 @@ export const AboutSection = () => {
             visions to life with precision and purpose. We’re the minds shaping
             what’s next.
           </p>
-          <Button variant="outline">View Portfolio</Button>
+          <Button variant="outline">Learn More</Button>
         </div>
         {/* Right Content */}
         <div className="flex-1 flex justify-center">
