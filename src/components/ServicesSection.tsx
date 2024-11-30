@@ -24,6 +24,30 @@ export const ServicesSection = () => {
           image1: "",
           image2:"",
       },
+      {
+        id: 4,
+        title: "E-Commerce Solutions",
+        description:
+          "From small business e-commerce to large-scale e-commerce platforms, we provide expertise in e-commerce solutions.",
+        image1: "",
+        image2: "",
+      },
+      {
+        id: 5,
+        title: "Branding & Identity",
+        description:
+          "From small business branding to large-scale branding, we provide expertise in branding & identity.",
+        image1: "",
+        image2: "",
+      },
+      {
+        id: 6,
+        title: "Content Marketing",
+        description:
+          "From social media content marketing to search engine optimization, we provide expertise in content marketing.",
+        image1: "",
+        image2: "",
+      }
     ];
   
     return (
