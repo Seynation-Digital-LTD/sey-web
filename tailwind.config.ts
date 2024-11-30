@@ -41,7 +41,8 @@ export default {
         neutralTwo: "#9B9781",
         neutralThree: "#35342C",
         neutralFour: " #787564",
-
+        neutralFive: "#D9D3B3",
+        neutralSix: "#73705F",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
