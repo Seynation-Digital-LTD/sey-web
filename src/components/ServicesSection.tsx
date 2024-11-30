@@ -5,21 +5,24 @@ export const ServicesSection = () => {
         title: "Web Development",
         description:
           "Masterminding every step of your digital journey, from small business websites to large-scale website, we provide expertise in web development.",
-        image: "",
+        image1: "",
+        image2:"",
       },
       {
         id: 2,
         title: "Mobile App Development",
         description:
           "From small business applications to large-scale e-commerce apps, we provide expertise in mobile app development.",
-        image: "",
+          image1: "",
+          image2:"",
       },
       {
         id: 3,
         title: "Digital Marketing",
         description:
           "From social media marketing to search engine optimization, we provide expertise in digital marketing.",
-        image: "",
+          image1: "",
+          image2:"",
       },
     ];
   
@@ -40,7 +43,7 @@ export const ServicesSection = () => {
             >
               <div className="flex flex-col justify-between h-full">
                 <div className="flex flex-col items-start gap-3">
-                  <img src={item.image} alt={item.title} className="w-10 h-10" />
+                  <img src={item.image1} alt={item.title} className="w-10 h-10" />
                   <h3 className="text-2xl font-bold font-inter text-white">
                     {item.title}
                   </h3>
@@ -49,7 +52,7 @@ export const ServicesSection = () => {
                   <p className="text-base text-white font-inter flex-1">
                     {item.description}
                   </p>
-                  <img src={item.image} alt="" className="w-16 h-16 object-contain" />
+                  <img src={item.image2} alt="" className="w-16 h-16 object-contain" />
                 </div>
               </div>
             </div>
