@@ -85,12 +85,10 @@ export const ContactSection = () => {
       <div className="z-10 relative h-full max-md:min-h-[350px]">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15931.662111083495!2d36.6860541!3d-3.3708243!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x18371d00193654cd%3A0xaf7135313713c9c3!2sSeynation%20Digital!5e0!3m2!1ssw!2stz!4v1733294093939!5m2!1ssw!2stz"
-          
-          className="left-0 top-0 h-full w-full rounded-t-lg lg:rounded-tr-none lg:rounded-bl-md"
-          frameborder="0"
-          allowfullscreen
+          className="left-0 top-0 h-full w-full rounded-t-lg lg:rounded-tr-none lg:rounded-bl-md allowfullscreen"
+        //   frameborder="0"
+    
         ></iframe>
-
       </div>
     </div>
   );
