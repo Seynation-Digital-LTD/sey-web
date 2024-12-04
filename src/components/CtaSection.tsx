@@ -56,7 +56,7 @@ export const CtaSection3 = () => {
   );
 };
 
-export const CtaSection4= () => {
+export const CtaSection4 = () => {
   return (
     <div className="flex justify-center items-start mt-16">
       <div className="flex flex-col items-center justify-center bg-gradient-to-br  from-neutralFive neutralSix to-neutralSix w-4/5 h-[180px] rounded-md">

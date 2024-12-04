@@ -18,8 +18,8 @@ export const NavbarMenu = [
   },
   {
     id: 3,
-    title: "Services",
-    link: "/services",
+    title: "Solutions",
+    link: "/solutions",
   },
   {
     id: 4,
