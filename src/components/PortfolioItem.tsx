@@ -40,6 +40,7 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({ divItem, from, to }) => {
               className="mt-2 text-blue-500 hover:underline text-sm"
             >
               Learn More
+              
             </a> */}
           </div>
         ))}
