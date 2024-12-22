@@ -34,6 +34,31 @@ export default function about() {
       image2: "",
     },
   ];
+
+  const teamData = [
+    {
+      id:1,
+      name: "John Doe",
+      role: "Creative Director",
+      image: "",
+      description:""
+    },
+    {
+      id:2,
+      name: "Jane Smith",
+      role: "Senior Designer",
+      image: "",
+      description:""
+    },
+    {
+      id:3,
+      name: "Mike Johnson",
+      role: "Product Manager",
+      image: "",
+      description:""
+    }
+  ];
+  
   return (
     <>
       {" "}
@@ -123,10 +148,12 @@ export default function about() {
           </div>
         </div>
       </div>
+      {/* The Value Section */}
       <div className="flex justify-center items-center ">
         <div className="flex flex-col items-center justify-center">
           
-            <h1 className="font-mina font-extrabold text-5xl mb-10 mt-[96px]">Our Values.</h1>
+            <h1 className="font-mina font-extrabold text-5xl mt-[96px]">Our Values.</h1>
+            <p className="font-inter mb-10">The Seynation Code</p>
         
             <div className="flex items-center justify-center overflow-hidden flex-row flex-wrap gap-4">
               {valueData.map((item) => (
@@ -159,17 +186,21 @@ export default function about() {
                 </div>
               ))}
             </div>
-            {/* <div className="bg-black w-16 h-16"></div>
-            <div className="bg-primaryFour w-16 h-16"></div>
-            <div className="bg-primaryOne w-16 h-16"></div>
-            <div className="bg-primaryTwo w-16 h-16"></div> */}
           </div>
+        </div>
 
-          {/* <div className="space-y-4">
+        {/* The Team Section */}
+        <div className="flex justify-center items-center ">
+        <div className="flex flex-col items-center justify-center">
+          
+            <h1 className="font-mina font-extrabold text-5xl mt-[96px]">Meet The Masterminds.</h1>
+            <p className="font-inter mb-10">The Visonarries Behind Seynaton</p>
+        
+            <div className="flex items-center justify-center overflow-hidden flex-row flex-wrap gap-4">
               {valueData.map((item) => (
                 <div
                   key={item.id}
-                  className="bg-gradient-to-br from-neutralFive to-neutralSix w-[395px] h-[245px] rounded-[20px] p-7 hover:bg-gradient-to-br hover:from-[#BA3521] hover:to-secondaryFour hover:cursor-pointer"
+                  className="bg-gradient-to-br from-neutralFive to-neutralSix w-[295px] h-[200px] rounded-[15px] mb-10 p-7 hover:bg-gradient-to-br hover:from-[#BA3521] hover:to-secondaryFour hover:cursor-pointer"
                 >
                   <div className="flex flex-col justify-between h-full">
                     <div className="flex flex-col items-start gap-3">
@@ -195,9 +226,9 @@ export default function about() {
                   </div>
                 </div>
               ))}
-            </div> */}
+            </div>
+          </div>
         </div>
-      
     </>
   );
 }
