@@ -13,11 +13,10 @@ import { ContactSection } from "@/components/ContactSection";
 export default function Home() {
   return (
     <div>
-      
       <HeroPage />
+
       <div className="ml-20 mr-20">
         <Patners />
-        
         <AboutSection />
         <CtaSection />
         <ServicesSection />
