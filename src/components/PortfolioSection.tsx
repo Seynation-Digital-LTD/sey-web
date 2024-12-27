@@ -41,6 +41,7 @@ export const PortfolioSection = () => {
       link: "#",
     },
   ];
+  
   const upperPortfolioSection = [
     {
       id: 1,

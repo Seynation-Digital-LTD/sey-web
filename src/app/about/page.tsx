@@ -1,5 +1,4 @@
 "use-client";
-
 import { bg } from "../../app/index.js";
 import Image from "next/image";
 import { ContactSection } from "@/components/ContactSection.tsx";

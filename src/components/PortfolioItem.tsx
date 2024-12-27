@@ -13,8 +13,7 @@ interface PortfolioItemProps {
   from: number | string;
   to: number | string;
 }
-
-const PortfolioItem: React.FC<PortfolioItemProps> = ({ divItem, from, to }) => {
+ const PortfolioItem: React.FC<PortfolioItemProps> = ({ divItem, from, to }) => {
   return (
     <div className="flex MyGradient">
       <motion.div
