@@ -162,32 +162,6 @@ export default function Solutions() {
         ))}
       </div>
 
-      {/* Here We put the Popup/Modal */}
-      {popupVisible && selectedProject && (
-        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center z-50">
-          <div className="bg-neutralOne w-[900px] p-6 rounded-lg shadow-lg relative">
-            {/* The Close Button */}
-            <button
-              className="absolute top-2 right-2 text-black text-xl  font-bold"
-              onClick={closePopup}
-            >
-              &times;
-            </button>
-            {/* The Project Details Goes Here MwanaWanee. */}
-            <h2 className="tex-xl font-bold mb-4">{selectedProject.title}</h2>
-            {selectedProject.image && (
-              <Image
-                src={selectedProject.image}
-                alt={selectedProject.title}
-                className="w-full h-auto rounded-md mb-4"
-                width={600}
-                height={400}
-              />
-            )}
-            <p className="text-gray-700">{selectedProject.details}</p>
-          </div>
-        </div>
-      )}
       {/* CTA SECTION */}
       <div className="flex justify-center items-start mt-16 mb-20">
         <div className="flex flex-col items-center justify-center bg-gradient-to-br  from-neutralFive neutralSix to-neutralSix w-4/5 h-[180px] rounded-md">
@@ -197,6 +171,74 @@ export default function Solutions() {
         </div>
       </div>
       {/* END CTA */}
+
+      {/* Here We put the Popup/Modal */}
+      {popupVisible && selectedProject && (
+        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center z-50">
+          <div className="bg-neutralOne w-[800px] p-6 rounded-lg shadow-lg relative">
+            {/* The Close Button */}
+            <button
+              className="absolute top-2 right-2 text-black text-xl  font-bold"
+              onClick={closePopup}
+            >
+              &times;
+            </button>
+            {/* The Project Details Goes Here MwanaWanee. */}
+            <div className="flex flex-row justify-start p-4 gap-4">
+              <div className="flex flex-row gap-3 justify-center items-cente">
+                {selectedProject.image && (
+                  <div className="bg-black rounded-md h-[250px] w-[250px]">
+                    <Image
+                      src={selectedProject.image}
+                      alt={selectedProject.title}
+                      className="w-full h-auto rounded-md mb-4"
+                      width={600}
+                      height={400}
+                    />
+                  </div>
+                )}
+              </div>
+              <div className="flex flex-col justify-start items-start">
+                <div className="flex flex-row gap-4">
+                  <h2 className="font-bold font-inter text-primaryOne">
+                    Project Name:
+                  </h2>
+                  <h2 className="font-medium font-inter text-black">
+                    {selectedProject.title}
+                  </h2>
+                </div>
+                <div className="flex flex-row gap-4">
+                  <h2 className="font-bold font-inter text-primaryOne">
+                    Client :
+                  </h2>
+                  <h2 className="font-medium font-inter text-black">
+                    {selectedProject.title}
+                  </h2>
+                </div>
+                <div className="flex flex-row gap-4">
+                  <h2 className="font-bold font-inter text-primaryOne">
+                    Description:
+                  </h2>
+                  <h2 className="font-medium font-inter text-black">
+                    {selectedProject.description}
+                  </h2>
+                </div>
+                <div className="flex flex-row gap-4">
+                  <h2 className="font-bold font-inter text-primaryOne">
+                    Project Link :
+                  </h2>
+                  <h2 className="font-medium font-inter text-black">#</h2>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex flex-row items-start justify-start gap-4">
+              <div className="bg-primaryOne h-24 w-24 rounded-lg"></div>
+              <div className="bg-primaryTwo h-24 w-24 rounded-lg"></div>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }
