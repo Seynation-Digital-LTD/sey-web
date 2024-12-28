@@ -2,13 +2,24 @@
 import { useState } from "react";
 import { bg } from "../../app/index.js";
 import Image from "next/image";
-import { access } from "fs";
 
 export default function Solutions() {
   const [selectedPortfolio, setSelectedPortfolio] = useState("all");
+  const [popupVisible, setPopupVisible] = useState(false); // This Tracks Popup visibility.
+  const [selectedProject, setSelectedProject] = useState(null); // This Tracks Selected Project.
 
   const handleCategoryClick = (categoryId: string) => {
     setSelectedPortfolio(categoryId);
+  };
+
+  const handlePortfolioClick = (project: any) => {
+    setSelectedProject(project);
+    setPopupVisible(true);
+  };
+
+  const closePopup = () => {
+    setPopupVisible(false);
+    setSelectedProject(null);
   };
 
   const portfolios = [
@@ -127,11 +138,12 @@ export default function Solutions() {
       </div>
 
       {/* Portfolio Display */}
-      <div className="flex flex-row items-center justify-center gap-4 overflow-hidden flex-wrap  mt-5 ">
+      <div className="flex flex-row items-center justify-center gap-3 overflow-hidden flex-wrap  mt-5 ">
         {filteredPortfolios.map((item) => (
           <div
             key={item.id}
-            className="bg-black w-[300px] h-[300px] rounded-2xl text-white p-6 flex items-center justify-center "
+            onClick={() => handlePortfolioClick(item)}
+            className="bg-black w-[300px] h-[300px] rounded-2xl text-white p-6 flex items-center justify-center cursor-pointer"
           >
             <div className="">
               <h3 className="text-lg font-bold">{item.title}</h3>
@@ -149,6 +161,33 @@ export default function Solutions() {
           </div>
         ))}
       </div>
+
+      {/* Here We put the Popup/Modal */}
+      {popupVisible && selectedProject && (
+        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center z-50">
+          <div className="bg-neutralOne w-[900px] p-6 rounded-lg shadow-lg relative">
+            {/* The Close Button */}
+            <button
+              className="absolute top-2 right-2 text-black text-xl  font-bold"
+              onClick={closePopup}
+            >
+              &times;
+            </button>
+            {/* The Project Details Goes Here MwanaWanee. */}
+            <h2 className="tex-xl font-bold mb-4">{selectedProject.title}</h2>
+            {selectedProject.image && (
+              <Image
+                src={selectedProject.image}
+                alt={selectedProject.title}
+                className="w-full h-auto rounded-md mb-4"
+                width={600}
+                height={400}
+              />
+            )}
+            <p className="text-gray-700">{selectedProject.details}</p>
+          </div>
+        </div>
+      )}
       {/* CTA SECTION */}
       <div className="flex justify-center items-start mt-16 mb-20">
         <div className="flex flex-col items-center justify-center bg-gradient-to-br  from-neutralFive neutralSix to-neutralSix w-4/5 h-[180px] rounded-md">
