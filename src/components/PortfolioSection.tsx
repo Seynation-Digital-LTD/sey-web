@@ -164,14 +164,14 @@ export const PortfolioSection = () => {
     <>
       <div>
         <div className="text-center">
-          <h6 className="font-mina font-bold mt-10 mb-4">
+          <h6 className="font-mina font-bold mt-10 text-2xl">
             Check our Portfolio
           </h6>
           <p className="text-base text-gray-600 font-inter">
             Masterpieces by the Masters
           </p>
         </div>
-        <div className="port-buttons flex flex-row gap-4 justify-center items-center p-6">
+        <div className="port-buttons flex flex-row gap-4 justify-center items-center p-6 mb-3">
           {portfolioSectionItems.map((item) => (
             <div
               key={item.id}

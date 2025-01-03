@@ -15,16 +15,12 @@ export default function Home() {
     <div>
       <HeroPage />
 
-      <div className="ml-20 mr-20">
+      <div className="flex flex-col items-center justify-center gap-10">
         <Patners />
         <AboutSection />
-        <CtaSection />
         <ServicesSection />
-        <CtaSection2 />
         <PortfolioSection />
-        <CtaSection3 />
         <ContactSection />
-        <CtaSection4 />
       </div>
     </div>
   );
