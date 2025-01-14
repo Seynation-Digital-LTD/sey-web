@@ -7,8 +7,10 @@ import { CtaSection2 } from "@/components/CtaSection";
 import { CtaSection3 } from "@/components/CtaSection";
 import { CtaSection4 } from "@/components/CtaSection";
 import { Portfolio } from "@/components/Portfolio";
+import PortfolioPage from "@/app/portfolio/page.tsx";
+import { PortfolioSection2 } from "@/components/PortofolioSection2";
 import { ServicesSection } from "@/components/ServicesSection";
-import { PortfolioSection } from "@/components/PortfolioSection";
+// import { PortfolioSection } from "@/components/PortfolioSection";
 import { ContactSection } from "@/components/ContactSection";
 export default function Home() {
   return (
@@ -19,7 +21,7 @@ export default function Home() {
         <Patners />
         <AboutSection />
         <ServicesSection />
-        <PortfolioSection />
+        <PortfolioSection2 />
         <ContactSection />
       </div>
     </div>

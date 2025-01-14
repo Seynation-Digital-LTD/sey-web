@@ -1,16 +1,18 @@
 export const ContactSection = () => {
   return (
     <>
-     <div className="text-center">
-        <h6 className="font-mina font-bold mt-10 text-xl sm:text-2xl lg:text-3xl">
-        Contact Us.
-        </h6>
-        <p className="text-sm sm:text-base text-gray-600 font-inter mt-2">
-        Have a specific inquiry or looking to explore new opportunities? <br></br> We're
-        ready to engage with you.
-        </p>
-      </div>
-      
+  <div className="flex justify-center items-center px-4 mt-16">
+  <div className="text-center max-w-3xl w-full">
+    <h6 className="font-mina font-bold text-2xl sm:text-3xl lg:text-4xl mt-10">
+      Contact Us.
+    </h6>
+    <p className="text-sm sm:text-base lg:text-lg text-gray-600 font-inter mt-4 leading-relaxed">
+      Have a specific inquiry or looking to explore new opportunities? <br className="hidden sm:block" />
+      We're ready to engage with you.
+    </p>
+  </div>
+</div>
+
       <div className="grid md:grid-cols-2 items-center overflow-hidden shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] rounded-md p-4 max-w-6xl mx-auto bg-white my-6 font-[sans-serif] mb-40">
         <div className="p-8 bg-gradient bg-gradient-to-bl  from-neutralTwo  to-neutralThree cursor-pointer ">
           {/* <h2 className="text-3xl font-bold text-white">

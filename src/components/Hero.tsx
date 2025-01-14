@@ -18,8 +18,10 @@ export const HeroPage = () => {
             that make life easier and businesses better.
           </p>
           <div className=" md:gap-4 overflow-hidden justify-center items-center lg:justify-start pb-20">
-            <Button variant="primary" className="mr-4">About Us</Button>
-            <Button variant="outline" >View Portfolio</Button>
+            <Button variant="primary" className="mr-4">
+              About Us
+            </Button>
+            <Button variant="outline">View Portfolio</Button>
           </div>
         </div>
         {/* Right Content */}

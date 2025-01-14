@@ -9,7 +9,7 @@ export const Portfolio = () => {
       id: 1,
       title: "Portfolio Section 1",
       description: "Description 1",
-      image: bg.src, // Convert imported image to string
+      image: bg.src,
       link: "#",
     },
     {
@@ -95,7 +95,7 @@ export const Portfolio = () => {
   ];
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col space-y-8">
       <PortfolioItem divItem={upperPortfolioSection} from={0} to={"-100%"} />
       <PortfolioItem divItem={lowerPortfolioSection} from={"-100%"} to={0} />
     </div>

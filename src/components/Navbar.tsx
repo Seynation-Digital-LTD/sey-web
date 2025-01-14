@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { NavbarMenu } from "../app/mockdata/data";
 import ResponsiveMenu from "./ResponsiveMenu";
 import { MdMenu } from "react-icons/md";
-import Link from "next/link"
+import Link from "next/link";
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -12,12 +12,11 @@ export const Navbar = () => {
 
   // Tracking the scroll position
   useEffect(() => {
-    const handleScroll = () => { 
+    const handleScroll = () => {
       if (window.scrollY > 50) {
-        setScrolled(true); 
-      } else {
-        setScrolled(false); 
+        setScrolled(true);
       }
+      setScrolled(false);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -28,14 +27,13 @@ export const Navbar = () => {
     <>
       <nav
         className={`fixed w-full z-20 top-0 left-0 transition-all duration-300 ${
-          scrolled ? "bg-primaryFive shadow-lg" : "bg-transparent"
+          scrolled ? "bg-primaryFive shadow-lg" : "bg-primaryOne shadow"
         }`}
       >
         <div className="container flex justify-between items-center py-4">
           {/* Logo Section */}
           <div className="text-2xl flex items-center gap-1 font-bold uppercase py-4">
             <p>Seynation</p>
-            <p className="text-neutralOne">Digital</p>
           </div>
 
           {/* Menu Section */}
