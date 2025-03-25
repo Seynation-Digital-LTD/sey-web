@@ -1,28 +1,27 @@
 "use client";
-import { Button } from "./ui/button";
+
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import { MdMenu } from "react-icons/md";
+import { Button } from "./ui/button";
 import { NavbarMenu } from "../app/mockdata/data";
 import ResponsiveMenu from "./ResponsiveMenu";
-import { MdMenu } from "react-icons/md";
-import Link from "next/link";
-
+import Image from "next/image";
+import { seynation } from "../app/index.js";
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // Tracking the scroll position
+  // Track scrolling to change navbar appearance
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      }
-      setScrolled(false);
+      setScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
+ 
   return (
     <>
       <nav
@@ -30,44 +29,49 @@ export const Navbar = () => {
           scrolled ? "bg-primaryFive shadow-lg" : "bg-primaryOne shadow"
         }`}
       >
-        <div className="container flex justify-between items-center py-4">
+        <div className="container mx-auto flex justify-between items-center py-4 px-4">
           {/* Logo Section */}
           <div className="text-2xl flex items-center gap-1 font-bold uppercase py-4">
-            <p>Seynation</p>
+            <Link href="/" className="hover:text-white">
+              <Image className="" src={seynation} alt="Seynation" priority />
+            </Link>
           </div>
 
-          {/* Menu Section */}
+          {/* Desktop Menu Section */}
           <div className="hidden md:block">
             <ul className="flex items-center gap-3 text-white">
               {NavbarMenu.map((item) => (
                 <li key={item.id}>
-                  <a
+                  <Link
                     href={item.link}
                     className="inline-block py-1 px-3 hover:text-neutralOne hover:underline-offset-4 font-semibold"
                   >
                     {item.title}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Icons Section */}
+          {/* Right Section (Buttons) */}
           <div className="flex items-center gap-4">
-            <Button variant="outline">Get a Quote</Button>
+            {/* Get a Quote Button */}
+            <Link href="/getquote">
+              <Button variant="outline">Get a Quote</Button>
+            </Link>
           </div>
 
-          {/* Mobile Hamburger Menu Section */}
+          {/* Mobile Hamburger Menu */}
           <div
             className="md:hidden cursor-pointer"
             onClick={() => setOpen(!open)}
           >
-            <MdMenu className="text-4xl"></MdMenu>
+            <MdMenu className="text-4xl" />
           </div>
         </div>
       </nav>
 
-      {/* Mobile Sidebar Section */}
+      {/* Mobile Sidebar */}
       <ResponsiveMenu open={open} />
     </>
   );

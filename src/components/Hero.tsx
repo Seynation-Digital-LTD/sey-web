@@ -1,40 +1,41 @@
-"use-client";
+"use client";
 import { Button } from "./ui/button";
-import { bg } from "../app/index.js";
+import { hero2} from "../app/index.js";
 import Image from "next/image";
 
 export const HeroPage = () => {
   return (
-    <div className="w-screen h-screen pb-20 pt-30 flex justify-center items-center bg-gradient-to-bl from-primaryOne via-primarySix to-primarySeven">
-      <div className="flex w-full max-w-6xl flex-col-reverse gap-5 justify-center align-middle lg:flex-row items-center px-4 lg:px-8 mt-[96px] space-y-8 lg:space-y-0">
-        {/* Left Content */}
-        <div className="flex-1 text-white space-y-4 text-center lg:text-left">
-          <h1 className="font-mina font-extrabold text-4xl lg:text-5xl">
-            We're the Masterminds,
+    <section className="w-screen lg:h-[90vh] xl:h-[100vh] flex justify-center items-center bg-gradient-to-bl from-primaryOne via-primarySix to-primarySeven">
+      <div className="container max-w-6xl mx-auto px-4 lg:px-8 flex flex-col lg:flex-row items-center gap-8 md:gap-12 py-16">
+        {/* Left Content - Text and Buttons */}
+        <div className="flex-1 text-white space-y-6 text-center lg:text-left">
+          <h1 className="font-mina font-extrabold text-4xl md:text-5xl lg:text-5xl mt-44">
+            We're the Masterminds.
           </h1>
-          <p className="font-inter text-sm lg:text-md leading-relaxed mx-4 lg:mx-0">
-            We’re here to shape the future of the digital world. Every problem
-            is a chance for us to create smart, simple, and powerful solutions
+          <p className="font-inter text-sm md:text-base lg:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
+            Every problem is a chance for us to create smart, simple, and powerful solutions
             that make life easier and businesses better.
           </p>
-          <div className=" md:gap-4 overflow-hidden justify-center items-center lg:justify-start pb-20">
-            <Button variant="primary" className="mr-4">
+          <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
+            <Button variant="primary" className="text-sm md:text-base">
               About Us
             </Button>
-            <Button variant="outline">View Portfolio</Button>
+            <Button variant="outline" className="text-sm md:text-base">
+              View Portfolio
+            </Button>
           </div>
         </div>
-        {/* Right Content */}
-        <div className="flex-1 flex justify-center">
-          <div className="bg-black w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-lg">
-            <Image
-              className="w-full h-full object-cover rounded-lg"
-              src={bg}
+
+        {/* Right Content - Image */}
+        <div className=" flex-1 justify-center">
+        <Image
+              className="lg:mt-58 xl:mt-[95px]  mt-36"
+              src={hero2}
               alt="Hero Image"
+              priority
             />
-          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };

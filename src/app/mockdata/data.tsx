@@ -30,4 +30,8 @@ export const NavbarMenu = [
     id: 5,
    title: "Contact Us",
    link: "/contact" },
+  //  { 
+  //   id: 6,
+  //  title: "Get a Qoute",
+  //  link: "/getqoute" },
 ];
