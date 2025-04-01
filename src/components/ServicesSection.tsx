@@ -1,5 +1,6 @@
 "use-client";
 import Image from "next/image";
+import { branding2, web, mobile, nextpage2, nextpage, digitalstrategy, ecom2, digitalmarketing } from "../app/index.js";
 
 export const ServicesSection = () => {
   const servicesData = [
@@ -8,48 +9,48 @@ export const ServicesSection = () => {
       title: "Web Development",
       description:
         "Masterminding every step of your digital journey, from small business websites to large-scale websites, we provide expertise in web development.",
-      image1: "/images/web-dev-icon.png", 
-      image2: "/images/web-dev-illustration.png", 
+      image1: web,
+      image2: nextpage2,
     },
     {
       id: 2,
       title: "Mobile App Development",
       description:
         "From small business applications to large-scale e-commerce apps, we provide expertise in mobile app development.",
-      image1: "/images/mobile-app-icon.png", 
-      image2: "/images/mobile-app-illustration.png", 
+      image1: mobile,
+      image2: nextpage2,
     },
     {
       id: 3,
       title: "Digital Marketing",
       description:
         "From social media marketing to search engine optimization, we provide expertise in digital marketing.",
-      image1: "/images/digital-marketing-icon.png", 
-      image2: "/images/digital-marketing-illustration.png", 
+      image1: digitalmarketing,
+      image2: nextpage2,
     },
     {
       id: 4,
       title: "E-Commerce Solutions",
       description:
         "From small business e-commerce to large-scale e-commerce platforms, we provide expertise in e-commerce solutions.",
-      image1: "/images/ecommerce-icon.png",
-      image2: "/images/ecommerce-illustration.png", 
+      image1:ecom2,
+      image2: nextpage
     },
     {
       id: 5,
       title: "Branding & Identity",
       description:
         "From small business branding to large-scale branding, we provide expertise in branding & identity.",
-      image1: "/images/branding-icon.png", 
-      image2: "/images/branding-illustration.png", 
+      image1: branding2,
+      image2: nextpage
     },
     {
       id: 6,
       title: "Content Marketing",
       description:
         "From social media content marketing to search engine optimization, we provide expertise in content marketing.",
-      image1: "/images/content-marketing-icon.png", 
-      image2: "/images/content-marketing-illustration.png", 
+      image1: digitalstrategy,
+      image2: nextpage
     },
   ];
 
@@ -94,7 +95,7 @@ export const ServicesSection = () => {
                   <p className="text-sm sm:text-base text-white font-inter flex-1">
                     {item.description}
                   </p>
-                  <div className="w-12 h-12 sm:w-16 sm:h-16 relative">
+                  <div className="w-auto h-auto sm:w-10 sm:h-10 relative">
                     <Image
                       src={item.image2}
                       alt={item.title}

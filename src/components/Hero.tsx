@@ -10,7 +10,7 @@ export const HeroPage = () => {
         {/* Left Content - Text and Buttons */}
         <div className="flex-1 text-white space-y-6 text-center lg:text-left">
           <h1 className="font-mina font-extrabold text-4xl md:text-5xl lg:text-5xl mt-44">
-            We're the Masterminds.
+            We're the Digital Masterminds.
           </h1>
           <p className="font-inter text-sm md:text-base lg:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
             Every problem is a chance for us to create smart, simple, and

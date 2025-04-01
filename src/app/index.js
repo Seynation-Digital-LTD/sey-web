@@ -1,5 +1,18 @@
 export { default as bg } from "../app/assets/images/bg.jpeg";
 export { default as seynation } from "../app/assets/images/seynation.png";
-export {default as hero3 } from "../app/assets/images/hero3.png";
+export { default as hero3 } from "../app/assets/images/hero3.png";
+export { default as branding } from "../app/assets/images/branding.png";
+export { default as branding2 } from "../app/assets/images/branding2.png";
+export { default as socialmedia } from "../app/assets/images/socialmedia.png";
+export { default as mobile } from "../app/assets/images/mobile.png";
+export { default as touchpad } from "../app/assets/images/touchpad.png";
+export { default as web } from "../app/assets/images/web.png";
+export { default as nextpage } from "../app/assets/images/nextpage.png";
+export { default as nextpage2 } from "../app/assets/images/nextpage2.png";
+export { default as ecom2 } from "../app/assets/images/ecom2.png";
+export { default as digitalstrategy } from "../app/assets/images/digitalstrategy.png";
+export { default as mind } from "../app/assets/images/mind.png";
+export { default as digitalmarketing } from "../app/assets/images/digitalmarketing.png"
+export {default as masterpiece } from "../app/assets/images/masterpiece.jpg"
 // export { default as aboutvd} from "../app/assets/videos/aboutvd.mp4";
 // export { default as aboutimg } from "../app/assets/images/aboutimg.png";
