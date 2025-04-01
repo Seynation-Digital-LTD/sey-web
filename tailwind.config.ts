@@ -25,9 +25,13 @@ export default {
         mina: ["Mina", "sans-serif"],
       },
       screens:{
+        smd:"520px",
         sm: "640px",
         md: "768px",
         lg: "1024px",
+        laptop:"1272px",
+        monitor:"1346px",
+        // "1xl":"1272px",
         xl: "1280px",
         "2xl": "1536px",
       },

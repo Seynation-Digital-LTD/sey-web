@@ -1,6 +1,6 @@
 "use client";
 import { Button } from "./ui/button";
-import { hero2} from "../app/index.js";
+import { hero3 } from "../app/index.js";
 import Image from "next/image";
 
 export const HeroPage = () => {
@@ -13,8 +13,8 @@ export const HeroPage = () => {
             We're the Masterminds.
           </h1>
           <p className="font-inter text-sm md:text-base lg:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
-            Every problem is a chance for us to create smart, simple, and powerful solutions
-            that make life easier and businesses better.
+            Every problem is a chance for us to create smart, simple, and
+            powerful solutions that make life easier and businesses better.
           </p>
           <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
             <Button variant="primary" className="text-sm md:text-base">
@@ -27,14 +27,26 @@ export const HeroPage = () => {
         </div>
 
         {/* Right Content - Image */}
-        <div className=" flex-1 justify-center">
-        <Image
-              className="lg:mt-58 xl:mt-[95px]  mt-36"
-              src={hero2}
-              alt="Hero Image"
-              priority
-            />
+
+        <div className="flex-1 flex justify-center items-center rounded-lg border-y-neutralOne lg:mt-20">
+          <Image
+            className="w-[480px] h-[512px] overflow-hidden"
+            src={hero3}
+            alt="Hero Image"
+            priority
+          />
         </div>
+{/* 
+        <div className="flex-1 flex justify-center">
+          <div className="w-[912px] h-[912px] sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-lg border-red-950 overflow-hidden relative">
+            <Image
+              className="w-[912px] h-[912px]"
+              src={hero2}
+              alt="What We Do Image"
+              layout="fill"
+            />
+          </div>
+        </div> */}
       </div>
     </section>
   );

@@ -38,7 +38,7 @@ export const AboutSection = () => {
 
           {/* Right Content - Video */}
           <div className="flex-1 flex justify-center">
-            <div className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-lg overflow-hidden relative">
+            <div className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-lg border-red-950 overflow-hidden relative">
               <video
                 src="/assets/aboutvd.mp4"
                 autoPlay
