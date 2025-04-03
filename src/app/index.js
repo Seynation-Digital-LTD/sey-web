@@ -13,6 +13,14 @@ export { default as ecom2 } from "../app/assets/images/ecom2.png";
 export { default as digitalstrategy } from "../app/assets/images/digitalstrategy.png";
 export { default as mind } from "../app/assets/images/mind.png";
 export { default as digitalmarketing } from "../app/assets/images/digitalmarketing.png"
+export {default as impact } from "../app/assets/images/impact.png"
+export {default as collaboration } from "../app/assets/images/collaboration.png"
+export {default as innovation} from "../app/assets/images/innovation.png"
+export {default as mastery } from "../app/assets/images/mastery.png"
 export {default as masterpiece } from "../app/assets/images/masterpiece.jpg"
+export {default as sey } from "../app/assets/images/sey.jpg"
+export {default as apoli } from "../app/assets/images/apoli.jpg"
+export {default as reuben } from "../app/assets/images/reuben.jpg"
+export {default as shayo } from "../app/assets/images/shayo.jpg"
 // export { default as aboutvd} from "../app/assets/videos/aboutvd.mp4";
 // export { default as aboutimg } from "../app/assets/images/aboutimg.png";

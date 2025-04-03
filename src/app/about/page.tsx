@@ -1,5 +1,5 @@
 "use client";
-import { bg } from "../../app/index.js";
+import { bg, masterpiece, mastery, innovation, impact, collaboration, apoli, sey, reuben, shayo} from "../../app/index.js";
 import Image from "next/image";
 const ctaContent = [
   {
@@ -29,29 +29,26 @@ export default function About() {
       id: 1,
       title: "Mastery",
       description: "We believe in perfecting every detail.",
-      image1: "/images/mastery-icon.png", // Add your image path
-      image2: "/images/mastery-illustration.png", // Add your image path
+      image1: mastery,
+      image2: mastery
     },
     {
       id: 2,
       title: "Innovation",
       description: "Every project is a chance to redefine the norm.",
-      image1: "/images/innovation-icon.png", // Add your image path
-      image2: "/images/innovation-illustration.png", // Add your image path
+      image1:innovation, 
     },
     {
       id: 3,
       title: "Collaboration",
       description: "Partnerships are the foundation of our success.",
-      image1: "/images/collaboration-icon.png", // Add your image path
-      image2: "/images/collaboration-illustration.png", // Add your image path
+      image1: collaboration,
     },
     {
       id: 4,
       title: "Impact",
       description: "We measure our success by the value we create.",
-      image1: "/images/impact-icon.png", // Add your image path
-      image2: "/images/impact-illustration.png", // Add your image path
+      image1: impact,
     },
   ];
 
@@ -60,21 +57,28 @@ export default function About() {
       id: 1,
       name: "Omega Seyongwe",
       role: "Founder & CEO",
-      image: "/images/omega-seyongwe.jpg", // Add your image path
+      image: sey,
       description: "Visionary leader driving Seynation's digital revolution.",
     },
     {
       id: 2,
       name: "Dionese Shayo",
-      role: "Assistant Managing Director",
-      image: "/images/dionese-shayo.jpg", // Add your image path
+      role: "Asistant Managing Director",
+      image: shayo,
       description: "Strategic thinker with a passion for innovation.",
     },
     {
       id: 3,
+      name: "Reuben Ngike",
+      role: "Secretary",
+      image: reuben,
+      description: "The go-to expert for all things tech and creativity.",
+    },
+    {
+      id: 4,
       name: "Apolinary Theonest",
       role: "Mastermind of Everything",
-      image: "/images/apolinary-theonest.jpg", // Add your image path
+      image: apoli,
       description: "The go-to expert for all things tech and creativity.",
     },
   ];
@@ -198,16 +202,16 @@ export default function About() {
       </section>
 
       {/* The Value Section */}
-      <section className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+      <section className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 cursor-pointer">
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
           <h1 className="font-mina font-extrabold text-3xl sm:text-4xl lg:text-4xl text-gray-900">
             Our Values.
           </h1>
           <p className="font-inter text-sm sm:text-base lg:text-lg text-gray-600">
-            The Seynation Code
+            The Sey Code
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 ">
           {valueData.map((item) => (
             <div
               key={item.id}
@@ -246,13 +250,13 @@ export default function About() {
             The Visionaries Behind Seynation
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 ">
           {teamData.map((item) => (
             <div
               key={item.id}
               className="flex flex-col items-center bg-white rounded-lg overflow-hidden shadow-lg"
             >
-              <div className="w-full h-48 sm:h-60 lg:h-72 relative">
+              <div className="w-full h-48 sm:h-60 lg:h-72 relative cursor-cell">
                 <Image
                   src={item.image}
                   alt={item.name}

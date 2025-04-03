@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { Button } from "./ui/button";
-import { bg } from "../app/index.js";
+import { masterpiece, mastery, innovation, impact, collaboration} from "../app/index.js";
 
 const ctaContent = [
   {
@@ -54,7 +54,7 @@ export function PortfolioSection2() {
             <div className="w-full max-w-xs sm:max-w-sm lg:w-96 lg:h-96 h-64 rounded-lg overflow-hidden relative">
               <Image
                 className="w-full h-full object-cover"
-                src={bg}
+                src={masterpiece}
                 alt="What We Do Image"
                 layout="fill"
                 priority
