@@ -137,12 +137,22 @@ export default function PortfolioPage() {
           {/* Right Content */}
           <div className="flex-1 flex justify-center">
             <div className="relative w-full h-64 lg:w-96 lg:h-96 rounded-lg overflow-hidden mt-4">
-              <Image
+              {/* <Image
                 src={bg}
                 alt="Hero Image"
                 layout="fill"
                 objectFit="cover"
                 className="rounded-lg"
+              /> */}
+             <video
+                src="/assets/smedia5.mp4"
+                width="100%"
+                height="100%"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute inset-0 w-96 h-full object-cover rounded-lg"
               />
             </div>
           </div>

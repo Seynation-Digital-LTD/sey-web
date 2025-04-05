@@ -38,30 +38,38 @@ export default function solutions() {
               What We Do.
             </h1>
             <p className="font-inter text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed">
-              We don’t just offer services—we craft tailored solutions that
-              empower the bold, ignite the visionary, and elevate the
-              unstoppable. Every project we undertake is treated as a unique
-              masterpiece, meticulously designed to inspire action, create
-              value, and deliver measurable impact.
+              We build custom digital, creative, and marketing solutions that
+              help ambitious brands stand out, grow faster, and stay ahead.
               <br />
               <br />
-              Whether it’s transforming a brand’s digital presence, developing
-              innovative tools, or designing experiences that captivate, we
-              approach each challenge with a commitment to excellence and a
-              drive to push boundaries. With Seynation, your vision isn’t just
-              realized—it’s reimagined and engineered to leave a lasting mark on
-              the world.
+              Every project we take on is designed to make real impact—whether
+              it’s building powerful websites, creating standout visuals,
+              launching smart marketing campaigns, or developing tech that
+              solves problems. <br />
+              <br /> From leveling up your brand to building tools that drive
+              results, we push creative and digital boundaries to make your
+              vision unforgettable.
             </p>
           </div>
           {/* Right Content */}
           <div className="flex-1 flex justify-center">
             <div className="w-full h-64 sm:h-80 lg:w-96 lg:h-96 rounded-lg overflow-hidden relative">
-              <Image
+              {/* <Image
                 src={bg}
                 alt="Who We Are"
                 layout="fill"
                 objectFit="cover"
                 className="rounded-lg"
+              /> */}
+              <video
+                src="/assets/smedia4  .mp4"
+                width="100%"
+                height="100%"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute inset-0 w-96 h-full object-cover rounded-lg"
               />
             </div>
           </div>
@@ -76,12 +84,23 @@ export default function solutions() {
           {/* Left Content */}
           <div className="flex-1 flex justify-center">
             <div className="w-full h-64 sm:h-80 lg:w-96 lg:h-96 rounded-lg overflow-hidden relative">
-              <Image
+              {/* <Image
                 src={bg}
                 alt="Our Story"
                 layout="fill"
                 objectFit="cover"
                 className="rounded-lg"
+              /> */}
+
+              <video
+                src="/assets/smedia1.mp4"
+                width="100%"
+                height="100%"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute inset-0 w-96 h-full object-cover rounded-lg"
               />
             </div>
           </div>
@@ -124,7 +143,7 @@ export default function solutions() {
           {/* Left Content */}
           <div className="flex-1 space-y-6">
             <h1 className="font-mina font-extrabold text-3xl sm:text-4xl lg:text-4xl text-gray-900">
-              Branding & Identity Design.1
+              Branding & Identity Design.
             </h1>
             <p className="font-inter text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed">
               Your brand is more than a logo—it’s your story, your values, and
@@ -144,15 +163,25 @@ export default function solutions() {
           <div className="flex-1 flex justify-center">
             <div className="w-full h-64 sm:h-80 lg:w-96 lg:h-96 rounded-lg overflow-hidden relative">
               <Image
-                src={bg}
+                src="/assets/brand1.jpg"
                 alt="Who We Are"
                 layout="fill"
                 objectFit="cover"
                 className="rounded-lg"
               />
+
+              {/* <video
+                src="/assets/smedia2.mp4"
+                width="100%"
+                height="100%"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute inset-0 w-96 h-full object-cover rounded-lg"
+              /> */}
             </div>
           </div>
-
         </div>
       </section>
       {/* ---------- */}
@@ -170,6 +199,16 @@ export default function solutions() {
                 layout="fill"
                 objectFit="cover"
                 className="rounded-lg"
+              />
+               <video
+                src="/assets/web2.mp4"
+                width="100%"
+                height="100%"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute inset-0 w-96 h-full object-cover rounded-lg"
               />
             </div>
           </div>
@@ -230,12 +269,22 @@ export default function solutions() {
           {/* Right Content */}
           <div className="flex-1 flex justify-center">
             <div className="w-full h-64 sm:h-80 lg:w-96 lg:h-96 rounded-lg overflow-hidden relative">
-              <Image
+              {/* <Image
                 src={bg}
                 alt="Who We Are"
                 layout="fill"
                 objectFit="cover"
                 className="rounded-lg"
+              /> */}
+              <video
+                src="/assets/smedia3.mp4"
+                width="100%"
+                height="100%"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute inset-0 w-96 h-full object-cover rounded-lg"
               />
             </div>
           </div>
@@ -259,8 +308,8 @@ export default function solutions() {
           <div className="flex-1 flex justify-center">
             <div className="w-full h-64 sm:h-80 lg:w-96 lg:h-96 rounded-lg overflow-hidden relative">
               <Image
-                src={bg}
-                alt="Who We Are"
+                src="/assets/ux.jpg"
+                alt="UI/UX Designing"
                 layout="fill"
                 objectFit="cover"
                 className="rounded-lg"
@@ -314,7 +363,7 @@ export default function solutions() {
           <div className="flex-1 flex justify-center">
             <div className="w-full h-64 sm:h-80 lg:w-96 lg:h-96 rounded-lg overflow-hidden relative">
               <Image
-                src={bg}
+                src="/assets/emerge.jpg"
                 alt="Our Story"
                 layout="fill"
                 objectFit="cover"

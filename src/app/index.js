@@ -22,5 +22,8 @@ export {default as sey } from "../app/assets/images/sey.jpg"
 export {default as apoli } from "../app/assets/images/apoli.jpg"
 export {default as reuben } from "../app/assets/images/reuben.jpg"
 export {default as shayo } from "../app/assets/images/shayo.jpg"
+export {default as about } from "../app/assets/images/about.jpg"
+export {default as about2 } from "../app/assets/images/about2.jpg"
+export {default as about3 } from "../app/assets/images/about3.jpg"
 // export { default as aboutvd} from "../app/assets/videos/aboutvd.mp4";
 // export { default as aboutimg } from "../app/assets/images/aboutimg.png";

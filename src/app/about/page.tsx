@@ -1,5 +1,19 @@
 "use client";
-import { bg, masterpiece, mastery, innovation, impact, collaboration, apoli, sey, reuben, shayo} from "../../app/index.js";
+import {
+  bg,
+  masterpiece,
+  mastery,
+  innovation,
+  impact,
+  collaboration,
+  apoli,
+  sey,
+  reuben,
+  shayo,
+  about,
+  about2,
+  about3,
+} from "../../app/index.js";
 import Image from "next/image";
 const ctaContent = [
   {
@@ -30,13 +44,13 @@ export default function About() {
       title: "Mastery",
       description: "We believe in perfecting every detail.",
       image1: mastery,
-      image2: mastery
+      image2: mastery,
     },
     {
       id: 2,
       title: "Innovation",
       description: "Every project is a chance to redefine the norm.",
-      image1:innovation, 
+      image1: innovation,
     },
     {
       id: 3,
@@ -109,12 +123,20 @@ export default function About() {
           {/* Right Content */}
           <div className="flex-1 flex justify-center">
             <div className="w-full h-64 sm:h-80 lg:w-96 lg:h-96 rounded-lg overflow-hidden relative">
-              <Image
-                src={bg}
+              {/* <Image
+                src={about2}
                 alt="Who We Are"
                 layout="fill"
                 objectFit="cover"
                 className="rounded-lg"
+              /> */}
+              <video
+                src="/assets/storyvd3.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute inset-0 w-auto h-full object-cover rounded-lg"
               />
             </div>
           </div>
@@ -127,12 +149,21 @@ export default function About() {
           {/* Left Content */}
           <div className="flex-1 flex justify-center">
             <div className="w-full h-64 sm:h-80 lg:w-96 lg:h-96 rounded-lg overflow-hidden relative">
-              <Image
+              {/* <Image
                 src={bg}
                 alt="Our Story"
                 layout="fill"
                 objectFit="cover"
                 className="rounded-lg"
+              /> */}
+
+              <video
+                src="/assets/storyvd1.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute inset-0 w-auto h-full object-cover rounded-lg"
               />
             </div>
           </div>
@@ -142,18 +173,18 @@ export default function About() {
               Our Story.
             </h1>
             <p className="font-inter text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed">
-              Founded in 2015 by Omega Seyongwe, Seynation was born out of a
-              vision to lead a digital revolution. Starting as a one-person
-              dream, the agency has grown into a powerhouse of passionate
-              creatives, delivering groundbreaking solutions in digital,
-              technology, and design.
-              <br />
-              <br />
+              Founded in <i>November, 2015</i> by <b>Omega Seyongwe</b>,
+              Seynation was born out of a vision to lead a digital revolution.
+              Starting as a one-person dream, the agency has grown into a
+              powerhouse of passionate creatives, delivering groundbreaking
+              solutions in digital, technology, and design.
+              <br /> <br/>
               Over the years, we’ve built a legacy of innovation and impact,
               transforming ideas into masterpieces that redefine industries.
-              With unwavering dedication, Seynation continues to push
-              boundaries, crafting solutions that empower businesses and shape
-              the future.
+              <br /> <br />
+              We are thankfully to Almighty GOD that we Seynation continue to
+              push boundaries, crafting solutions that empower businesses and
+              shape the future.
             </p>
           </div>
         </div>
@@ -189,12 +220,21 @@ export default function About() {
           {/* Right Content */}
           <div className="flex-1 flex justify-center">
             <div className="w-full h-64 sm:h-80 lg:w-96 lg:h-96 rounded-lg overflow-hidden relative">
-              <Image
+              {/* <Image
                 src={bg}
                 alt="Our Purpose"
                 layout="fill"
                 objectFit="cover"
                 className="rounded-lg"
+              /> */}
+
+              <video
+                src="/assets/storyvd2.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute inset-0 w-auto h-full object-cover rounded-lg"
               />
             </div>
           </div>
@@ -278,8 +318,8 @@ export default function About() {
       </section>
 
       {/* CTA Section */}
-     {/* CTA SECTION */}
-     <div
+      {/* CTA SECTION */}
+      <div
         className="flex flex-col items-center mt-16 mb-16 justify-center ml-6 mr-6 bg-gradient-to-br
             from-neutralFive neutralSix to-neutralSix w-5/5 h-[180px] rounded-md"
       >
@@ -329,12 +369,21 @@ export default function About() {
           <div className="flex-1 flex justify-center">
             <div className="w-full h-64 sm:h-80 lg:w-96 lg:h-96 rounded-lg overflow-hidden relative">
               <Image
-                src={bg}
+                src="/assets/why1.jpg"
                 alt="Why Choose Us"
                 layout="fill"
                 objectFit="cover"
                 className="rounded-lg"
               />
+
+              {/* <video
+                src="/assets/storyvd3.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute inset-0 w-auto h-full object-cover rounded-lg"
+              /> */}
             </div>
           </div>
         </div>
