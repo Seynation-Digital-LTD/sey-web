@@ -52,38 +52,90 @@ export default function PortfolioPage() {
     {
       slug: "website",
       title: "Websites",
-      description: "Corporate website for a law firm",
+      name: "Oltau Safaris Website",
+      url: "oltausafaris.com",
+      description: "A Website for a Toursim Company in Arusha - Tanzania.",
       image: "/assets/oltau1.png",
     },
     {
       slug: "website",
       title: "Websites",
-      description: "Corporate website for a law firm",
+      name: "SUMOSA Energies Website",
+      url: "https://www.sumosa.co.tz",
+      description:
+        "A Website for Filling Station (Gas Station) located in Sikonge - Tabora.",
       image: "/assets/sumosa.jpg",
     },
     {
       slug: "website",
-      title: "Sawasawa Safaris Website",
-      description: "Startup landing page for a SaaS product",
+      title: "Website",
+      name: "Sawasawa Safaris Website.",
+      url: "https://www.sawasawasafaris.co.tz",
+      description: "A Website for a Toursim Company in Arusha - Tanzania.",
       image: "/assets/sawasawaaa.png",
     },
     {
       slug: "website",
       title: "Websites",
-      description: "Startup landing page for a SaaS product",
+      name: "Tanzania Enterprenuership Federation Website.",
+      url: "https://www.tzef.org/",
+      description:
+        "A Website for TZEF Organization that helps to promote Enterprenuers in Tanzania by providing business insight.",
       image: "/assets/tef1.jpg",
     },
     {
       slug: "website",
       title: "Websites",
-      description: "Startup landing page for a SaaS product",
+      name: "St. Aggrey Health College.",
+      url: "https://www.staggreyhealth.ac.tz",
+      description:
+        "A Website for St. Aggrey Health College located in Mbeya - Tanzania.",
       image: "/assets/stagrey2.jpg",
+    },
+    {
+      slug: "website",
+      title: "Websites",
+      name: "Mbeya Baby Blue Group Website",
+      url: "https://www.mbeyababybluegroup.or.tz",
+      description:
+        "A Website for a Local Community Group in Mbeya, Tanzania (Mbeya Baby Blue Group).",
+      image: "/assets/mbbb.png",
+    },
+    {
+      slug: "website",
+      title: "Websites",
+      name: "Arusha Jua Website",
+      url: "https://arushajua.wordpress.com/",
+      description:
+        "A Website for a Local Tourists Hostel in Arusha - Tanzania.",
+      image: "/assets/arj.jpg",
+    },
+    {
+      slug: "website",
+      title: "Websites",
+      name: "Kujengana Organization Website",
+      url: "https://www.kujengana.org",
+      description:
+        "Providing education, healthcare, and skills to promote gender equality and sustainable community development.",
+      image: "/assets/kujengana1.jpg",
+    },
+    {
+      slug: "website",
+      title: "Websites",
+      name: "Cube Nation Website",
+      url: "https://www.kujengana.org",
+      description:
+        "A Website for Cube-nation which is a premier destination wedding company.",
+      image: "/assets/cube.jpg",
     },
     {
       slug: "apps",
       title: "Apps",
-      description: "Fintech mobile app for seamless transactions",
-      image: "/images/about3.jpg",
+      name: "AI Crop Disease Detector App (AddApp)",
+      url: "www.seynation.co/portfolio",
+      description:
+        "An AI/ML mobile app for detection fo diseases found in Crops.",
+      image: "/assets/addapp2.jpg",
     },
     {
       slug: "systems",
@@ -112,8 +164,11 @@ export default function PortfolioPage() {
     {
       slug: "uiux",
       title: "UI/UX Designs",
-      description: "Modern interface for an ed-tech platform",
-      image: "/images/bg.jpg",
+      name: "AI Crop Disease Detector App (AddApp)",
+      url: "www.seynation.co/portfolio",
+      description:
+        "UI for an AI/ML mobile app for detection fo diseases found in Crops.",
+      image: "/assets/addapp2.jpg",
     },
     {
       slug: "graphics",
@@ -140,7 +195,10 @@ export default function PortfolioPage() {
     { id: "all", title: "All" },
     ...Array.from(
       new Map(
-        portfolios.map((item) => [item.slug, { id: item.slug, title: item.title }])
+        portfolios.map((item) => [
+          item.slug,
+          { id: item.slug, title: item.title },
+        ])
       ).values()
     ),
   ];
@@ -255,13 +313,19 @@ export default function PortfolioPage() {
 
             <div className="flex flex-col justify-start items-start mb-6">
               <h2 className="font-bold font-inter text-primaryOne text-lg sm:text-xl">
-                Project: {selectedProject.title}
+                Project: {selectedProject.name}
               </h2>
               <p className="font-medium font-inter text-black text-sm sm:text-base mt-2">
-                Description: {selectedProject.description}
+                <b>Description:</b> {selectedProject.description}
               </p>
               <a
-                href="#"
+                href={
+                  selectedProject.url?.startsWith("http")
+                    ? selectedProject.url
+                    : `https://${selectedProject.url}`
+                }
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-primaryOne font-medium mt-2 underline"
               >
                 View Project
