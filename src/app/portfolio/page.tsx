@@ -1,33 +1,32 @@
 "use client";
-
 import { useState, useEffect } from "react";
 import { bg } from "../../app/index.js";
 import Image from "next/image";
 
 export default function PortfolioPage() {
   const [selectedPortfolio, setSelectedPortfolio] = useState("all");
-  const [popupVisible, setPopupVisible] = useState(false); // Tracks popup visibility.
-  const [selectedProject, setSelectedProject] = useState(null); // Tracks selected project.
-  const [scrolled, setScrolled] = useState(false); // Determines if buttons should be fixed
+  const [popupVisible, setPopupVisible] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [scrolled, setScrolled] = useState(false);
 
-  // Handle category button click.
+  // Handle category button click
   const handleCategoryClick = (categoryId) => {
     setSelectedPortfolio(categoryId);
   };
 
-  // Open the popup modal.
+  // Open the popup modal
   const handlePortfolioClick = (project) => {
     setSelectedProject(project);
     setPopupVisible(true);
   };
 
-  // Close the popup modal.
+  // Close the popup modal
   const closePopup = () => {
     setPopupVisible(false);
     setSelectedProject(null);
   };
 
-  // Check scroll position to fix portfolio buttons.
+  // Scroll logic for sticky buttons
   useEffect(() => {
     const handleScroll = () => {
       const portfolioSection = document.querySelector(".portfolio-section");
@@ -37,8 +36,6 @@ export default function PortfolioPage() {
       const rect = portfolioSection.getBoundingClientRect();
       const buttonsRect = buttons.getBoundingClientRect();
 
-      // If the top of the portfolio section has scrolled past a threshold
-      // and there's enough space below for the buttons.
       if (rect.top <= 80 && rect.bottom >= buttonsRect.height + 20) {
         setScrolled(true);
       } else {
@@ -50,72 +47,109 @@ export default function PortfolioPage() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Portfolio categories array.
+  // Portfolio Data
   const portfolios = [
     {
-      id: "all",
-      title: "All",
-      description: "View all our portfolio projects",
-      link: "#",
-    },
-    {
-      id: "website",
+      slug: "website",
       title: "Websites",
-      description: "A website designed for a prestigious company",
-      image: "/images/website.jpg",
+      description: "Corporate website for a law firm",
+      image: "/assets/oltau1.png",
     },
     {
-      id: "apps",
+      slug: "website",
+      title: "Websites",
+      description: "Corporate website for a law firm",
+      image: "/assets/sumosa.jpg",
+    },
+    {
+      slug: "website",
+      title: "Sawasawa Safaris Website",
+      description: "Startup landing page for a SaaS product",
+      image: "/assets/sawasawaaa.png",
+    },
+    {
+      slug: "website",
+      title: "Websites",
+      description: "Startup landing page for a SaaS product",
+      image: "/assets/tef1.jpg",
+    },
+    {
+      slug: "website",
+      title: "Websites",
+      description: "Startup landing page for a SaaS product",
+      image: "/assets/stagrey2.jpg",
+    },
+    {
+      slug: "apps",
       title: "Apps",
-      description: "A mobile app designed for a successful business",
-      image: "/images/apps.jpg",
+      description: "Fintech mobile app for seamless transactions",
+      image: "/images/about3.jpg",
     },
     {
-      id: "systems",
+      slug: "systems",
       title: "Systems/Software",
-      description: "A system designed for a successful business",
-      image: "/images/systems.jpg",
+      description: "POS software for retail chains",
+      image: "/assets/winga1.png",
     },
     {
-      id: "uiux",
+      slug: "systems",
+      title: "Systems/Software",
+      description: "POS software for retail chains",
+      image: "/assets/live1.png",
+    },
+    {
+      slug: "systems",
+      title: "Systems/Software",
+      description: "POS software for retail chains",
+      image: "/assets/peace.png",
+    },
+    {
+      slug: "systems",
+      title: "Systems/Software",
+      description: "POS software for retail chains",
+      image: "/assets/codasa.jpg",
+    },
+    {
+      slug: "uiux",
       title: "UI/UX Designs",
-      description: "A user experience designed for a successful business",
-      image: "/images/uiux.jpg",
+      description: "Modern interface for an ed-tech platform",
+      image: "/images/bg.jpg",
     },
     {
-      id: "graphics",
+      slug: "graphics",
       title: "Graphics",
-      description: "A graphic design for a successful business",
-      image: "/images/graphics.jpg",
+      description: "Event poster designs for concerts",
+      image: "/images/about2.jpg",
     },
     {
-      id: "marketing",
+      slug: "marketing",
       title: "Marketing & Advertising",
-      description: "A marketing strategy designed for a successful business",
+      description: "Digital ad campaign for e-commerce",
       image: "/images/marketing.jpg",
     },
     {
-      id: "socialmedia",
+      slug: "socialmedia",
       title: "Social Media",
-      description:
-        "A social media marketing strategy designed for a successful business",
+      description: "Instagram branding for influencers",
       image: "/images/socialmedia.jpg",
     },
   ];
 
-  // Extract unique categories for buttons.
-  const uniqueCategories = portfolios.reduce((acc, item) => {
-    if (!acc.some((cat) => cat.id === item.id)) {
-      acc.push({ id: item.id, title: item.title });
-    }
-    return acc;
-  }, []);
+  // Get unique categories from portfolio items
+  const uniqueCategories = [
+    { id: "all", title: "All" },
+    ...Array.from(
+      new Map(
+        portfolios.map((item) => [item.slug, { id: item.slug, title: item.title }])
+      ).values()
+    ),
+  ];
 
-  // Filter portfolios based on the selected category.
+  // Filter portfolios
   const filteredPortfolios =
     selectedPortfolio === "all"
-      ? portfolios.filter((item) => item.id !== "all")
-      : portfolios.filter((item) => item.id === selectedPortfolio);
+      ? portfolios
+      : portfolios.filter((item) => item.slug === selectedPortfolio);
 
   return (
     <>
@@ -128,23 +162,16 @@ export default function PortfolioPage() {
               Our Masterpieces
             </h1>
             <p className="font-inter text-sm lg:text-md leading-relaxed text-center lg:text-left">
-              Every project we undertake tells a story—a narrative of innovation,
-              collaboration, and transformation. Each solution we deliver is a
-              revolution, breaking boundaries and setting new standards for
-              excellence.
+              Every project we undertake tells a story—a narrative of
+              innovation, collaboration, and transformation. Each solution we
+              deliver is a revolution, breaking boundaries and setting new
+              standards for excellence.
             </p>
           </div>
           {/* Right Content */}
           <div className="flex-1 flex justify-center">
             <div className="relative w-full h-64 lg:w-96 lg:h-96 rounded-lg overflow-hidden mt-4">
-              {/* <Image
-                src={bg}
-                alt="Hero Image"
-                layout="fill"
-                objectFit="cover"
-                className="rounded-lg"
-              /> */}
-             <video
+              <video
                 src="/assets/smedia5.mp4"
                 width="100%"
                 height="100%"
@@ -159,7 +186,7 @@ export default function PortfolioPage() {
         </div>
       </div>
 
-      {/* Portfolio Buttons */}
+      {/* Filter Buttons */}
       <div
         className={`port-buttons flex flex-wrap gap-4 justify-center items-center p-6 mt-10 transition-all duration-300 ${
           scrolled ? "fixed top-8 left-0 w-full bg-white z-50 shadow-md" : ""
@@ -182,34 +209,30 @@ export default function PortfolioPage() {
 
       {/* Portfolio Display */}
       <div className="portfolio-section max-w-6xl mx-auto flex flex-wrap justify-center items-center gap-6 mt-8 mb-16 px-4">
-        {filteredPortfolios.map((item) => (
+        {filteredPortfolios.map((item, index) => (
           <div
-            key={item.id}
+            key={index}
             onClick={() => handlePortfolioClick(item)}
-            className="bg-black w-[300px] h-[300px] rounded-2xl text-white p-6 flex flex-col items-center justify-center cursor-pointer hover:scale-105 transform transition duration-300"
+            className="bg-primaryTwo w-[350px] h-[210px] rounded-xl text-white p-2 flex flex-col items-center justify-center cursor-pointer hover:scale-105 transform transition duration-300"
           >
-            <h3 className="text-lg font-bold text-center">{item.title}</h3>
             {item.image && (
-              <div className="mt-2">
+              <div className="relative w-full h-full object-fill">
                 <Image
                   src={item.image}
                   alt={item.title}
-                  width={250}
-                  height={150}
-                  className="rounded-md object-cover"
+                  fill
+                  className="rounded-md object-fill"
                 />
               </div>
             )}
-            <p className="text-sm mt-2 text-center">{item.description}</p>
           </div>
         ))}
       </div>
 
-      {/* Popup/Modal */}
+      {/* Popup Modal */}
       {popupVisible && selectedProject && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 p-4">
           <div className="bg-neutralOne w-full max-w-[800px] p-6 sm:p-8 rounded-lg shadow-lg relative overflow-y-auto max-h-full">
-            {/* Close Button */}
             <button
               className="absolute top-2 right-2 text-black text-2xl font-bold focus:outline-none"
               onClick={closePopup}
@@ -218,7 +241,6 @@ export default function PortfolioPage() {
               &times;
             </button>
 
-            {/* Hero Image */}
             {selectedProject.image && (
               <div className="bg-black rounded-md mb-6 w-full h-[200px] sm:h-[300px] relative">
                 <Image
@@ -231,7 +253,6 @@ export default function PortfolioPage() {
               </div>
             )}
 
-            {/* Content */}
             <div className="flex flex-col justify-start items-start mb-6">
               <h2 className="font-bold font-inter text-primaryOne text-lg sm:text-xl">
                 Project: {selectedProject.title}
@@ -247,26 +268,24 @@ export default function PortfolioPage() {
               </a>
             </div>
 
-            {/* Additional Images */}
-            {selectedProject.images &&
-              selectedProject.images.length > 0 && (
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                  {selectedProject.images.map((image, index) => (
-                    <div
-                      key={index}
-                      className="bg-black rounded-md h-[100px] sm:h-[150px] w-full relative"
-                    >
-                      <Image
-                        src={image}
-                        alt={`Additional Image ${index + 1}`}
-                        layout="fill"
-                        objectFit="cover"
-                        className="rounded-md"
-                      />
-                    </div>
-                  ))}
-                </div>
-              )}
+            {selectedProject.images && selectedProject.images.length > 0 && (
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                {selectedProject.images.map((image, index) => (
+                  <div
+                    key={index}
+                    className="bg-black rounded-md h-[100px] sm:h-[150px] w-full relative"
+                  >
+                    <Image
+                      src={image}
+                      alt={`Additional Image ${index + 1}`}
+                      layout="fill"
+                      objectFit="cover"
+                      className="rounded-md"
+                    />
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       )}
