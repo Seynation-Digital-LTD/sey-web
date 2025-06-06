@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { Button } from "./ui/button";
-import { masterpiece, mastery, innovation, impact, collaboration} from "../app/index.js";
+import { masterpiece} from "../app/index.js";
 
 const ctaContent = [
   {

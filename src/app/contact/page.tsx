@@ -1,8 +1,8 @@
 "use client";
-import { useState } from "react";
+// import { useState } from "react";
 import { bg } from "../../app/index.js";
 import Image from "next/image";
-import { access } from "fs";
+// import { access } from "fs";
 import { ContactSection } from "@/components/ContactSection";
 export default function Solutions() {
   return (

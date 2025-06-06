@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { Button } from "./ui/button";
-import { bg } from "../app/index.js";
+// import { bg } from "../app/index.js";
 
 export const AboutSection = () => {
   return (

@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { bg } from "../../app/index.js";
+// import { bg } from "../../app/index.js";
 import Image from "next/image";
 
 export default function PortfolioPage() {
@@ -146,21 +146,28 @@ export default function PortfolioPage() {
     {
       slug: "systems",
       title: "Systems/Software",
-      description: "POS software for retail chains",
+      name: "Live Events Attendee Engagement Platform",
+      url: "www.seynation.co/portfolio",
+      description: "Developed to enhance live events for attendee during live interactions.",
       image: "/assets/live1.png",
     },
     {
       slug: "systems",
       title: "Systems/Software",
-      description: "POS software for retail chains",
-      image: "/assets/peace.png",
+      name: "Dynamic Technology Electrical Energy Monitoring Platform",
+      url: "www.seynation.co/portfolio",
+      description: "System build for electrical energy company to monitor and manage energy consumptions.",
+      image: "/assets/dynamic.png",
     },
     {
       slug: "systems",
       title: "Systems/Software",
-      description: "POS software for retail chains",
-      image: "/assets/codasa.jpg",
+      name: "Peace Training Center SIMS",
+      url: "https://www.seynation.co/portfolio",
+      description: "Official Students Management System for Peace Training Center with Live Teaching sessions",
+      image: "/assets/peace.png",
     },
+    
     {
       slug: "uiux",
       title: "UI/UX Designs",
@@ -173,18 +180,24 @@ export default function PortfolioPage() {
     {
       slug: "graphics",
       title: "Graphics",
+      name: "Dynamic Technology Electrical Energy Monitoring Platform",
+      url: "www.seynation.co/portfolio",
       description: "Event poster designs for concerts",
       image: "/images/about2.jpg",
     },
     {
       slug: "marketing",
       title: "Marketing & Advertising",
+      name: "Dynamic Technology Electrical Energy Monitoring Platform",
+      url: "www.seynation.co/portfolio",
       description: "Digital ad campaign for e-commerce",
       image: "/images/marketing.jpg",
     },
     {
       slug: "socialmedia",
       title: "Social Media",
+      name: "Dynamic Technology Electrical Energy Monitoring Platform",
+      url: "www.seynation.co/portfolio",
       description: "Instagram branding for influencers",
       image: "/images/socialmedia.jpg",
     },
