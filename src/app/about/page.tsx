@@ -1,7 +1,7 @@
 "use client";
 import {
-  bg,
-  masterpiece,
+  // bg,
+  // masterpiece,
   mastery,
   innovation,
   impact,
@@ -10,9 +10,9 @@ import {
   sey,
   reuben,
   shayo,
-  about,
-  about2,
-  about3,
+  // about,
+  // about2,
+  // about3,
 } from "../../app/index.js";
 import Image from "next/image";
 const ctaContent = [

@@ -78,6 +78,7 @@ export default function GetAQuotePage() {
         message: "",
       });
     } catch (err) {
+      console.log(err)
       setError(
         "There was an error processing your request. Please try again later."
       );
