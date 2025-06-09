@@ -10,7 +10,7 @@ export default function PortfolioPage() {
   const [scrolled, setScrolled] = useState(false);
 
   // Handle category button click
-  const handleCategoryClick = (categoryId) => {
+  const handleCategoryClick = (categoryId:string) => {
     setSelectedPortfolio(categoryId);
   };
 
