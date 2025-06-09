@@ -1,28 +1,28 @@
 "use-client";
 import { bg } from "../../app/index.js";
 import Image from "next/image";
-const ctaContent = [
-  {
-    id: 1,
-    description1: "We don’t just complete projects; we engineer revolutions",
-    image: "",
-  },
-  {
-    id: 2,
-    description2: "Every project is a masterpiece in progress.",
-    image: "",
-  },
-  {
-    id: 3,
-    description3: "Let’s Create the Future Together.",
-    image: "",
-  },
-  {
-    id: 4,
-    description4: "We're really the Masterminds.",
-    image: "",
-  },
-];
+// const ctaContent = [
+//   {
+//     id: 1,
+//     description1: "We don’t just complete projects; we engineer revolutions",
+//     image: "",
+//   },
+//   {
+//     id: 2,
+//     description2: "Every project is a masterpiece in progress.",
+//     image: "",
+//   },
+//   {
+//     id: 3,
+//     description3: "Let’s Create the Future Together.",
+//     image: "",
+//   },
+//   {
+//     id: 4,
+//     description4: "We're really the Masterminds.",
+//     image: "",
+//   },
+// ];
 // import { ContactSection } from "@/components/ContactSection.tsx";
 export default function solutions() {
   return (
