@@ -54,7 +54,7 @@ export default function PortfolioPage() {
       title: "Websites",
       name: "Oltau Safaris Website",
       url: "oltausafaris.com",
-      description: "A Website for a Toursim Company in Arusha - Tanzania.",
+      description: "A Website for a Tourism Company in Arusha - Tanzania.",
       image: "/assets/oltau1.png",
     },
     {

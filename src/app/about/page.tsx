@@ -281,7 +281,7 @@ export default function About() {
       </section>
 
       {/* The Team Section */}
-      <section className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+      {/* <section className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
           <h1 className="font-mina font-extrabold text-3xl sm:text-4xl lg:text-4xl text-gray-900">
             Meet The Masterminds.
@@ -315,7 +315,7 @@ export default function About() {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       {/* CTA SECTION */}

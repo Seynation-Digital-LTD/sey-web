@@ -25,52 +25,47 @@ export const Navbar = () => {
   return (
     <>
       <nav
-        className={`fixed w-full z-20 top-0 left-0 transition-all duration-300 ${
-          scrolled ? "bg-primaryFive shadow-lg" : "bg-primaryOne shadow"
-        }`}
+  className={`fixed top-0 left-8 right-12 z-20 mt-8 rounded-xl transition-all duration-300 ${
+    scrolled ? "bg-primaryFive shadow-lg" : "bg-primaryOne shadow"
+  }`}
+>
+  <div className="container mx-auto flex items-center justify-between">
+    {/* Logo */}
+    <div className="flex items-center gap-1 py-4">
+      <Link href="/" className="hover:text-white">
+        <Image className="" src={seynation} alt="Seynation" priority />
+      </Link>
+    </div>
+
+    {/* Desktop Menu */}
+    <div className="hidden md:flex items-center gap-4 text-white">
+      {NavbarMenu.map((item) => (
+        <Link
+          key={item.id}
+          href={item.link}
+          className="inline-block py-1 px-3 hover:text-neutralOne hover:underline-offset-4 font-semibold"
+        >
+          {item.title}
+        </Link>
+      ))}
+    </div>
+
+    {/* CTA + Hamburger */}
+    <div className="flex items-center gap-4">
+      <Link href="/getquote">
+        <Button variant="outline">Get a Quote</Button>
+      </Link>
+
+      {/* Mobile Menu Toggle */}
+      <div
+        className="md:hidden cursor-pointer"
+        onClick={() => setOpen(!open)}
       >
-        <div className="container mx-auto flex justify-between items-center py-4 px-4">
-          {/* Logo Section */}
-          <div className="text-2xl flex items-center gap-1 font-bold uppercase py-4">
-            <Link href="/" className="hover:text-white">
-              <Image className="" src={seynation} alt="Seynation" priority />
-            </Link>
-          </div>
-
-          {/* Desktop Menu Section */}
-          <div className="hidden md:block">
-            <ul className="flex items-center gap-3 text-white">
-              {NavbarMenu.map((item) => (
-                <li key={item.id}>
-                  <Link
-                    href={item.link}
-                    className="inline-block py-1 px-3 hover:text-neutralOne hover:underline-offset-4 font-semibold"
-                  >
-                    {item.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Right Section (Buttons) */}
-          <div className="flex items-center gap-4">
-            {/* Get a Quote Button */}
-            <Link href="/getquote">
-              <Button variant="outline">Get a Quote</Button>
-            </Link>
-          </div>
-
-          {/* Mobile Hamburger Menu */}
-          <div
-            className="md:hidden cursor-pointer"
-            onClick={() => setOpen(!open)}
-          >
-            <MdMenu className="text-4xl" />
-          </div>
-        </div>
-      </nav>
-
+        <MdMenu className="text-4xl text-white" />
+      </div>
+    </div>
+  </div>
+</nav>
       {/* Mobile Sidebar */}
       <ResponsiveMenu open={open} />
     </>

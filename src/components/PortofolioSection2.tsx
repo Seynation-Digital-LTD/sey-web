@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "./ui/button";
 import { masterpiece} from "../app/index.js";
 
@@ -37,15 +38,17 @@ export function PortfolioSection2() {
               Our Masterpieces.
             </h1>
             <p className="font-inter text-sm sm:text-base lg:text-lg leading-relaxed text-gray-700">
-              Every project we undertake tells a story—a narrative of
+              Every project we undertake tells a story, a narrative of
               innovation, collaboration, and transformation. Each solution we
               deliver is a revolution, breaking boundaries and setting new
               standards for excellence.
             </p>
             <div className="flex justify-center lg:justify-start">
+              <Link href="/portfolio">
               <Button variant="outline2" className="text-sm sm:text-base">
                 View Portfolio
               </Button>
+              </Link>
             </div>
           </div>
 

@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "./ui/button";
 // import { bg } from "../app/index.js";
 
@@ -22,7 +23,7 @@ export const AboutSection = () => {
           {/* Left Content - Text and Button */}
           <div className="flex-1 space-y-6 text-center lg:text-left">
             <p className="font-inter text-sm sm:text-base md:text-lg leading-relaxed text-gray-700">
-              We're not just creatives—we're digital pioneers who build the
+              We're not just creatives, we're digital pioneers who build the
               future one innovation at a time. So, we as Seynation, don't settle
               for what's already been done. Our expertise lies in using
               creativity with technology, turning obstacles into opportunities,
@@ -30,9 +31,11 @@ export const AboutSection = () => {
               minds shaping what's next.
             </p>
             <div className="flex justify-center lg:justify-start">
+              <Link href="/about">
               <Button variant="outline2" className="text-sm sm:text-base">
                 Learn More
               </Button>
+              </Link>
             </div>
           </div>
 

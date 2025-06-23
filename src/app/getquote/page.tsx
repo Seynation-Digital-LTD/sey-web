@@ -1,9 +1,11 @@
 "use client";
 import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 interface FormData {
   name: string;
   email: string;
+  phone: string;
   services: string[];
   budget: string;
   message: string;
@@ -28,6 +30,7 @@ export default function GetAQuotePage() {
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
+    phone: "",
     services: [],
     budget: "",
     message: "",
@@ -36,7 +39,6 @@ export default function GetAQuotePage() {
   const [error, setError] = useState<string>("");
   const [success, setSuccess] = useState<string>("");
 
-  // Update text input and textarea fields.
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -44,10 +46,7 @@ export default function GetAQuotePage() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  // Update services when a checkbox is toggled.
-  const handleServiceChange = (
-    e: React.ChangeEvent<HTMLInputElement>
-  ) => {
+  const handleServiceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value, checked } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -57,7 +56,6 @@ export default function GetAQuotePage() {
     }));
   };
 
-  // Handle form submission.
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
@@ -65,23 +63,35 @@ export default function GetAQuotePage() {
     setSuccess("");
 
     try {
-      // Simulate an API call delay (replace this with your actual API call).
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      const time = new Date().toLocaleString();
 
-      // On successful submission, display a success message and reset the form.
-      setSuccess("Thank you! Your quote request has been submitted.");
+      await emailjs.send(
+        "service_ozv8srd",
+        "template_xpcr7xc",
+        {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          services: formData.services.join(", "),
+          budget: formData.budget,
+          message: formData.message,
+          time: time,
+        },
+        "pZlt-k_XIMYLNGSxE"
+      );
+
+      setSuccess("✅ Thank you! Your quote request has been submitted.");
       setFormData({
         name: "",
         email: "",
+        phone: "",
         services: [],
         budget: "",
         message: "",
       });
     } catch (err) {
-      console.log(err)
-      setError(
-        "There was an error processing your request. Please try again later."
-      );
+      console.error(err);
+      setError("❌ There was an error sending your request. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -92,16 +102,14 @@ export default function GetAQuotePage() {
       <div className="bg-white rounded-lg shadow-lg p-8 max-w-lg w-full">
         <h1 className="text-3xl font-bold text-center mb-4">Get a Quote</h1>
         <p className="text-gray-600 text-center mb-6">
-          Fill out the form below with your details, select the services you’re interested in,
-          specify your budget, and provide any additional details so we can provide you with a complete quote.
+          Fill out the form below with your details, select the services you’re
+          interested in, specify your budget, and provide any additional details.
         </p>
 
         <form onSubmit={handleSubmit}>
-          {/* Name Field */}
+          {/* Name */}
           <div className="mb-4">
-            <label htmlFor="name" className="block text-gray-700 mb-2">
-              Name
-            </label>
+            <label htmlFor="name" className="block text-gray-700 mb-2">Name</label>
             <input
               id="name"
               name="name"
@@ -114,11 +122,9 @@ export default function GetAQuotePage() {
             />
           </div>
 
-          {/* Email Field */}
+          {/* Email */}
           <div className="mb-4">
-            <label htmlFor="email" className="block text-gray-700 mb-2">
-              Email Address
-            </label>
+            <label htmlFor="email" className="block text-gray-700 mb-2">Email Address</label>
             <input
               id="email"
               name="email"
@@ -131,7 +137,22 @@ export default function GetAQuotePage() {
             />
           </div>
 
-          {/* Services Selection */}
+          {/* Phone */}
+          <div className="mb-4">
+            <label htmlFor="phone" className="block text-gray-700 mb-2">Phone Number</label>
+            <input
+              id="phone"
+              name="phone"
+              type="tel"
+              placeholder="+255 712 345 678"
+              value={formData.phone}
+              onChange={handleInputChange}
+              required
+              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primaryOne"
+            />
+          </div>
+
+          {/* Services */}
           <div className="mb-4">
             <p className="block text-gray-700 mb-2">Select Services</p>
             <div className="flex flex-wrap gap-3">
@@ -151,11 +172,9 @@ export default function GetAQuotePage() {
             </div>
           </div>
 
-          {/* Budget Field */}
+          {/* Budget */}
           <div className="mb-4">
-            <label htmlFor="budget" className="block text-gray-700 mb-2">
-              Budget
-            </label>
+            <label htmlFor="budget" className="block text-gray-700 mb-2">Budget</label>
             <input
               id="budget"
               name="budget"
@@ -168,11 +187,9 @@ export default function GetAQuotePage() {
             />
           </div>
 
-          {/* Additional Details Field */}
+          {/* Message */}
           <div className="mb-4">
-            <label htmlFor="message" className="block text-gray-700 mb-2">
-              Additional Details
-            </label>
+            <label htmlFor="message" className="block text-gray-700 mb-2">Additional Details</label>
             <textarea
               id="message"
               name="message"
@@ -194,13 +211,9 @@ export default function GetAQuotePage() {
           </button>
         </form>
 
-        {/* Display error or success messages */}
-        {error && (
-          <p className="text-red-500 mt-4 text-center">{error}</p>
-        )}
-        {success && (
-          <p className="text-green-500 mt-4 text-center">{success}</p>
-        )}
+        {/* Notifications */}
+        {error && <p className="text-red-500 mt-4 text-center">{error}</p>}
+        {success && <p className="text-green-500 mt-4 text-center">{success}</p>}
       </div>
     </main>
   );
