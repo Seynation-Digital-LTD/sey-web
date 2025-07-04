@@ -1,6 +1,9 @@
+"use client";
+
 import { seynation } from "../app/index.js";
 import Link from "next/link";
 import Image from "next/image";
+
 export const Footer = () => {
   return (
     <footer className="font-sans tracking-wide bg-black px-8 py-12">
@@ -9,7 +12,6 @@ export const Footer = () => {
           <Link href="/" className="hover:text-white">
             <Image className="" src={seynation} alt="Seynation" priority />
           </Link>
-
           <ul className="mt-10 flex space-x-5">
             <li>
               <a
@@ -49,7 +51,12 @@ export const Footer = () => {
         </div>
 
         <div>
-          <h4 className="text-white font-semibold text-lg relative max-sm:cursor-pointer">
+          <h4
+            className="text-white font-semibold text-lg relative max-sm:cursor-pointer"
+            onClick={(e) => {
+              e.currentTarget.nextElementSibling.classList.toggle("active");
+            }}
+          >
             Company{" "}
             <svg
               xmlns="/"
@@ -65,44 +72,37 @@ export const Footer = () => {
               ></path>
             </svg>
           </h4>
-
-          <ul className="space-y-5 mt-6 max-sm:hidden">
+          <ul className="space-y-5 mt-6 hidden sm:block active">
             <li>
-              <a
-                href="/about"
-                className="hover:text-white text-gray-300 text-sm"
-              >
+              <a href="/about" className="hover:text-white text-gray-300 text-sm">
                 About us
               </a>
             </li>
             <li>
-              <a
-                href="/contact"
-                className="hover:text-white text-gray-300 text-sm"
-              >
+              <a href="/contact" className="hover:text-white text-gray-300 text-sm">
                 Join Our Team
               </a>
             </li>
             <li>
-              <a
-                href="/services"
-                className="hover:text-white text-gray-300 text-sm"
-              >
+              <a href="/services" className="hover:text-white text-gray-300 text-sm">
                 Our Services
               </a>
             </li>
             <li>
-              <a
-                href="/portfolio"
-                className="hover:text-white text-gray-300 text-sm"
-              >
+              <a href="/portfolio" className="hover:text-white text-gray-300 text-sm">
                 Portfolio
               </a>
             </li>
           </ul>
         </div>
+
         <div>
-          <h4 className="text-white font-semibold text-lg relative max-sm:cursor-pointer">
+          <h4
+            className="text-white font-semibold text-lg relative max-sm:cursor-pointer"
+            onClick={(e) => {
+              e.currentTarget.nextElementSibling.classList.toggle("active");
+            }}
+          >
             Services{" "}
             <svg
               xmlns="/"
@@ -118,17 +118,21 @@ export const Footer = () => {
               ></path>
             </svg>
           </h4>
-
-          <ul className="mt-6 space-y-5 text-[#d6d6d6]">
+          <ul className="mt-6 space-y-5 text-[#d6d6d6] hidden sm:block active">
             <li>Web & App Development</li>
-            <li>Software Develoment</li>
+            <li>Software Development</li>
             <li>Social Media Management</li>
             <li>Digital Strategy</li>
           </ul>
         </div>
 
         <div>
-          <h4 className="text-white font-semibold text-lg relative max-sm:cursor-pointer">
+          <h4
+            className="text-white font-semibold text-lg relative max-sm:cursor-pointer"
+            onClick={(e) => {
+              e.currentTarget.nextElementSibling.classList.toggle("active");
+            }}
+          >
             Products{" "}
             <svg
               xmlns="/"
@@ -144,7 +148,7 @@ export const Footer = () => {
               ></path>
             </svg>
           </h4>
-          <ul className="space-y-5 mt-6 max-sm:hidden">
+          <ul className="space-y-5 mt-6 hidden sm:block active">
             <li>
               <a
                 href="https://www.festalive.com/"
@@ -153,16 +157,16 @@ export const Footer = () => {
                 Festalive App
               </a>
             </li>
-            {/* <li>
-              <a href="#" className="hover:text-white text-gray-300 text-sm">
-                AddApp
-              </a>
-            </li> */}
           </ul>
         </div>
 
         <div>
-          <h4 className="text-white font-semibold text-lg relative max-sm:cursor-pointer">
+          <h4
+            className="text-white font-semibold text-lg relative max-sm:cursor-pointer"
+            onClick={(e) => {
+              e.currentTarget.nextElementSibling.classList.toggle("active");
+            }}
+          >
             Contact Us{" "}
             <svg
               xmlns="/"
@@ -178,8 +182,7 @@ export const Footer = () => {
               ></path>
             </svg>
           </h4>
-
-          <ul className="space-y-5 mt-6 max-sm:hidden">
+          <ul className="space-y-5 mt-6 hidden sm:block active">
             <li>
               <a
                 href="mailto:info@seynation.co"
@@ -219,37 +222,24 @@ export const Footer = () => {
       <hr className="my-10 border-gray-400" />
 
       <div className="flex flex-wrap max-md:flex-col gap-4">
-        {/* <ul className="md:flex md:space-x-6 max-md:space-y-2">
-          <li>
-            <a
-              href="javascript:void(0)"
-              className="hover:text-white text-gray-300 text-sm"
-            >
-              Terms of Service
-            </a>
-          </li>
-          <li>
-            <a
-              href="javascript:void(0)"
-              className="hover:text-white text-gray-300 text-sm"
-            >
-              Privacy Policy
-            </a>
-          </li>
-          <li>
-            <a
-              href="javascript:void(0)"
-              className="hover:text-white text-gray-300 text-sm"
-            >
-              Security
-            </a>
-          </li>
-        </ul> */}
-
         <p className="text-gray-300 text-sm md:ml-auto">
           © 2025 Seynation Digital LTD. All rights reserved.
         </p>
       </div>
+
+      <style jsx>{`
+        ul {
+          display: none;
+        }
+        ul.active {
+          display: block;
+        }
+        @media (min-width: 640px) {
+          ul {
+            display: block;
+          }
+        }
+      `}</style>
     </footer>
   );
 };
