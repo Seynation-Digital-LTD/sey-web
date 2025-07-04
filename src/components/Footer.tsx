@@ -146,15 +146,18 @@ export const Footer = () => {
           </h4>
           <ul className="space-y-5 mt-6 max-sm:hidden">
             <li>
-              <a href="#" className="hover:text-white text-gray-300 text-sm">
+              <a
+                href="https://www.festalive.com/"
+                className="hover:text-white text-gray-300 text-sm"
+              >
                 Festalive App
               </a>
             </li>
-            <li>
+            {/* <li>
               <a href="#" className="hover:text-white text-gray-300 text-sm">
                 AddApp
               </a>
-            </li>
+            </li> */}
           </ul>
         </div>
 
@@ -178,20 +181,34 @@ export const Footer = () => {
 
           <ul className="space-y-5 mt-6 max-sm:hidden">
             <li>
-              <a href="#" className="hover:text-white text-gray-300 text-sm">
-                info@seynation.co <br />
-                Arusha - Tanzania <br />
-                Mega Complex Building,7th Floor
+              <a
+                href="mailto:info@seynation.co"
+                className="hover:text-white text-gray-300 text-sm block"
+              >
+                info@seynation.co
               </a>
+              <p className="text-gray-300 text-sm mt-1">
+                Arusha - Tanzania <br />
+                Mega Complex Building, 7th Floor
+              </p>
             </li>
-
             <li>
-              <a href="#" className="hover:text-white text-gray-300 text-sm">
+              <a
+                href="https://wa.me/255742005867"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white text-gray-300 text-sm"
+              >
                 +255 742 005 867
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-white text-gray-300 text-sm">
+              <a
+                href="https://wa.me/255684224468"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white text-gray-300 text-sm"
+              >
                 +255 684 224 468
               </a>
             </li>
@@ -202,7 +219,7 @@ export const Footer = () => {
       <hr className="my-10 border-gray-400" />
 
       <div className="flex flex-wrap max-md:flex-col gap-4">
-        <ul className="md:flex md:space-x-6 max-md:space-y-2">
+        {/* <ul className="md:flex md:space-x-6 max-md:space-y-2">
           <li>
             <a
               href="javascript:void(0)"
@@ -227,7 +244,7 @@ export const Footer = () => {
               Security
             </a>
           </li>
-        </ul>
+        </ul> */}
 
         <p className="text-gray-300 text-sm md:ml-auto">
           © 2025 Seynation Digital LTD. All rights reserved.
