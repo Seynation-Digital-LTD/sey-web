@@ -1,7 +1,6 @@
 import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
-
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
@@ -9,27 +8,20 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        primary:
-          "bg-primaryOne text-white shadow hover:bg-primaryFive focused:bg-primarySix pressed:bg-primaryTwo",
-        secondary:
-          "bg-secondaryOne text-white shadow-sm hover:bg-secondaryTwo pressed:bg-primaryFour focused:bg-secondaryFive",
-        neutral:
-          "bg-neutralFour text-white hover:bg-neutralOne pressed:bg-neutralTwo focused:neutralOne",
-        default:
-          "bg-primaryOne text-white shadow hover:bg-primaryFive pressed:bg-primaryTwo",
-        extra:
-          "bg-neutralOne text-black hover:bg-neutralThree hover:text-white focused:bg-neutralThree",
-        destructive:
-          "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
-        outline:
-          " hover:border bg-neutralOne hover:text-white shadow-sm hover:bg-accent text-black ",
-        outline2:
-          "hover:border bg-neutralOne hover:text-secondaryTwo shadow-sm hover:bg-accent text-black",
+        primary: "bg-primaryOne text-white shadow hover:bg-primaryFive focused:bg-primarySix pressed:bg-primaryTwo",
+        secondary: "bg-secondaryOne text-white shadow-sm hover:bg-secondaryTwo pressed:bg-primaryFour focused:bg-secondaryFive",
+        neutral: "bg-neutralFour text-white hover:bg-neutralOne pressed:bg-neutralTwo focused:neutralOne",
+        default: "bg-primaryOne text-white shadow hover:bg-primaryFive pressed:bg-primaryTwo",
+        extra: "bg-neutralOne text-black hover:bg-neutralThree hover:text-white focused:bg-neutralThree",
+        destructive: "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
+        outline: "hover:border bg-neutralOne hover:text-white shadow-sm hover:bg-accent text-black",
+        outline2: "hover:border bg-neutralOne hover:text-secondaryTwo shadow-sm hover:bg-accent text-black",
+        outline3: "border hover:text- shadow-sm hover:bg-accent text-white",
+        outline4: "hover:border bg-neutralOne hover:text-white shadow-sm hover:bg-accent text-black text-sm px-3 py-2 md:text-base md:px-4 md:py-2.5",
+        outlineMobile: "w-fit border bg-neutralOne text-black text-[3px] px-1.5 py-1 hover:bg-accent hover:text-white sm:text-sm sm:px-4 sm:py-2",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         mycolor: "bg-primaryOne text-white",
-        outline3:
-          "border hover:text- shadow-sm hover:bg-accent text-white",
       },
       size: {
         default: "h-9 px-4 py-2",

@@ -25,6 +25,7 @@ export default {
         mina: ["Mina", "sans-serif"],
       },
       screens:{
+        
         smd:"520px",
         sm: "640px",
         md: "768px",
