@@ -129,6 +129,24 @@ export default function PortfolioPage() {
       image: "/assets/cube.jpg",
     },
     {
+      slug: "website",
+      title: "Websites",
+      name: "Orchard Tanzania",
+      url: "http://orchardtz.com/",
+      description:
+        "A Website for Orchard Tanzania which sells pure avaocado based products like Hair oil and skin oi.",
+      image: "/assets/orchard.jpg",
+    },
+    {
+      slug: "website",
+      title: "Websites",
+      name: "HugNbox",
+      url: "https://www.hugnbox.com/",
+      description:
+        "A Website for HunNbox which sales avocado.",
+      image: "/assets/orchard.jpg",
+    },
+    {
       slug: "apps",
       title: "Apps",
       name: "AI Crop Disease Detector App (AddApp)",
