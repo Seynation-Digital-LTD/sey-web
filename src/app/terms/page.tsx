@@ -1,36 +1,13 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
-export default function TermsOfService() {
-  const sections = [
-    {
-      title: "Agreement to Terms",
-      content: "By accessing and using the Seynation Digital website and services, you agree to be bound by these Terms of Service. If you do not agree, please do not use our site or services."
-    },
-    {
-      title: "Intellectual Property",
-      content: "All content, designs, code, and materials on this site are the intellectual property of Seynation Digital or its licensors. You may not reproduce, distribute, or create derivative works without our express permission."
-    },
-    {
-      title: "Service Scope",
-      content: "We provide digital, creative, and marketing solutions. The specific scope, deliverables, and timelines for individual projects will be outlined in separate client agreements or project proposals."
-    },
-    {
-      title: "User Responsibilities",
-      content: "You agree to provide accurate information and to use our site and services in a lawful manner. Any misuse or unauthorized access is strictly prohibited."
-    },
-    {
-      title: "Limitation of Liability",
-      content: "Seynation Digital shall not be liable for any indirect, incidental, or consequential damages arising out of your use or inability to use our services."
-    },
-    {
-      title: "Governing Law",
-      content: "These terms are governed by and construed in accordance with the laws of the United Republic of Tanzania. Any disputes shall be subject to the exclusive jurisdiction of the competent courts."
-    }
-  ];
-
+export default function TermsPage() {
+  useEffect(() => {
+    document.title = "Terms of Service | Seynation Digital";
+  }, []);
   return (
     <div className="relative min-h-screen bg-[#050505] text-white overflow-hidden">
       
@@ -41,53 +18,202 @@ export default function TermsOfService() {
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
       </div>
 
-      <div className="relative z-10 pt-32 lg:pt-48 pb-32">
-        <section className="container max-w-4xl mx-auto px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
+      <div className="relative z-10 pt-32 pb-24">
+        <div className="container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          {/* Header Section */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="space-y-12"
+            transition={{ duration: 0.8 }}
+            className="text-center mb-20"
           >
-            <div className="text-center space-y-4">
-              <h6 className="text-primaryOne font-bold uppercase tracking-[0.4em] text-xs">Legal Center</h6>
-              <h1 className="text-5xl lg:text-7xl font-mina font-bold">Terms of <span className="italic text-primaryOne">Service.</span></h1>
-              <p className="text-gray-500 font-inter">Last Updated: January 3, 2026</p>
+            <div className="inline-block mb-6 px-5 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
+              <span className="text-sm font-medium text-primaryOne tracking-wider uppercase">Legal Center</span>
             </div>
+            
+            <h1 className="text-5xl lg:text-7xl font-mina font-bold leading-tight mb-6">
+              Terms of <span className="text-primaryOne italic drop-shadow-[0_0_30px_rgba(255,0,0,0.4)]">Service</span>
+            </h1>
+            
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+              Clear terms for a transparent partnership. Understand your rights and our commitments.
+            </p>
 
-            <div className="space-y-16 mt-24">
-              {sections.map((section, index) => (
-                <motion.div
-                  key={section.title}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="group"
-                >
-                  <div className="flex items-start gap-8">
-                     <span className="text-primaryOne/20 font-mina font-bold text-4xl group-hover:text-primaryOne transition-colors duration-500">0{index + 1}</span>
-                     <div className="space-y-4">
-                        <h2 className="text-2xl font-mina font-bold text-white group-hover:text-primaryOne transition-colors">
-                          {section.title}
-                        </h2>
-                        <div className="p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-xl group-hover:border-primaryOne/30 transition-all duration-500">
-                          <p className="text-gray-400 font-inter leading-relaxed text-lg">
-                            {section.content}
-                          </p>
-                        </div>
-                     </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-
-            <div className="pt-24 text-center">
-              <p className="text-gray-500 text-sm font-inter">
-                By using our services, you acknowledge that you have read and understood these Terms. For inquiries, contact <a href="mailto:legal@seynation.co" className="text-primaryOne hover:underline">legal@seynation.co</a>
-              </p>
+            <div className="mt-4 text-sm text-gray-500">
+              Last Updated: January 2026
             </div>
           </motion.div>
-        </section>
+
+          {/* Content Sections */}
+          <div className="space-y-12">
+            
+            {/* Section 01 */}
+            <motion.section 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="bg-white/[0.02] backdrop-blur-sm border border-white/10 rounded-3xl p-8 lg:p-12 hover:bg-white/[0.03] transition-colors"
+            >
+              <div className="flex items-baseline gap-4 mb-4">
+                <span className="text-6xl font-bold text-primaryOne/20">01</span>
+                <h2 className="text-3xl font-mina font-bold">Acceptance of Terms</h2>
+              </div>
+              <div className="pl-0 lg:pl-20 space-y-4 text-gray-300 leading-relaxed">
+                <p>
+                  By accessing or using Seynation Digital&apos;s services, you agree to be bound by these Terms of Service. If you disagree with any part of these terms, you may not access our services.
+                </p>
+                <p>
+                  We reserve the right to update or modify these terms at any time. Your continued use of our services following any changes indicates your acceptance of the new terms.
+                </p>
+              </div>
+            </motion.section>
+
+            {/* Section 02 */}
+            <motion.section 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="bg-white/[0.02] backdrop-blur-sm border border-white/10 rounded-3xl p-8 lg:p-12 hover:bg-white/[0.03] transition-colors"
+            >
+              <div className="flex items-baseline gap-4 mb-4">
+                <span className="text-6xl font-bold text-primaryOne/20">02</span>
+                <h2 className="text-3xl font-mina font-bold">Services Provided</h2>
+              </div>
+              <div className="pl-0 lg:pl-20 space-y-4 text-gray-300 leading-relaxed">
+                <p>
+                  Seynation Digital provides a range of digital services including but not limited to:
+                </p>
+                <ul className="list-disc list-inside space-y-2 ml-4">
+                  <li>Digital Marketing & Social Media Management</li>
+                  <li>Website Design & Development</li>
+                  <li>Graphics Design & Branding</li>
+                  <li>Content Creation & Strategy</li>
+                  <li>Mobile Application Development</li>
+                </ul>
+                <p>
+                  All services are subject to availability and will be provided as outlined in individual project agreements or proposals.
+                </p>
+              </div>
+            </motion.section>
+
+            {/* Section 03 */}
+            <motion.section 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="bg-white/[0.02] backdrop-blur-sm border border-white/10 rounded-3xl p-8 lg:p-12 hover:bg-white/[0.03] transition-colors"
+            >
+              <div className="flex items-baseline gap-4 mb-4">
+                <span className="text-6xl font-bold text-primaryOne/20">03</span>
+                <h2 className="text-3xl font-mina font-bold">User Responsibilities</h2>
+              </div>
+              <div className="pl-0 lg:pl-20 space-y-4 text-gray-300 leading-relaxed">
+                <p>
+                  As a client or user of our services, you agree to:
+                </p>
+                <ul className="list-disc list-inside space-y-2 ml-4">
+                  <li>Provide accurate and complete information when requested</li>
+                  <li>Comply with all applicable laws and regulations</li>
+                  <li>Respect intellectual property rights</li>
+                  <li>Make timely payments as outlined in project agreements</li>
+                  <li>Provide necessary materials and feedback in a timely manner</li>
+                </ul>
+              </div>
+            </motion.section>
+
+            {/* Section 04 */}
+            <motion.section 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="bg-white/[0.02] backdrop-blur-sm border border-white/10 rounded-3xl p-8 lg:p-12 hover:bg-white/[0.03] transition-colors"
+            >
+              <div className="flex items-baseline gap-4 mb-4">
+                <span className="text-6xl font-bold text-primaryOne/20">04</span>
+                <h2 className="text-3xl font-mina font-bold">Intellectual Property</h2>
+              </div>
+              <div className="pl-0 lg:pl-20 space-y-4 text-gray-300 leading-relaxed">
+                <p>
+                  All content, designs, code, and materials created by Seynation Digital remain our intellectual property until final payment is received. Upon full payment:
+                </p>
+                <ul className="list-disc list-inside space-y-2 ml-4">
+                  <li>Ownership of commissioned work transfers to the client as specified in the project agreement</li>
+                  <li>We retain the right to showcase the work in our portfolio unless otherwise agreed</li>
+                  <li>Pre-existing materials and templates remain our property</li>
+                  <li>Source code and proprietary tools remain our intellectual property</li>
+                </ul>
+              </div>
+            </motion.section>
+
+            {/* Section 05 */}
+            <motion.section 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="bg-white/[0.02] backdrop-blur-sm border border-white/10 rounded-3xl p-8 lg:p-12 hover:bg-white/[0.03] transition-colors"
+            >
+              <div className="flex items-baseline gap-4 mb-4">
+                <span className="text-6xl font-bold text-primaryOne/20">05</span>
+                <h2 className="text-3xl font-mina font-bold">Limitation of Liability</h2>
+              </div>
+              <div className="pl-0 lg:pl-20 space-y-4 text-gray-300 leading-relaxed">
+                <p>
+                  Seynation Digital shall not be liable for any indirect, incidental, special, or consequential damages arising from the use of our services. Our total liability is limited to the amount paid for the specific service in question.
+                </p>
+                <p>
+                  We make every effort to ensure quality and timeliness but do not guarantee specific results from marketing campaigns or digital strategies.
+                </p>
+              </div>
+            </motion.section>
+
+            {/* Section 06 */}
+            <motion.section 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="bg-white/[0.02] backdrop-blur-sm border border-white/10 rounded-3xl p-8 lg:p-12 hover:bg-white/[0.03] transition-colors"
+            >
+              <div className="flex items-baseline gap-4 mb-4">
+                <span className="text-6xl font-bold text-primaryOne/20">06</span>
+                <h2 className="text-3xl font-mina font-bold">Contact Information</h2>
+              </div>
+              <div className="pl-0 lg:pl-20 space-y-4 text-gray-300 leading-relaxed">
+                <p>
+                  For questions or concerns about these Terms of Service, please contact us:
+                </p>
+                <div className="space-y-2 mt-4">
+                  <p><strong className="text-white">Email:</strong> <a href="mailto:hello@seynation.co" className="text-primaryOne hover:underline">hello@seynation.co</a></p>
+                  <p><strong className="text-white">Location:</strong> Dar es Salaam, Tanzania</p>
+                  <p><strong className="text-white">Website:</strong> <a href="https://seynation.co" className="text-primaryOne hover:underline">https://seynation.co</a></p>
+                </div>
+              </div>
+            </motion.section>
+
+          </div>
+
+          {/* Footer CTA */}
+          <motion.div 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="mt-20 text-center"
+          >
+            <Link 
+              href="/"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-primaryOne hover:bg-primaryOne/90 text-white rounded-full font-semibold transition-all hover:scale-105 shadow-xl shadow-primaryOne/20"
+            >
+              Return to Homepage
+            </Link>
+          </motion.div>
+
+        </div>
       </div>
     </div>
   );

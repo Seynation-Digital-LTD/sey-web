@@ -1,93 +1,196 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
-export default function PrivacyPolicy() {
-  const sections = [
-    {
-      title: "Introduction",
-      content: "At Seynation Digital, we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you visit our website and use our services."
-    },
-    {
-      title: "Information Collection",
-      content: "We collect information that you provide directly to us, such as when you request a quote, contact us, or sign up for our newsletter. This may include your name, email address, phone number, and project details."
-    },
-    {
-      title: "Use of Information",
-      content: "We use the information we collect to provide and improve our services, communicate with you, and personalize your experience. We may also use your information for marketing and promotional purposes with your consent."
-    },
-    {
-      title: "Data Protection",
-      content: "We implement a variety of security measures to maintain the safety of your personal information. However, no method of transmission over the Internet or electronic storage is 100% secure."
-    },
-    {
-      title: "Third-Party Disclosure",
-      content: "We do not sell, trade, or otherwise transfer your personal information to outside parties without your consent, except as required by law or to provide our services."
-    },
-    {
-      title: "Changes to Policy",
-      content: "We reserve the right to update this Privacy Policy at any time. We will notify you of any changes by posting the new policy on this page."
-    }
-  ];
-
+export default function PrivacyPage() {
+  useEffect(() => {
+    document.title = "Privacy Policy | Seynation Digital";
+  }, []);
   return (
     <div className="relative min-h-screen bg-[#050505] text-white overflow-hidden">
       
       {/* Universal Dynamic Background */}
       <div className="fixed inset-0 z-0 pointer-events-none">
-        <div className="absolute top-[-10%] right-[-10%] w-[800px] h-[800px] bg-primaryOne/10 rounded-full blur-[150px] opacity-30 animate-pulse" />
-        <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-primaryOne/5 rounded-full blur-[150px] opacity-20" />
+        <div className="absolute top-[-10%] left-[-10%] w-[800px] h-[800px] bg-primaryOne/10 rounded-full blur-[150px] opacity-30 animate-pulse" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-primaryOne/5 rounded-full blur-[150px] opacity-20" />
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
       </div>
 
-      <div className="relative z-10 pt-32 lg:pt-48 pb-32">
-        <section className="container max-w-4xl mx-auto px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
+      <div className="relative z-10 pt-32 pb-24">
+        <div className="container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          {/* Header Section */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="space-y-12"
+            transition={{ duration: 0.8 }}
+            className="text-center mb-20"
           >
-            <div className="text-center space-y-4">
-              <h6 className="text-primaryOne font-bold uppercase tracking-[0.4em] text-xs">Legal Center</h6>
-              <h1 className="text-5xl lg:text-7xl font-mina font-bold">Privacy <span className="italic text-primaryOne">Policy.</span></h1>
-              <p className="text-gray-500 font-inter">Last Updated: January 3, 2026</p>
+            <div className="inline-block mb-6 px-5 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
+              <span className="text-sm font-medium text-primaryOne tracking-wider uppercase">Legal Center</span>
             </div>
+            
+            <h1 className="text-5xl lg:text-7xl font-mina font-bold leading-tight mb-6">
+              Privacy <span className="text-primaryOne italic drop-shadow-[0_0_30px_rgba(255,0,0,0.4)]">Policy</span>
+            </h1>
+            
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+              Your privacy matters. Here&apos;s how we protect and manage your data with transparency and care.
+            </p>
 
-            <div className="space-y-16 mt-24">
-              {sections.map((section, index) => (
-                <motion.div
-                  key={section.title}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="group"
-                >
-                  <div className="flex items-start gap-8">
-                     <span className="text-primaryOne/20 font-mina font-bold text-4xl group-hover:text-primaryOne transition-colors duration-500">0{index + 1}</span>
-                     <div className="space-y-4">
-                        <h2 className="text-2xl font-mina font-bold text-white group-hover:text-primaryOne transition-colors">
-                          {section.title}
-                        </h2>
-                        <div className="p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-xl group-hover:border-primaryOne/30 transition-all duration-500">
-                          <p className="text-gray-400 font-inter leading-relaxed text-lg">
-                            {section.content}
-                          </p>
-                        </div>
-                     </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-
-            <div className="pt-24 text-center">
-              <p className="text-gray-500 text-sm font-inter">
-                If you have any questions about our Privacy Policy, please contact us at <a href="mailto:privacy@seynation.co" className="text-primaryOne hover:underline">privacy@seynation.co</a>
-              </p>
+            <div className="mt-4 text-sm text-gray-500">
+              Last Updated: January 2026
             </div>
           </motion.div>
-        </section>
+
+          {/* Content Sections */}
+          <div className="space-y-12">
+            
+            {/* Section 01 */}
+            <motion.section 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="bg-white/[0.02] backdrop-blur-sm border border-white/10 rounded-3xl p-8 lg:p-12 hover:bg-white/[0.03] transition-colors"
+            >
+              <div className="flex items-baseline gap-4 mb-4">
+                <span className="text-6xl font-bold text-primaryOne/20">01</span>
+                <h2 className="text-3xl font-mina font-bold">Information We Collect</h2>
+              </div>
+              <div className="pl-0 lg:pl-20 space-y-4 text-gray-300 leading-relaxed">
+                <p>
+                  We collect information you provide directly to us when you use our services, contact us, or engage with our digital platforms. This includes:
+                </p>
+                <ul className="list-disc list-inside space-y-2 ml-4">
+                  <li>Name, email address, phone number, and company details</li>
+                  <li>Project requirements and communication preferences</li>
+                  <li>Usage data, including IP addresses, browser types, and device information</li>
+                  <li>Cookies and analytics data to improve user experience</li>
+                </ul>
+              </div>
+            </motion.section>
+
+            {/* Section 02 */}
+            <motion.section 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="bg-white/[0.02] backdrop-blur-sm border border-white/10 rounded-3xl p-8 lg:p-12 hover:bg-white/[0.03] transition-colors"
+            >
+              <div className="flex items-baseline gap-4 mb-4">
+                <span className="text-6xl font-bold text-primaryOne/20">02</span>
+                <h2 className="text-3xl font-mina font-bold">How We Use Your Information</h2>
+              </div>
+              <div className="pl-0 lg:pl-20 space-y-4 text-gray-300 leading-relaxed">
+                <p>
+                  Your information helps us deliver exceptional services and tailor experiences to your needs:
+                </p>
+                <ul className="list-disc list-inside space-y-2 ml-4">
+                  <li>To provide, maintain, and improve our services</li>
+                  <li>To communicate with you about projects, updates, and support</li>
+                  <li>To analyze usage patterns and optimize platform performance</li>
+                  <li>To send marketing communications (with your consent)</li>
+                  <li>To comply with legal obligations and protect our rights</li>
+                </ul>
+              </div>
+            </motion.section>
+
+            {/* Section 03 */}
+            <motion.section 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="bg-white/[0.02] backdrop-blur-sm border border-white/10 rounded-3xl p-8 lg:p-12 hover:bg-white/[0.03] transition-colors"
+            >
+              <div className="flex items-baseline gap-4 mb-4">
+                <span className="text-6xl font-bold text-primaryOne/20">03</span>
+                <h2 className="text-3xl font-mina font-bold">Data Protection & Security</h2>
+              </div>
+              <div className="pl-0 lg:pl-20 space-y-4 text-gray-300 leading-relaxed">
+                <p>
+                  We implement industry-standard security measures to protect your data from unauthorized access, disclosure, alteration, or destruction. Our practices include:
+                </p>
+                <ul className="list-disc list-inside space-y-2 ml-4">
+                  <li>Encrypted data transmission (SSL/TLS)</li>
+                  <li>Secure data storage with access controls</li>
+                  <li>Regular security audits and updates</li>
+                  <li>Staff training on data privacy and protection</li>
+                </ul>
+              </div>
+            </motion.section>
+
+            {/* Section 04 */}
+            <motion.section 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="bg-white/[0.02] backdrop-blur-sm border border-white/10 rounded-3xl p-8 lg:p-12 hover:bg-white/[0.03] transition-colors"
+            >
+              <div className="flex items-baseline gap-4 mb-4">
+                <span className="text-6xl font-bold text-primaryOne/20">04</span>
+                <h2 className="text-3xl font-mina font-bold">Your Rights</h2>
+              </div>
+              <div className="pl-0 lg:pl-20 space-y-4 text-gray-300 leading-relaxed">
+                <p>
+                  You have the right to:
+                </p>
+                <ul className="list-disc list-inside space-y-2 ml-4">
+                  <li>Access and review your personal data</li>
+                  <li>Request corrections or updates to your information</li>
+                  <li>Request deletion of your data (subject to legal requirements)</li>
+                  <li>Opt-out of marketing communications at any time</li>
+                  <li>Withdraw consent for data processing where applicable</li>
+                </ul>
+              </div>
+            </motion.section>
+
+            {/* Section 05 */}
+            <motion.section 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="bg-white/[0.02] backdrop-blur-sm border border-white/10 rounded-3xl p-8 lg:p-12 hover:bg-white/[0.03] transition-colors"
+            >
+              <div className="flex items-baseline gap-4 mb-4">
+                <span className="text-6xl font-bold text-primaryOne/20">05</span>
+                <h2 className="text-3xl font-mina font-bold">Contact Us</h2>
+              </div>
+              <div className="pl-0 lg:pl-20 space-y-4 text-gray-300 leading-relaxed">
+                <p>
+                  If you have questions about this Privacy Policy or how we handle your data, reach out to us:
+                </p>
+                <div className="space-y-2 mt-4">
+                  <p><strong className="text-white">Email:</strong> <a href="mailto:hello@seynation.co" className="text-primaryOne hover:underline">hello@seynation.co</a></p>
+                  <p><strong className="text-white">Location:</strong> Dar es Salaam, Tanzania</p>
+                </div>
+              </div>
+            </motion.section>
+
+          </div>
+
+          {/* Footer CTA */}
+          <motion.div 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="mt-20 text-center"
+          >
+            <Link 
+              href="/"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-primaryOne hover:bg-primaryOne/90 text-white rounded-full font-semibold transition-all hover:scale-105 shadow-xl shadow-primaryOne/20"
+            >
+              Return to Homepage
+            </Link>
+          </motion.div>
+
+        </div>
       </div>
     </div>
   );

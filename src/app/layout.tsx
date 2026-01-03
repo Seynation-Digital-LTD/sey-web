@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import "./globals.css"
 import { Navbar } from "@/components/Navbar"
 import { Footer } from "@/components/Footer"
+import { StructuredData } from "@/components/StructuredData"
 
 export const metadata: Metadata = {
   title: {
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
     template: "%s | Seynation Digital"
   },
   description:
-    "We are the masterminds shaping tomorrow’s digital world today. Experts in Digital Marketing, Social Media Management, Website Design & Development, Graphics Design, and Brand Strategy.",
+    "We are the masterminds shaping tomorrow's digital world today. Experts in Digital Marketing, Social Media Management, Website Design & Development, Graphics Design, and Brand Strategy.",
   keywords: [
     // Core Brand
     "Seynation",
@@ -88,7 +89,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Seynation Digital - The Mastermind Agency",
     description:
-      "The masterminds shaping tomorrow’s digital world today. Every challenge becomes an opportunity for us to engineer brilliance that transforms industries.",
+      "The masterminds shaping tomorrow's digital world today. Every challenge becomes an opportunity for us to engineer brilliance that transforms industries.",
     url: "https://seynation.co",
     siteName: "Seynation Digital",
     images: [
@@ -106,7 +107,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Seynation Digital - The Mastermind Agency",
     description:
-      "We are the masterminds shaping tomorrow’s digital world today.",
+      "We are the masterminds shaping tomorrow's digital world today.",
     images: ["https://seynation.co/og-image.jpg"],
     creator: "@seynation",
   },
@@ -122,6 +123,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <StructuredData type="organization" />
+        <StructuredData type="website" />
+        <StructuredData type="service" />
+      </head>
       <body>
         <Navbar />
         <main className="relative overflow-x-hidden">{children}</main>
