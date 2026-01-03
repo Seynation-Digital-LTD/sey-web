@@ -1,8 +1,4 @@
-interface NavbarItem {
-  id: string; 
-  link: string;
-  title: string;
-}
+
 
 export const NavbarMenu = [
    

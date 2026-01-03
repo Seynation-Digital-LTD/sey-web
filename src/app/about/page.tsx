@@ -104,7 +104,7 @@ export default function About() {
                </div>
                <p className="font-inter text-gray-400 text-lg leading-relaxed max-w-xl">
                  We are the architects of transformation, merging imagination with the science of innovation 
-                 to craft solutions that redefine what's possible in the digital age.
+                 to craft solutions that redefine what&apos;s possible in the digital age.
                </p>
             </motion.div>
 

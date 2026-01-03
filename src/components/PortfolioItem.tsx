@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { StaticImageData } from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 interface PortfolioItemProps {
   divItem: Array<{
@@ -30,11 +30,14 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({ divItem, from, to }) => {
                        w-full sm:w-[300px] md:w-[350px] lg:w-[400px] h-auto sm:h-[350px] 
                        md:h-[400px]"
           >
-            <img
-              src={typeof item.image === "string" ? item.image : item.image.src}
-              alt={item.title}
-              className="w-full h-[200px] object-cover rounded-md"
-            />
+            <div className="relative w-full h-[200px]">
+              <Image
+                src={typeof item.image === "string" ? item.image : item.image.src}
+                alt={item.title}
+                fill
+                className="object-cover rounded-md"
+              />
+            </div>
             <h3 className="text-lg font-bold mt-2 text-center">{item.title}</h3>
             {/* Uncomment if you want to include these */}
             {/* <p className="text-sm text-gray-600">{item.description}</p> */}

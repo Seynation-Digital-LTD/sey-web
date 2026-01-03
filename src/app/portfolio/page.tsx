@@ -3,10 +3,20 @@ import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
+interface PortfolioItem {
+  slug: string;
+  title: string;
+  name: string;
+  url: string;
+  description: string;
+  image: string;
+  images?: string[];
+}
+
 export default function PortfolioPage() {
   const [selectedPortfolio, setSelectedPortfolio] = useState("all");
   const [popupVisible, setPopupVisible] = useState(false);
-  const [selectedProject, setSelectedProject] = useState<any>(null);
+  const [selectedProject, setSelectedProject] = useState<PortfolioItem | null>(null);
   
   // Ref for horizontal scrolling interaction
   const sliderRef = useRef<HTMLDivElement>(null);
@@ -17,7 +27,7 @@ export default function PortfolioPage() {
   };
 
   // Open the popup modal
-  const handlePortfolioClick = (project: any) => {
+  const handlePortfolioClick = (project: PortfolioItem) => {
     setSelectedProject(project);
     setPopupVisible(true);
   };
@@ -30,21 +40,7 @@ export default function PortfolioPage() {
 
   // Helper to scroll horizontally with wheel (for desktop usability)
   useEffect(() => {
-    const slider = sliderRef.current;
-    if (!slider) return;
-
-    const onWheel = (e: WheelEvent) => {
-      // If we are strictly vertical scrolling, we might not want to hijack.
-      // But for a horizontal gallery, mapping vertical scroll to horizontal scroll is often expected.
-      // However, to keep it "native", we can leave it to Shift+Scroll or Touchpad.
-      // If the user insists on vertical wheel scrolling:
-      if (e.deltaY !== 0) {
-        // e.preventDefault(); // Uncomment to force hijack
-        // slider.scrollLeft += e.deltaY;
-      }
-    };
-    // slider.addEventListener("wheel", onWheel, { passive: false });
-    // return () => slider.removeEventListener("wheel", onWheel);
+    // Scroll handling placeholder
   }, []);
 
   // Portfolio Data
@@ -391,7 +387,7 @@ export default function PortfolioPage() {
   );
 }
 
-const PortfolioCard = ({ item, onClick }: { item: any; onClick: () => void }) => {
+const PortfolioCard = ({ item, onClick }: { item: PortfolioItem; onClick: () => void }) => {
   return (
     <div className="snap-center shrink-0 flex items-center">
       <motion.div

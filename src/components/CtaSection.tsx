@@ -25,7 +25,7 @@ export const CtaSection = () => {
     <div className="flex justify-center items-start mt-16">
       <div className="flex flex-col items-center justify-center bg-gradient-to-br  from-neutralFive neutralSix to-neutralSix w-4/5 h-[180px] rounded-md">
         {ctaContent.map((item) => (
-          <h4 className="text-white font-inter pl-20 pr-20">{item.description3}</h4>
+          <h4 key={item.id} className="text-white font-inter pl-20 pr-20">{item.description3}</h4>
         ))}
       </div>
     </div>
@@ -37,7 +37,7 @@ export const CtaSection2 = () => {
     <div className="flex justify-center items-start mt-16">
       <div className="flex flex-col items-center justify-center bg-gradient-to-br  from-neutralFive neutralSix to-neutralSix w-4/5 h-[180px] rounded-md">
         {ctaContent.map((item) => (
-          <h4 className="text-white font-inter pl-20 pr-20">{item.description2}</h4>
+          <h4 key={item.id} className="text-white font-inter pl-20 pr-20">{item.description2}</h4>
         ))}
       </div>
     </div>
@@ -49,7 +49,7 @@ export const CtaSection3 = () => {
     <div className="flex justify-center items-start mt-16">
       <div className="flex flex-col items-center justify-center bg-gradient-to-br  from-neutralFive neutralSix to-neutralSix w-4/5 h-[180px] rounded-md">
         {ctaContent.map((item) => (
-          <h4 className="text-white font-inter pl-20 pr-20">{item.description3}</h4>
+          <h4 key={item.id} className="text-white font-inter pl-20 pr-20">{item.description3}</h4>
         ))}
       </div>
     </div>
@@ -61,7 +61,7 @@ export const CtaSection4 = () => {
     <div className="flex justify-center items-start mt-16">
       <div className="flex flex-col items-center justify-center bg-gradient-to-br  from-neutralFive neutralSix to-neutralSix w-4/5 h-[180px] rounded-md">
         {ctaContent.map((item) => (
-          <h4 className="text-white font-inter">{item.description4}</h4>
+          <h4 key={item.id} className="text-white font-inter">{item.description4}</h4>
         ))}
       </div>
     </div>
