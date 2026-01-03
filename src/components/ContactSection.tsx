@@ -1,132 +1,86 @@
 "use client";
-
-import { useState } from "react";
-import emailjs from "@emailjs/browser";
+import React from "react";
+import { motion } from "framer-motion";
+import { Button } from "./ui/button";
 
 export const ContactSection = () => {
-  const [loading, setLoading] = useState(false);
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
-
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-
-    try {
-      const now = new Date().toLocaleString();
-
-      const res = await emailjs.send(
-        "service_ozv8srd",         
-        "template_geonc4x",  
-        {
-          name: form.name,
-          email: form.email,
-          phone: form.phone,
-          message: form.message,
-          time: now,
-          title: "New Contact Form Submission",
-        },
-        "pZlt-k_XIMYLNGSxE"
-      );
-
-      alert("✅ Message sent successfully!");
-      setForm({ name: "", email: "", phone: "", message: "" });
-    } catch (error) {
-      console.error("EmailJS Error:", error);
-      alert("❌ Something went wrong. Try again.");
-    }
-
-    setLoading(false);
-  };
-
   return (
-    <section className="w-full py-12 sm:py-16 lg:py-20 bg-white">
-      <div className="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-          <h6 className="font-mina font-bold text-2xl sm:text-3xl lg:text-4xl text-gray-900">
-            Contact Us
-          </h6>
-          <p className="font-inter text-sm sm:text-base lg:text-lg text-gray-600 mt-4 leading-relaxed">
-            Have a specific inquiry or looking to explore new opportunities?{" "}
-            <br className="hidden sm:block" />
-            We're ready to engage with you.
-          </p>
-        </div>
+    <section className="w-full py-24 bg-transparent text-white relative overflow-hidden">
+      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          
+          {/* Left Content */}
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="space-y-8"
+          >
+            <div className="space-y-4">
+              <h2 className="text-4xl lg:text-6xl font-mina font-bold leading-tight">
+                Let’s Forge <br />
+                <span className="text-primaryOne italic">Something Iconic.</span>
+              </h2>
+              <div className="h-1 w-20 bg-primaryOne rounded-full" />
+            </div>
+            
+            <p className="text-gray-400 text-lg leading-relaxed max-w-md">
+              Whether you have a concrete project or just a spark of an idea, we’re here to engineer the brilliance you need.
+            </p>
 
-        <div className="grid md:grid-cols-2 gap-8 bg-white shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)]
-         rounded-lg overflow-hidden">
-          {/* Left - Form */}
-          <div className="p-8 bg-gradient-to-bl from-neutralTwo to-neutralThree">
-            <form className="space-y-6" onSubmit={handleSubmit}>
-              <input
-                type="text"
-                name="name"
-                placeholder="Full Name"
-                value={form.name}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-3 bg-transparent text-white text-sm border-b
-                 border-gray-400 focus:border-neutralOne outline-none placeholder-white"
-              />
-              <input
-                type="number"
-                name="phone"
-                placeholder="Phone No."
-                value={form.phone}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-3 bg-transparent text-white text-sm border-b
-                 border-gray-400 focus:border-neutralOne outline-none placeholder-white"
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="Email"
-                value={form.email}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-3 bg-transparent text-white text-sm border-b
-                 border-gray-400 focus:border-neutralOne outline-none placeholder-white"
-              />
-              <textarea
-                name="message"
-                placeholder="Write Message"
-                rows={4}
-                value={form.message}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-3 bg-transparent text-white text-sm border-b
-                 border-gray-400 focus:border-neutralOne outline-none placeholder-white"
-              ></textarea>
+            <div className="space-y-6 text-gray-300">
+               <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-primaryOne">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L22 8m-2 11H4a2 2 0 01-2-2V8a2 2 0 012-2h16a2 2 0 012 2v11a2 2 0 01-2 2z" /></svg>
+                  </div>
+                  <span>hello@seynation.co</span>
+               </div>
+               <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-primaryOne">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                  </div>
+                  <span>Dar es Salaam, Tanzania</span>
+               </div>
+            </div>
+          </motion.div>
 
-              <button
-                type="submit"
-                disabled={loading}
-                className="w-full px-6 py-3 text-sm font-medium text-black bg-neutralOne
-                 hover:bg-primaryTwo hover:text-white rounded-md transition-all duration-300"
-              >
-                {loading ? "Sending..." : "Send Message"}
-              </button>
+          {/* Right Content - Form */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="bg-white/5 backdrop-blur-xl border border-white/10 p-8 md:p-12 rounded-[2.5rem] shadow-2xl"
+          >
+            <form className="space-y-6">
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-gray-400">Full Name</label>
+                  <input className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primaryOne transition-colors" placeholder="John Doe" />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-gray-400">Email</label>
+                  <input className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primaryOne transition-colors" placeholder="john@example.com" />
+                </div>
+              </div>
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-gray-400">Project Type</label>
+                <select className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primaryOne transition-colors text-white appearance-none">
+                  <option className="bg-neutral-900">Website Design</option>
+                  <option className="bg-neutral-900">Mobile App</option>
+                  <option className="bg-neutral-900">Branding</option>
+                  <option className="bg-neutral-900">Marketing</option>
+                </select>
+              </div>
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-gray-400">Message</label>
+                <textarea rows={4} className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primaryOne transition-colors" placeholder="How can we help?" />
+              </div>
+              <Button className="w-full py-6 text-lg rounded-xl bg-primaryOne hover:bg-primaryOne/90 text-white shadow-xl transition-all hover:scale-[1.02]">
+                Initiate Conversation
+              </Button>
             </form>
-          </div>
+          </motion.div>
 
-          {/* Right - Map */}
-          <div className="h-full min-h-[350px] md:min-h-[400px] lg:min-h-[450px]">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15931.662111083495!2d36.6860541!3d-3.3708243!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x18371d00193654cd%3A0xaf7135313713c9c3!2sSeynation%20Digital!5e0!3m2!1ssw!2stz!4v1733294093939!5m2!1ssw!2stz"
-              className="w-full h-full rounded-lg"
-              allowFullScreen
-              loading="lazy"
-            ></iframe>
-          </div>
         </div>
       </div>
     </section>

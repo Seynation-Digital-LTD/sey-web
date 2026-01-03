@@ -1,57 +1,81 @@
 "use client";
-import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./ui/button";
-// import { bg } from "../app/index.js";
+import { motion } from "framer-motion";
 
 export const AboutSection = () => {
   return (
-    <section className="w-full py-12 sm:py-16 lg:py-20 bg-white">
-      <div className="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Heading Section */}
-        <div className="text-center space-y-2 mb-8 sm:mb-12 lg:mb-16">
-          <h6 className="font-mina font-bold text-2xl sm:text-3xl lg:text-4xl text-gray-900">
-            About Us
-          </h6>
-          <p className="font-inter text-sm sm:text-base text-gray-600">
-            Pioneers of Digital Mastery
-          </p>
-        </div>
+    <section className="w-full py-20 bg-transparent text-white overflow-hidden relative">
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primaryOne/5 rounded-full blur-[150px] pointer-events-none" />
+      
+      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+          
+          {/* Left Content - Text */}
+          <div className="flex-1 space-y-8 text-center lg:text-left">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <h6 className="font-mina font-bold text-4xl lg:text-5xl mb-4 leading-tight">
+                Pioneers of <br />
+                <span className="text-primaryOne">Digital Mastery</span>
+              </h6>
+              <div className="h-1 w-24 bg-gradient-to-r from-primaryOne to-transparent mx-auto lg:mx-0 rounded-full" />
+            </motion.div>
 
-        {/* Content Section */}
-        <div className="flex flex-col-reverse lg:flex-row items-center gap-8 lg:gap-12">
-          {/* Left Content - Text and Button */}
-          <div className="flex-1 space-y-6 text-center lg:text-left">
-            <p className="font-inter text-sm sm:text-base md:text-lg leading-relaxed text-gray-700">
-              We're not just creatives, we're digital pioneers who build the
-              future one innovation at a time. So, we as Seynation, don't settle
-              for what's already been done. Our expertise lies in using
-              creativity with technology, turning obstacles into opportunities,
-              and bringing visions to life with precision and purpose. We're the
-              minds shaping what's next.
-            </p>
-            <div className="flex justify-center lg:justify-start">
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="font-inter text-gray-400 text-lg leading-relaxed"
+            >
+              We&apos;re not just creatives; we are architects of the future. 
+              At Seynation, we refuse to settle for the ordinary. Our expertise merges 
+              boundless creativity with cutting-edge technology, transforming obstacles 
+              into launchpads for innovation.
+            </motion.p>
+
+            <motion.div 
+               initial={{ opacity: 0, y: 20 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               viewport={{ once: true }}
+               transition={{ delay: 0.2 }}
+               className="flex justify-center lg:justify-start"
+            >
               <Link href="/about">
-              <Button variant="outline2" className="text-sm sm:text-base">
-                Learn More
-              </Button>
+                <Button className="px-8 py-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:scale-105 transition-all text-white backdrop-blur-sm">
+                  Discover Our Story
+                </Button>
               </Link>
-            </div>
+            </motion.div>
           </div>
 
-          {/* Right Content - Video */}
-          <div className="flex-1 flex justify-center">
-            <div className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-lg border-red-950 overflow-hidden relative">
+          {/* Right Content - Video/Visual */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="flex-1 relative group"
+          >
+            <div className="absolute -inset-1 bg-gradient-to-r from-primaryOne to-primaryThree rounded-2xl blur opacity-20 group-hover:opacity-40 transition-opacity duration-500" />
+            <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black">
               <video
                 src="/assets/aboutvd.mp4"
                 autoPlay
                 loop
                 muted
                 playsInline
-                className="absolute inset-0 w-96 h-full object-cover rounded-lg"
+                className="w-full h-auto object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500"
               />
+              {/* Overlay Gradient */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
             </div>
-          </div>
+          </motion.div>
+          
         </div>
       </div>
     </section>
