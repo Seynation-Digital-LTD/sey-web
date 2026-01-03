@@ -1,390 +1,174 @@
-"use-client";
-import { bg } from "../../app/index.js";
+"use client";
+
+import React from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
-// const ctaContent = [
-//   {
-//     id: 1,
-//     description1: "We don’t just complete projects; we engineer revolutions",
-//     image: "",
-//   },
-//   {
-//     id: 2,
-//     description2: "Every project is a masterpiece in progress.",
-//     image: "",
-//   },
-//   {
-//     id: 3,
-//     description3: "Let’s Create the Future Together.",
-//     image: "",
-//   },
-//   {
-//     id: 4,
-//     description4: "We're really the Masterminds.",
-//     image: "",
-//   },
-// ];
-// import { ContactSection } from "@/components/ContactSection.tsx";
-export default function solutions() {
+import { bg } from "../../app/index.js";
+
+const solutionsData = [
+  {
+    id: "strategy",
+    title: "Digital Strategy & Consulting",
+    description: "Success begins with a plan. We analyze, strategize, and map out the digital journey that transforms your brand into a powerhouse. From market insights to tailored solutions, we ensure every step leads to brilliance.",
+    video: "/assets/smedia1.mp4",
+    offerings: ["Brand Strategy", "Market Research", "Performance Optimization", "Digital Audits"],
+    align: "left"
+  },
+  {
+    id: "branding",
+    title: "Branding & Identity Design",
+    description: "Your brand is more than a logo—it's your story, your values, and your promise to the world. We create identities that captivate, resonate, and leave a lasting impression on your audience.",
+    video: "/assets/smedia4.mp4",
+    offerings: ["Logo Systems", "Visual Identity", "Brand Guidelines", "Tone of Voice"],
+    align: "right"
+  },
+  {
+    id: "dev",
+    title: "Web & App Development",
+    description: "From sleek websites to powerful apps, we build digital experiences that captivate and convert. Seamlessly blending functionality with aesthetics, our solutions are engineered for peak performance.",
+    video: "/assets/web2.mp4",
+    offerings: ["Custom Web Apps", "iOS & Android", "E-Commerce", "API Architectures"],
+    align: "left"
+  },
+  {
+    id: "content",
+    title: "Creative Content & Marketing",
+    description: "Content that speaks. Campaigns that convert. We create stories and strategies that amplify your reach and connect you with your audience like never before through data-driven creativity.",
+    video: "/assets/smedia3.mp4",
+    offerings: ["Social Strategy", "Video Production", "Paid Advertising", "Influencer Growth"],
+    align: "right"
+  },
+  {
+    id: "uiux",
+    title: "UI/UX Experience Design",
+    description: "Exceptional design isn't just seen; it's felt. We craft user experiences that are intuitive, engaging, and unforgettable, ensuring your audience keeps coming back for more.",
+    image: "/assets/ux.jpg",
+    offerings: ["Interface Design", "User Research", "Prototyping", "Design Systems"],
+    align: "left"
+  },
+  {
+    id: "tech",
+    title: "Emerging Tech Solutions",
+    description: "Stay ahead of the curve with cutting-edge technologies. From AI-powered innovations to advanced automation, we empower you to lead in a rapidly evolving tech-driven world.",
+    image: "/assets/emerge.jpg",
+    offerings: ["AI Integration", "Chatbot Dev", "Data Analytics", "Automation"],
+    align: "right"
+  }
+];
+
+export default function Solutions() {
   return (
-    <main className="w-full">
-      {" "}
-      {/* WHAT WE DO START */}
-      {/* ------ */}
-      <section className="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 mt-20">
-        <div className="flex flex-col-reverse lg:flex-row items-center gap-8 lg:gap-12">
-          {/* Left Content */}
-          <div className="flex-1 space-y-6">
-            <h1 className="font-mina font-extrabold text-3xl sm:text-4xl lg:text-4xl text-gray-900">
-              What We Do.
-            </h1>
-            <p className="font-inter text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed">
-              We build custom digital, creative, and marketing solutions that
-              help ambitious brands stand out, grow faster, and stay ahead.
-              <br />
-              <br />
-              Every project we take on is designed to make real impact—whether
-              it’s building powerful websites, creating standout visuals,
-              launching smart marketing campaigns, or developing tech that
-              solves problems. <br />
-              <br /> From leveling up your brand to building tools that drive
-              results, we push creative and digital boundaries to make your
-              vision unforgettable.
-            </p>
-          </div>
-          {/* Right Content */}
-          <div className="flex-1 flex justify-center">
-            <div className="w-full h-64 sm:h-80 lg:w-96 lg:h-96 rounded-lg overflow-hidden relative">
-              {/* <Image
-                src={bg}
-                alt="Who We Are"
-                layout="fill"
-                objectFit="cover"
-                className="rounded-lg"
-              /> */}
-              <video
-                src="/assets/smedia4  .mp4"
-                width="100%"
-                height="100%"
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="absolute inset-0 w-96 h-full object-cover rounded-lg"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* -------- */}
-      {/* WHAT WE DO END */}
-      {/* DIGITAL STRATEGY START */}
-      {/* ------- */}
-      <section className="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
-        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
-          {/* Left Content */}
-          <div className="flex-1 flex justify-center">
-            <div className="w-full h-64 sm:h-80 lg:w-96 lg:h-96 rounded-lg overflow-hidden relative">
-              {/* <Image
-                src={bg}
-                alt="Our Story"
-                layout="fill"
-                objectFit="cover"
-                className="rounded-lg"
-              /> */}
+    <div className="relative min-h-screen bg-[#050505] text-white overflow-hidden">
+      
+      {/* Universal Dynamic Background */}
+      <div className="fixed inset-0 z-0 pointer-events-none">
+        <div className="absolute top-[10%] right-[-10%] w-[700px] h-[700px] bg-primaryOne/10 rounded-full blur-[150px] opacity-30" />
+        <div className="absolute bottom-[10%] left-[-10%] w-[600px] h-[600px] bg-primaryOne/5 rounded-full blur-[150px] opacity-20" />
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+      </div>
 
-              <video
-                src="/assets/smedia1.mp4"
-                width="100%"
-                height="100%"
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="absolute inset-0 w-96 h-full object-cover rounded-lg"
-              />
-            </div>
-          </div>
-          {/* Right Content */}
-          <div className="flex-1 space-y-6">
-            <h1 className="font-mina font-extrabold text-3xl sm:text-4xl lg:text-4xl text-gray-900">
-              Digital Strategy & Consulting.
-            </h1>
-            <p className="font-inter text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed">
-              Success begins with a plan. We analyze, strategize, and map out
-              the digital journey that transforms your brand into a powerhouse.
-              From market insights to tailored solutions, we ensure every step
-              leads to brilliance.
-              <br />
-            </p>
-            <h3 className="font-bold">Key Offerings</h3>
-            <ul className="list-disc pl-4">
-              <li>Brand Strategy</li>
-              <li>Market Research & Analysis</li>
-              <li>Performance Optimization</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-      {/* ------- */}
-      {/* DIGITAL STRATEGY END */}
-      {/* CTA Section */}
-      <div className="flex justify-center items-start px-4 mt-16">
-        <div className="flex flex-col items-center justify-center bg-gradient-to-br from-neutralFive to-neutralSix w-full max-w-5xl h-[180px] sm:h-[200px] lg:h-[220px] rounded-md px-6 text-center">
-          <h4 className="text-white font-inter text-base sm:text-lg lg:text-xl leading-relaxed">
-            Great ideas need brilliant minds to bring them to life.
-          </h4>
-        </div>
-      </div>
-      {/* END CTA */}
-      {/* BRANDING & ID START */}
-      {/* ---------- */}
-      <section className="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 mt-20">
-        <div className="flex flex-col-reverse lg:flex-row items-center gap-8 lg:gap-12">
-          {/* Left Content */}
-          <div className="flex-1 space-y-6">
-            <h1 className="font-mina font-extrabold text-3xl sm:text-4xl lg:text-4xl text-gray-900">
-              Branding & Identity Design.
-            </h1>
-            <p className="font-inter text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed">
-              Your brand is more than a logo—it’s your story, your values, and
-              your promise to the world. We create identities that captivate,
-              resonate, and leave a lasting impression.
-              <br />
-              <br />
-              <h3 className="font-bold">Key Offerings</h3>
-              <ul className="list-disc pl-4">
-                <li>Logo Design.</li>
-                <li>Visual Identity Systems.</li>
-                <li>Brand Guidelines.</li>
-              </ul>
-            </p>
-          </div>
-          {/* Right Content */}
-          <div className="flex-1 flex justify-center">
-            <div className="w-full h-64 sm:h-80 lg:w-96 lg:h-96 rounded-lg overflow-hidden relative">
-              <Image
-                src="/assets/brand1.jpg"
-                alt="Who We Are"
-                layout="fill"
-                objectFit="cover"
-                className="rounded-lg"
-              />
+      <div className="relative z-10 pt-32 lg:pt-48">
+        
+        {/* Solutions Hero */}
+        <section className="container max-w-7xl mx-auto px-8 mb-32">
+          <motion.div 
+             initial={{ opacity: 0, y: 30 }}
+             animate={{ opacity: 1, y: 0 }}
+             className="max-w-4xl space-y-8"
+          >
+             <h6 className="text-primaryOne font-bold tracking-[0.4em] uppercase text-xs">Our Expertise</h6>
+             <h1 className="text-6xl lg:text-8xl font-mina font-bold leading-none">
+               Architecting <br />
+               <span className="italic text-primaryOne">Possibilities.</span>
+             </h1>
+             <p className="text-gray-400 text-xl lg:text-2xl font-inter max-w-2xl leading-relaxed">
+               We build bespoke digital, creative, and marketing solutions that empower ambitious brands to dominate their industries.
+             </p>
+          </motion.div>
+        </section>
 
-              {/* <video
-                src="/assets/smedia2.mp4"
-                width="100%"
-                height="100%"
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="absolute inset-0 w-96 h-full object-cover rounded-lg"
-              /> */}
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* ---------- */}
-      {/* BRANDING & ID END */}
-      {/* MOBILE APP DEV START */}
-      {/* ----- */}
-      <section className="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
-        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
-          {/* Left Content */}
-          <div className="flex-1 flex justify-center">
-            <div className="w-full h-64 sm:h-80 lg:w-96 lg:h-96 rounded-lg overflow-hidden relative">
-              <Image
-                src={bg}
-                alt="Our Story"
-                layout="fill"
-                objectFit="cover"
-                className="rounded-lg"
-              />
-               <video
-                src="/assets/web2.mp4"
-                width="100%"
-                height="100%"
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="absolute inset-0 w-96 h-full object-cover rounded-lg"
-              />
-            </div>
-          </div>
-          {/* Right Content */}
-          <div className="flex-1 space-y-6">
-            <h1 className="font-mina font-extrabold text-3xl sm:text-4xl lg:text-4xl text-gray-900">
-              Web & App Development.
-            </h1>
-            <p className="font-inter text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed">
-              From sleek websites to powerful apps, we build digital experiences
-              that captivate and convert. Seamlessly blending functionality with
-              aesthetics, our solutions are engineered to perform.
-              <br />
-            </p>
-            <h3 className="font-bold">Key Offerings</h3>
-            <ul className="list-disc pl-4">
-              <li>Custom Website Development.</li>
-              <li>Mobile App Design & Development.</li>
-              <li>E-Commerce Solutions.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-      {/* ----- */}
-      {/* MOBILE APP DEV END */}
-      {/* CTA Section */}
-      <div className="flex justify-center items-start px-4 mt-16">
-        <div className="flex flex-col items-center justify-center bg-gradient-to-br from-neutralFive to-neutralSix w-full max-w-5xl h-[180px] sm:h-[200px] lg:h-[220px] rounded-md px-6 text-center">
-          <h4 className="text-white font-inter text-base sm:text-lg lg:text-xl leading-relaxed">
-            Great ideas need brilliant minds to bring them to life.
-          </h4>
-        </div>
-      </div>
-      {/* END CTA SECTION */}
-      {/* CREATIVE CONTENT START */}
-      {/* ---- */}
-      <section className="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 mt-20">
-        <div className="flex flex-col-reverse lg:flex-row items-center gap-8 lg:gap-12">
-          {/* Left Content */}
-          <div className="flex-1 space-y-6">
-            <h1 className="font-mina font-extrabold text-3xl sm:text-4xl lg:text-4xl text-gray-900">
-              Creative Content & Marketing.
-            </h1>
-            <p className="font-inter text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed">
-              Content that speaks. Campaigns that convert. We create stories and
-              strategies that amplify your reach and connect you with your
-              audience like never before.
-              <br />
-              <br />
-              <h3 className="font-bold">Key Offerings</h3>
-              <ul className="list-disc pl-4">
-                <li>Social Media Management.</li>
-                <li>Content Creation (Video, Graphics, Copy).</li>
-                <li>Paid Advertising Campaigns.</li>
-              </ul>
-            </p>
-          </div>
-          {/* Right Content */}
-          <div className="flex-1 flex justify-center">
-            <div className="w-full h-64 sm:h-80 lg:w-96 lg:h-96 rounded-lg overflow-hidden relative">
-              {/* <Image
-                src={bg}
-                alt="Who We Are"
-                layout="fill"
-                objectFit="cover"
-                className="rounded-lg"
-              /> */}
-              <video
-                src="/assets/smedia3.mp4"
-                width="100%"
-                height="100%"
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="absolute inset-0 w-96 h-full object-cover rounded-lg"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* ----- */}
-      {/* CREATIVE CONTENT END */}
-      {/* CTA Section */}
-      <div className="flex justify-center items-start px-4 mt-16">
-        <div className="flex flex-col items-center justify-center bg-gradient-to-br from-neutralFive to-neutralSix w-full max-w-5xl h-[180px] sm:h-[200px] lg:h-[220px] rounded-md px-6 text-center">
-          <h4 className="text-white font-inter text-base sm:text-lg lg:text-xl leading-relaxed">
-            Great ideas need brilliant minds to bring them to life.
-          </h4>
-        </div>
-      </div>
-      {/* END OF CTA SECTION */}
-      {/* UI/UX START */}
-      {/* ------ */}
-      <section className="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 mt-20">
-        <div className="flex flex-col-reverse lg:flex-row items-center gap-8 lg:gap-12">
-          <div className="flex-1 flex justify-center">
-            <div className="w-full h-64 sm:h-80 lg:w-96 lg:h-96 rounded-lg overflow-hidden relative">
-              <Image
-                src="/assets/ux.jpg"
-                alt="UI/UX Designing"
-                layout="fill"
-                objectFit="cover"
-                className="rounded-lg"
-              />
-            </div>
-          </div>
+        {/* Vertical Experience Scroller */}
+        <div className="space-y-48 pb-48 px-4 md:px-8">
+          {solutionsData.map((item, index) => (
+            <section 
+              key={item.id}
+              className={`container max-w-7xl mx-auto flex flex-col ${item.align === 'right' ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-16 lg:gap-32`}
+            >
+              {/* Visual Component */}
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.9, x: item.align === 'left' ? -50 : 50 }}
+                whileInView={{ opacity: 1, scale: 1, x: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                className="flex-1 w-full"
+              >
+                <div className="relative aspect-video lg:aspect-square rounded-[3rem] overflow-hidden border border-white/10 group shadow-2xl">
+                  {item.video ? (
+                    <video 
+                      src={item.video} 
+                      autoPlay loop muted playsInline 
+                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 opacity-60 group-hover:opacity-100"
+                    />
+                  ) : (
+                    <Image 
+                      src={item.image || bg} 
+                      alt={item.title} 
+                      fill 
+                      className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 opacity-60 group-hover:opacity-100"
+                    />
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
+                </div>
+              </motion.div>
 
-          <div className="flex-1 space-y-6">
-            <h1 className="font-mina font-extrabold text-3xl sm:text-4xl lg:text-4xl text-gray-900">
-              UI/UX Design.
-            </h1>
-            <p className="font-inter text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed">
-              Exceptional design isn’t just seen; it’s felt. We craft user
-              experiences that are intuitive, engaging, and unforgettable,
-              ensuring your audience keeps coming back for more.
-              <br />
-              <br />
-              <h3 className="font-bold">Key Offerings</h3>
-              <ul className="list-disc pl-4">
-                <li>User Interface Design.</li>
-                <li>User Experience Research.</li>
-                <li>Prototyping & Testing.</li>
-              </ul>
-            </p>
-          </div>
+              {/* Text Content */}
+              <motion.div 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="flex-1 space-y-8"
+              >
+                 <span className="text-primaryOne font-bold text-5xl opacity-10 font-mina">0{index + 1}</span>
+                 <h2 className="text-4xl lg:text-5xl font-mina font-bold leading-tight">{item.title}</h2>
+                 <p className="text-gray-400 text-lg leading-relaxed font-inter">
+                   {item.description}
+                 </p>
+                 
+                 <div className="grid grid-cols-2 gap-4 pt-4">
+                    {item.offerings.map((offering) => (
+                      <div key={offering} className="flex items-center gap-3 group">
+                        <div className="w-2 h-2 rounded-full bg-primaryOne group-hover:scale-150 transition-transform" />
+                        <span className="text-sm font-bold tracking-wide text-gray-300 uppercase">{offering}</span>
+                      </div>
+                    ))}
+                 </div>
+
+                 <button className="px-8 py-3 rounded-full border border-white/20 hover:border-primaryOne hover:bg-primaryOne/10 transition-all font-bold text-sm">
+                   Explore Solution
+                 </button>
+              </motion.div>
+            </section>
+          ))}
         </div>
-      </section>
-      {/* ------- */}
-      {/* UI UX END */}
-      {/* EMERGING TECH SOLN START */}
-      <section className="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
-        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
-          <div className="flex-1 space-y-6">
-            <h1 className="font-mina font-extrabold text-3xl sm:text-4xl lg:text-4xl text-gray-900">
-              Emerging Tech Solutions
-            </h1>
-            <p className="font-inter text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed">
-              Stay ahead of the curve with cutting-edge technologies. From
-              AI-powered innovations to advanced tools, we empower you to lead
-              in a tech-driven world.
-              <br />
-            </p>
-            <h3 className="font-bold">Key Offerings</h3>
-            <ul className="list-disc pl-4">
-              <li>AI Integration.</li>
-              <li>Chatbot Development.</li>
-              <li>Data Analytics & Automation.</li>
-            </ul>
-          </div>
-          {/* Left Content */}
-          <div className="flex-1 flex justify-center">
-            <div className="w-full h-64 sm:h-80 lg:w-96 lg:h-96 rounded-lg overflow-hidden relative">
-              <Image
-                src="/assets/emerge.jpg"
-                alt="Our Story"
-                layout="fill"
-                objectFit="cover"
-                className="rounded-lg"
-              />
-            </div>
-          </div>
-          {/* Right Content */}
-        </div>
-      </section>
-      {/* EMERGING TECH SOLN END */}
-      {/* CTA Section */}
-      <div className="flex justify-center items-start px-4 mt-16 mb-16">
-        <div className="flex flex-col items-center justify-center bg-gradient-to-br from-neutralFive to-neutralSix w-full max-w-5xl h-[180px] sm:h-[200px] lg:h-[220px] rounded-md px-6 text-center">
-          <h4 className="text-white font-inter text-base sm:text-lg lg:text-xl leading-relaxed">
-            Great ideas need brilliant minds to bring them to life.
-          </h4>
-        </div>
+
+        {/* Closing CTA Section */}
+        <section className="container max-w-6xl mx-auto px-8 py-32 text-center">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="p-20 rounded-[4rem] bg-gradient-to-br from-primaryOne/20 via-primaryThree/5 to-transparent border border-white/10 relative overflow-hidden"
+            >
+               <h2 className="text-5xl lg:text-6xl font-mina font-bold mb-8">Ready to Scale <br /> <span className="italic text-primaryOne">Your Legacy?</span></h2>
+               <p className="text-gray-400 max-w-xl mx-auto mb-12 text-lg">
+                 Brilliant ideas deserve a mastermind approach. Let&apos;s engineer the next phase of your brand together.
+               </p>
+               <button className="px-12 py-5 bg-white text-black font-bold rounded-full hover:bg-primaryOne hover:text-white transition-all transform hover:scale-110 active:scale-95 shadow-2xl">
+                 Start a Project
+               </button>
+            </motion.div>
+        </section>
+
       </div>
-      {/* END CTA */}
-      {/* <ContactSection /> */}
-    </main>
+    </div>
   );
 }
