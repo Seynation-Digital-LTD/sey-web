@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { 
   mastery, 
   innovation, 
@@ -96,15 +97,14 @@ export default function About() {
             >
                <div className="space-y-4">
                   <h6 className="text-primaryOne font-bold tracking-[0.3em] uppercase text-xs">Since 2015</h6>
-                  <h1 className="text-5xl lg:text-7xl font-mina font-bold leading-tight">
+                  <h1 className="text-4xl lg:text-6xl font-mina font-bold leading-tight">
                     Engineering <br />
                     <span className="italic text-primaryOne">Digital Revolutions.</span>
                   </h1>
                   <div className="h-1 w-24 bg-gradient-to-r from-primaryOne to-transparent rounded-full" />
                </div>
                <p className="font-inter text-gray-400 text-lg leading-relaxed max-w-xl">
-                 We are the architects of transformation, merging imagination with the science of innovation 
-                 to craft solutions that redefine what&apos;s possible in the digital age.
+                 We don't just build websites or campaigns; we architect future-proof digital ecosystems. merging human imagination with raw technical power to redefine what's possible for your brand.
                </p>
             </motion.div>
 
@@ -151,12 +151,12 @@ export default function About() {
                 viewport={{ once: true }}
                 className="flex-1 space-y-8"
               >
-                <h2 className="text-4xl font-mina font-bold">The Seynation <span className="text-primaryOne tracking-widest uppercase text-lg block mt-2">Legacy</span></h2>
+                <h2 className="text-3xl lg:text-5xl font-mina font-bold">The Seynation <span className="text-primaryOne tracking-widest uppercase text-base block mt-2">Legacy</span></h2>
                 <p className="font-inter text-gray-400 text-lg leading-relaxed">
-                  Founded by <b className="text-white">Omega Seyongwe</b>, Seynation was born from a vision to lead a digital movement. 
-                  What started as a one-person dream has evolved into a powerhouse of creatives, technologists, and strategists.
+                  It started with a vision by <b className="text-white">Omega Seyongwe</b>—to create not just an agency, but a movement. 
+                  From a solo dream to a collective of strategists and creators, we've evolved into a powerhouse that refuses to settle for "good enough."
                   <br /><br />
-                  We don&apos;t just adapt to the future; we architect it through a relentless pursuit of excellence and a deep commitment to our clients&apos; growth.
+                  We don't chase trends; we set them. Our obsession with excellence drives us to architect the future of digital interaction, one masterpiece at a time.
                 </p>
               </motion.div>
             </div>
@@ -196,10 +196,10 @@ export default function About() {
           <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8 border-b border-white/5 pb-12">
             <div className="space-y-4">
                <h6 className="text-primaryOne font-bold uppercase tracking-widest text-xs">The Architects</h6>
-               <h2 className="text-4xl lg:text-6xl font-mina font-bold">Meet the <br /> <span className="italic">Masterminds.</span></h2>
+               <h2 className="text-4xl lg:text-5xl font-mina font-bold">Meet the <br /> <span className="italic">Masterminds.</span></h2>
             </div>
             <p className="text-gray-400 max-w-md text-lg">
-              The visionaries, creators, and engineers behind every digital breakthrough we deliver.
+              The visionaries, creators, and engineers making the magic happen.
             </p>
           </div>
 
@@ -249,7 +249,7 @@ export default function About() {
               </div>
               <h3 className="text-3xl font-mina font-bold mb-6 text-primaryOne">Our Mission</h3>
               <p className="text-xl font-inter text-white leading-relaxed italic">
-                &quot;To empower businesses with digital excellence, shaping brands that thrive and lead in the modern, evolving world.&quot;
+                &quot;To weaponize digital excellence for businesses, shaping brands that don't just survive but dominate in the modern world.&quot;
               </p>
             </motion.div>
 
@@ -264,7 +264,7 @@ export default function About() {
                </div>
                <h3 className="text-3xl font-mina font-bold mb-6 text-primaryOne">Our Vision</h3>
                <p className="text-xl font-inter text-white leading-relaxed italic">
-                 &quot;To be the masterminds behind transformative ideas that inspire growth and drive meaningful progress across global industries.&quot;
+                 &quot;To be the invisible hand behind the world's most transformative brands, inspiring growth and driving meaningful progress.&quot;
                </p>
             </motion.div>
           </div>
@@ -280,9 +280,11 @@ export default function About() {
             >
                 <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 pointer-events-none" />
                 <h2 className="text-4xl lg:text-5xl font-mina font-bold mb-8">Ready to Write Your <br /> <span className="italic text-primaryOne">Next Chapter?</span></h2>
-                <button className="px-10 py-5 bg-white text-black font-bold rounded-full hover:bg-primaryOne hover:text-white transition-all transform hover:scale-110 active:scale-95 shadow-2xl">
-                   Engineer Your Future
-                </button>
+                <Link href="/contact">
+                   <button className="px-10 py-5 bg-white text-black font-bold rounded-full hover:bg-primaryOne hover:text-white transition-all transform hover:scale-110 active:scale-95 shadow-2xl">
+                      Engineer Your Future
+                   </button>
+                </Link>
             </motion.div>
         </section>
 

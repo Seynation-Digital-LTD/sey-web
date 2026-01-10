@@ -9,6 +9,7 @@ export const metadata: Metadata = {
     default: "Seynation Digital - The Mastermind Agency",
     template: "%s | Seynation Digital"
   },
+  metadataBase: new URL('https://seynation.co'),
   description:
     "We are the masterminds shaping tomorrow's digital world today. Experts in Digital Marketing, Social Media Management, Website Design & Development, Graphics Design, and Brand Strategy.",
   keywords: [
@@ -65,7 +66,7 @@ export const metadata: Metadata = {
     // Location-Based
     "Digital Agency in Tanzania",
     "Marketing Agency Dar es Salaam",
-    "Web Design Tabora",
+    "Web Design Arusha",
     "Creative Agency in East Africa",
     "Social Media Services Africa",
     "Branding Agency Tanzania",
@@ -86,6 +87,9 @@ export const metadata: Metadata = {
     "NGO Marketing Services",
     "Ecommerce Growth Tanzania"
   ],
+  alternates: {
+    canonical: "https://seynation.co",
+  },
   openGraph: {
     title: "Seynation Digital - The Mastermind Agency",
     description:
@@ -94,7 +98,7 @@ export const metadata: Metadata = {
     siteName: "Seynation Digital",
     images: [
       {
-        url: "https://seynation.co/og-image.jpg", // add this image inside /public
+        url: "/og-image.jpg", // Relative path works better with metadataBase if set, otherwise absolute url is fine.
         width: 1200,
         height: 630,
         alt: "Seynation Digital - The Mastermind Agency",
@@ -108,7 +112,7 @@ export const metadata: Metadata = {
     title: "Seynation Digital - The Mastermind Agency",
     description:
       "We are the masterminds shaping tomorrow's digital world today.",
-    images: ["https://seynation.co/og-image.jpg"],
+    images: ["/og-image.jpg"],
     creator: "@seynation",
   },
   icons: {
@@ -128,7 +132,7 @@ export default function RootLayout({
         <StructuredData type="website" />
         <StructuredData type="service" />
       </head>
-      <body>
+      <body className="antialiased">
         <Navbar />
         <main className="relative overflow-x-hidden">{children}</main>
         <Footer />

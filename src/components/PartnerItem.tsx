@@ -3,13 +3,13 @@ import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-interface PatnerItemProps {
+interface PartnerItemProps {
   images: string[];
   from: number | string;
   to: number | string;
 }
 
-const PatnerItem: React.FC<PatnerItemProps> = ({ images, from, to }) => {
+const PartnerItem: React.FC<PartnerItemProps> = ({ images, from, to }) => {
   return (
     <div className="flex overflow-hidden w-full relative">
       {/* Edge Fades */}
@@ -55,4 +55,4 @@ const PatnerItem: React.FC<PatnerItemProps> = ({ images, from, to }) => {
   );
 };
 
-export default PatnerItem;
+export default PartnerItem;

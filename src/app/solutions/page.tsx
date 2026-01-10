@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { bg } from "../../app/index.js";
 
 const solutionsData = [
@@ -85,7 +86,7 @@ export default function Solutions() {
                 >
                   Our Expertise
                 </motion.h6>
-                <h1 className="text-6xl md:text-8xl lg:text-9xl font-mina font-bold leading-[0.9] tracking-tighter">
+                <h1 className="text-5xl md:text-7xl lg:text-8xl font-mina font-bold leading-[0.9] tracking-tighter">
                   Architecting <br />
                   <span className="italic text-primaryOne">Possibilities.</span>
                 </h1>
@@ -93,7 +94,7 @@ export default function Solutions() {
              
              <div className="flex flex-col md:flex-row gap-12 items-start md:items-center border-t border-white/10 pt-12">
                 <p className="text-gray-400 text-xl lg:text-2xl font-inter max-w-2xl leading-relaxed">
-                  We engineer bespoke digital, creative, and marketing solutions that empower ambitious brands to dominate their industries.
+                  We don't just offer services; we engineer bespoke digital solutions. Whether it's a campaign or code, we build to dominate.
                 </p>
                 <div className="hidden md:block h-24 w-px bg-gradient-to-b from-primaryOne to-transparent" />
                 <div className="flex flex-col gap-2">
@@ -160,7 +161,7 @@ export default function Solutions() {
                   >
                      <div className="space-y-6">
                         <div className="h-1 w-20 bg-primaryOne rounded-full" />
-                        <h2 className="text-5xl lg:text-7xl font-mina font-bold leading-tight">{item.title}</h2>
+                        <h2 className="text-4xl lg:text-6xl font-mina font-bold leading-tight">{item.title}</h2>
                         <p className="text-gray-400 text-xl leading-relaxed font-inter max-w-xl">
                           {item.description}
                         </p>
@@ -177,14 +178,16 @@ export default function Solutions() {
                         ))}
                      </div>
 
-                     <motion.button 
-                       whileHover={{ scale: 1.05 }}
-                       whileTap={{ scale: 0.95 }}
-                       className="group relative px-10 py-4 bg-white/5 border border-white/10 rounded-full font-bold overflow-hidden"
-                     >
-                       <div className="absolute inset-0 bg-primaryOne translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
-                       <span className="relative z-10 group-hover:text-white transition-colors font-mina uppercase tracking-widest text-xs">Explore Solution</span>
-                     </motion.button>
+                     <Link href="/contact">
+                       <motion.button 
+                         whileHover={{ scale: 1.05 }}
+                         whileTap={{ scale: 0.95 }}
+                         className="group relative px-10 py-4 bg-white/5 border border-white/10 rounded-full font-bold overflow-hidden mt-8"
+                       >
+                         <div className="absolute inset-0 bg-primaryOne translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+                         <span className="relative z-10 group-hover:text-white transition-colors font-mina uppercase tracking-widest text-xs">Explore Solution</span>
+                       </motion.button>
+                     </Link>
                   </motion.div>
                 </div>
               </div>
@@ -205,20 +208,22 @@ export default function Solutions() {
                <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-primaryThree/20 rounded-full blur-[100px] pointer-events-none" />
 
                <div className="relative z-10 space-y-12">
-                  <h2 className="text-6xl lg:text-8xl font-mina font-bold mb-8 leading-[0.9]">
+                  <h2 className="text-5xl lg:text-7xl font-mina font-bold mb-8 leading-[0.9]">
                     Ready to Scale <br /> 
                     <span className="italic text-primaryOne">Your Legacy?</span>
                   </h2>
                   <p className="text-gray-400 max-w-2xl mx-auto text-xl font-inter leading-relaxed">
                     Brilliant ideas deserve a mastermind approach. Let&apos;s engineer the next phase of your brand together and dominate the digital landscape.
                   </p>
-                  <motion.button 
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                    className="px-12 py-6 bg-white text-black font-bold rounded-full hover:bg-primaryOne hover:text-white transition-all shadow-[0_20px_50px_rgba(255,255,255,0.1)] font-mina uppercase tracking-widest text-sm"
-                  >
-                    Start a Project
-                  </motion.button>
+                  <Link href="/contact">
+                    <motion.button 
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
+                      className="px-12 py-6 bg-white text-black font-bold rounded-full hover:bg-primaryOne hover:text-white transition-all shadow-[0_20px_50px_rgba(255,255,255,0.1)] font-mina uppercase tracking-widest text-sm"
+                    >
+                      Start a Project
+                    </motion.button>
+                  </Link>
                </div>
             </motion.div>
         </section>

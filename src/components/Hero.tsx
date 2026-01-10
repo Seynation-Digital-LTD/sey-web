@@ -28,7 +28,7 @@ export const HeroPage = () => {
             <span className="text-primaryOne font-bold tracking-widest text-xs uppercase">The Mastermind Agency</span>
           </div>
           
-          <h1 className="font-mina font-bold text-5xl md:text-6xl lg:text-7xl leading-tight text-white mb-6 drop-shadow-2xl">
+          <h1 className="font-mina font-bold text-4xl md:text-5xl lg:text-6xl leading-tight text-white mb-6 drop-shadow-2xl">
             We Engineer <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primaryThree to-primaryOne">Digital Brilliance.</span>
           </h1>

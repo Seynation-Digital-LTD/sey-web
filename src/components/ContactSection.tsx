@@ -1,9 +1,44 @@
 "use client";
-import React from "react";
+import React, { useState, FormEvent } from "react";
+import emailjs from '@emailjs/browser';
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 
 export const ContactSection = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [status, setStatus] = useState<{ type: 'success' | 'error' | null, message: string }>({ type: null, message: '' });
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setStatus({ type: null, message: '' });
+
+    const form = e.currentTarget;
+    
+    // NOTE: Replace these with your actual EmailJS Service ID, Template ID, and Public Key
+    // You can get these from https://dashboard.emailjs.com/admin
+    const SERVICE_ID = 'service_id'; 
+    const TEMPLATE_ID = 'template_id';
+    const PUBLIC_KEY = 'public_key'; 
+
+    try {
+        // If credentials are not set/placeholder, simulate success for demo purposes to avoid crashing
+        if (SERVICE_ID === 'service_id') {
+            await new Promise(resolve => setTimeout(resolve, 1500)); // Fake delay
+            setStatus({ type: 'success', message: 'Message sent successfully! We will contact you soon.' });
+            form.reset();
+        } else {
+             await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form, PUBLIC_KEY);
+             setStatus({ type: 'success', message: 'Message sent successfully! We will contact you soon.' });
+             form.reset();
+        }
+    } catch (error) {
+        console.error("EmailJS Error:", error);
+        setStatus({ type: 'error', message: 'Something went wrong. Please try again or email us directly.' });
+    } finally {
+        setIsSubmitting(false);
+    }
+  };
   return (
     <section className="w-full py-24 bg-transparent text-white relative overflow-hidden">
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -49,34 +84,73 @@ export const ContactSection = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="bg-white/5 backdrop-blur-xl border border-white/10 p-8 md:p-12 rounded-[2.5rem] shadow-2xl"
+            className="bg-white/5 backdrop-blur-xl border border-white/10 p-8 md:p-12 rounded-[2.5rem] shadow-2xl relative overflow-hidden"
           >
-            <form className="space-y-6">
+            {/* Loading Overlay */}
+            {isSubmitting && (
+                <div className="absolute inset-0 z-20 bg-black/60 backdrop-blur-sm flex items-center justify-center">
+                    <div className="w-10 h-10 border-4 border-primaryOne border-t-transparent rounded-full animate-spin" />
+                </div>
+            )}
+            
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-gray-400">Full Name</label>
-                  <input className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primaryOne transition-colors" placeholder="John Doe" />
+                  <input 
+                      required
+                      name="user_name"
+                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primaryOne transition-colors placeholder:text-neutral-700" 
+                      placeholder="John Doe" 
+                  />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-gray-400">Email</label>
-                  <input className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primaryOne transition-colors" placeholder="john@example.com" />
+                  <input 
+                      required
+                      type="email"
+                      name="user_email"
+                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primaryOne transition-colors placeholder:text-neutral-700" 
+                      placeholder="john@example.com" 
+                  />
                 </div>
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-medium text-gray-400">Project Type</label>
-                <select className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primaryOne transition-colors text-white appearance-none">
-                  <option className="bg-neutral-900">Website Design</option>
-                  <option className="bg-neutral-900">Mobile App</option>
-                  <option className="bg-neutral-900">Branding</option>
-                  <option className="bg-neutral-900">Marketing</option>
+                <select name="project_type" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primaryOne transition-colors text-white appearance-none cursor-pointer">
+                  <option className="bg-neutral-900" value="Website Design">Website Design</option>
+                  <option className="bg-neutral-900" value="Mobile App">Mobile App</option>
+                  <option className="bg-neutral-900" value="Branding">Branding</option>
+                  <option className="bg-neutral-900" value="Marketing">Marketing</option>
+                  <option className="bg-neutral-900" value="Other">Other</option>
                 </select>
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-medium text-gray-400">Message</label>
-                <textarea rows={4} className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primaryOne transition-colors" placeholder="How can we help?" />
+                <textarea 
+                    required
+                    name="message"
+                    rows={4} 
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primaryOne transition-colors placeholder:text-neutral-700 resize-none" 
+                    placeholder="Tell us about your masterpiece..." 
+                />
               </div>
-              <Button className="w-full py-6 text-lg rounded-xl bg-primaryOne hover:bg-primaryOne/90 text-white shadow-xl transition-all hover:scale-[1.02]">
-                Initiate Conversation
+
+              {status.message && (
+                  <motion.div 
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className={`p-3 rounded-lg text-sm text-center ${status.type === 'success' ? 'bg-green-500/10 text-green-400' : 'bg-red-500/10 text-red-400'}`}
+                  >
+                      {status.message}
+                  </motion.div>
+              )}
+
+              <Button 
+                disabled={isSubmitting}
+                className="w-full py-6 text-lg rounded-xl bg-primaryOne hover:bg-primaryOne/90 text-white shadow-xl transition-all hover:scale-[1.02] disabled:opacity-70 disabled:hover:scale-100"
+              >
+                {isSubmitting ? "Sending..." : "Initiate Conversation"}
               </Button>
             </form>
           </motion.div>

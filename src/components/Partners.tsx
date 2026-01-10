@@ -1,8 +1,8 @@
 import React from "react";
-import PatnerItem from "./PatnerItem";
+import PartnerItem from "./PartnerItem";
 
-const Patners = () => {
-  const upperPatners = [
+const Partners = () => {
+  const upperPartners = [
     "/assets/ghalalogo2.png",
     "/assets/sarufilogo.png",
     "/assets/fabres.png",
@@ -12,7 +12,7 @@ const Patners = () => {
     "/assets/mstara.png",
   ];
 
-  const lowerPatners = [
+  const lowerPartners = [
     "/assets/kujengana2.png",
     "/assets/jm2.png",
     "/assets/arushajua2.png",
@@ -33,13 +33,13 @@ const Patners = () => {
       </h6>
       
       <div className="w-full relative z-10 opacity-70 hover:opacity-100 transition-opacity duration-500 grayscale hover:grayscale-0">
-        <PatnerItem images={upperPatners} from={0} to={"-100%"} />
+        <PartnerItem images={upperPartners} from={0} to={"-100%"} />
       </div>
       <div className="w-full mt-8 relative z-10 opacity-70 hover:opacity-100 transition-opacity duration-500 grayscale hover:grayscale-0">
-        <PatnerItem images={lowerPatners} from={"-100%"} to={0} />
+        <PartnerItem images={lowerPartners} from={"-100%"} to={0} />
       </div>
     </div>
   );
 };
 
-export default Patners;
+export default Partners;
