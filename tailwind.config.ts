@@ -20,10 +20,10 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
-        inter: ["Inter", "sans-serif"],
+        sans: ["var(--font-inter)", "sans-serif"],
+        inter: ["var(--font-inter)", "sans-serif"],
         silk: ["Silkscreen", "sans-serif"],
-        mina: ["Mina", "sans-serif"],
+        mina: ["var(--font-mina)", "sans-serif"],
       },
       screens: {
 
