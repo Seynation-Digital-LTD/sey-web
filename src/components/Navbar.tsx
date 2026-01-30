@@ -7,6 +7,7 @@ import { MdMenu, MdClose } from "react-icons/md";
 import Image from "next/image";
 import { seynation } from "../app/index.js";
 import { NavbarMenu } from "../app/mockdata/data";
+import { FlyoutLink } from "./FlyoutLink";
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -28,7 +29,7 @@ export const Navbar = () => {
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, ease: "circOut" }}
-          className={`mx-auto max-w-7xl h-20 rounded-[2rem] border transition-all duration-500 overflow-hidden ${
+          className={`mx-auto max-w-7xl h-20 rounded-[2rem] border transition-all duration-500 ${
             scrolled 
             ? "bg-black/60 border-white/10 backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.8)]" 
             : "bg-white/5 border-white/5 backdrop-blur-md"
@@ -51,14 +52,7 @@ export const Navbar = () => {
             {/* Desktop Menu */}
             <div className="hidden lg:flex items-center gap-8">
               {NavbarMenu.map((item) => (
-                <Link
-                  key={item.id}
-                  href={item.link}
-                  className="relative group text-sm font-medium tracking-wide text-gray-300 hover:text-white transition-colors py-2"
-                >
-                  {item.title}
-                  <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-primaryOne to-transparent transition-all duration-300 group-hover:w-full" />
-                </Link>
+                <FlyoutLink key={item.id} item={item} />
               ))}
             </div>
 

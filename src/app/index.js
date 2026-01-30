@@ -1,6 +1,7 @@
 export { default as bg } from "../app/assets/images/bg.jpeg";
 export { default as seynation } from "../app/assets/images/seynation.png";
 export { default as hero3 } from "../app/assets/images/hero3.png";
+export{ default as heroimg2 } from "../app/assets/images/heroimg2.jpg"
 // export { default as branding } from "../app/assets/images/branding.png";
 export { default as branding2 } from "../app/assets/images/branding2.png";
 export { default as socialmedia } from "../app/assets/images/socialmedia.png";

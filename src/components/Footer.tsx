@@ -64,10 +64,10 @@ export const Footer = () => {
           <div className="space-y-8">
             <h4 className="text-white font-mina font-bold text-lg tracking-widest uppercase">Services</h4>
             <ul className="space-y-4 text-gray-400 font-medium">
-              <li>Web & App Development</li>
-              <li>Branding & Identity</li>
-              <li>Social Media Strategy</li>
-              <li>AI & Emerging Tech</li>
+              <li><Link href="/solutions/development" className="hover:text-primaryOne transition-colors">Web & App Development</Link></li>
+              <li><Link href="/solutions/branding" className="hover:text-primaryOne transition-colors">Branding & Identity</Link></li>
+              <li><Link href="/solutions/social-media" className="hover:text-primaryOne transition-colors">Social Media Strategy</Link></li>
+              <li><Link href="/solutions/tech" className="hover:text-primaryOne transition-colors">AI & Emerging Tech</Link></li>
             </ul>
           </div>
 
