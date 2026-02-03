@@ -9,7 +9,7 @@ import { ArrowDownLeft, Globe, Play, Star } from "lucide-react";
 
 // Keeping the same rotating logic
 export const HeroPage = () => {
-  const words = ["Product Design", "Brand Marketing", "Web Experiences"];
+  const words = ["Web Design", "Digital Marketing", "AI Solutions"];
   const [index, setIndex] = useState(0);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
@@ -38,13 +38,13 @@ export const HeroPage = () => {
       {/* 1. Cinematic Video Background with Heavy Overlay */}
       <div className="absolute inset-0 z-0 select-none pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-b from-[#030303] via-transparent to-[#030303] z-10" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#030303] via-[#030303]/80 to-transparent z-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#030303] via-[#030303]/30 to-transparent z-10" />
 
         {/* Noise Texture */}
         <div className="absolute inset-0 opacity-[0.07] z-20 pointer-events-none mix-blend-overlay" style={{ backgroundImage: 'url("https://grainy-gradients.vercel.app/noise.svg")' }} />
 
         <video
-          src="/assets/herovdog.mp4"
+          src="/assets/videos/vid2.mp4"
           autoPlay loop muted playsInline
           className="w-full h-full object-cover opacity-40 grayscale mix-blend-screen scale-105"
         />
@@ -103,46 +103,67 @@ export const HeroPage = () => {
           </motion.div>
 
           {/* Massive Headline */}
+
+
           <div className="font-mina font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.1] md:leading-[0.95] tracking-tight mb-8">
-            <motion.div initial={{ x: -20, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.8 }} className="text-transparent bg-clip-text bg-gradient-to-b from-white to-white/70">
-              Digital
-            </motion.div>
 
+            {/* Line 1 */}
             <motion.div
               initial={{ x: -20, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-              className="relative h-[1.2em] overflow-hidden text-primaryOne flex justify-center lg:justify-start"
+              transition={{ duration: 0.8 }}
+              className="text-transparent bg-clip-text bg-gradient-to-b from-white to-white/70 pb-2"
             >
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={words[index]}
-                  initial={{ y: "100%", skewY: 5 }}
-                  animate={{ y: 0, skewY: 0 }}
-                  exit={{ y: "-120%", skewY: -5 }}
-                  transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                  className="absolute top-0 whitespace-nowrap bg-gradient-to-r from-primaryOne to-primaryThree bg-clip-text text-transparent"
-                >
-                  {words[index]}
-                </motion.div>
-              </AnimatePresence>
+              The Leading
             </motion.div>
 
-            <motion.div
-              initial={{ x: -20, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-white/40 flex flex-wrap justify-center lg:justify-start items-center gap-2 md:gap-4"
-            >
-              Built With <span className="text-white relative">
-                Clarity
-                {/* Underline Flourish */}
-                <motion.svg className="absolute -bottom-2 left-0 w-full h-3" viewBox="0 0 100 10" preserveAspectRatio="none">
-                  <motion.path d="M0 5 Q 50 10 100 5" fill="none" stroke="currentColor" strokeWidth="2" className="text-primaryOne" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ delay: 1, duration: 1 }} />
-                </motion.svg>
-                <span className="text-primaryOne">.</span>
-              </span>
-            </motion.div>
+            {/* Line 2: Animated Word + Agency */}
+            <div className="flex flex-col sm:flex-row items-center lg:items-baseline gap-3 sm:gap-4 justify-center lg:justify-start">
+              <motion.div
+                initial={{ x: -20, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.1 }}
+                // Increased line-height/height slightly and added pb-2 to accommodate descenders and gradient clipping
+                className="relative h-[1.4em] w-auto inline-flex overflow-hidden text-primaryOne pb-2"
+              >
+                {/* Spacer: Renders current word invisibly to set container width dynamically */}
+                <div className="invisible whitespace-nowrap opacity-0">{words[index]}</div>
+
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={words[index]}
+                    className="absolute left-0 top-0 whitespace-nowrap"
+                  >
+                    {words[index].split("").map((letter, i) => (
+                      <motion.span
+                        key={`${words[index]}-${i}`}
+                        initial={{ y: 40, opacity: 0, rotateX: -90 }}
+                        animate={{ y: 0, opacity: 1, rotateX: 0 }}
+                        exit={{ y: -40, opacity: 0, rotateX: 90 }}
+                        transition={{
+                          duration: 0.5,
+                          ease: "easeOut",
+                          delay: i * 0.05, // Stagger effect
+                        }}
+                        className="inline-block bg-gradient-to-r from-primaryOne to-primaryThree bg-clip-text text-transparent origin-bottom pb-1"
+                      >
+                        {letter === " " ? "\u00A0" : letter}
+                      </motion.span>
+                    ))}
+                  </motion.div>
+                </AnimatePresence>
+              </motion.div>
+
+              <motion.div
+                initial={{ x: -20, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="text-white/40"
+              >
+                Agency<span className="text-primaryOne">.</span>
+              </motion.div>
+            </div>
+
           </div>
 
           <motion.p
@@ -151,8 +172,9 @@ export const HeroPage = () => {
             transition={{ delay: 0.4 }}
             className="max-w-xl text-base md:text-lg text-gray-400 leading-relaxed mb-10 lg:border-l-2 lg:border-primaryOne/50 lg:pl-6 bg-white/5 lg:bg-transparent lg:bg-none py-4 px-4 lg:px-0 rounded-xl lg:rounded-none"
           >
-            We adhere to a methodology that prioritizes <span className="text-white font-medium">structure</span>, <span className="text-white font-medium">user experience</span>, and <span className="text-white font-medium">performance</span>—integrating marketing precisely where it propels the product forward.
+            We build <span className="text-white font-medium">digital foundations</span> brands can confidently grow on, through thoughtful web design, strong <span className="text-white font-medium">UX</span>, and <span className="text-white font-medium">digital marketing</span> built to perform today and scale with you over time.
           </motion.p>
+
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -189,10 +211,10 @@ export const HeroPage = () => {
 
             <div>
               <div className="w-14 h-14 rounded-2xl bg-black/50 flex items-center justify-center border border-white/10 mb-8 shadow-inner">
-                <Globe className="w-7 h-7 text-primaryOne animate-spin-slow" />
+                <Globe className="w-7 h-7 text-white animate-spin-slow" />
               </div>
               <h3 className="font-mina text-3xl font-bold leading-none mb-2">Global <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">Reach</span></h3>
-              <p className="text-[10px] text-primaryOne font-mono tracking-widest mt-2">SERVING CLIENTS WORLDWIDE</p>
+              <p className="text-[10px] text-white font-mono tracking-widest mt-2">SERVING CLIENTS WORLDWIDE</p>
             </div>
 
             <div className="space-y-6 relative z-10">

@@ -6,6 +6,14 @@ import Link from "next/link";
 
 const portfolioItems = [
   {
+    id: 5,
+    title: "Websites",
+    name: "Hadraj Safaris",
+    image: "/assets/hero1.png", // Placeholder
+    link: "https://www.hadrajsafaris.com",
+    isRecent: true,
+  },
+  {
     id: 1,
     title: "Websites",
     name: "Oltau Safaris",
@@ -20,17 +28,17 @@ const portfolioItems = [
     link: "/portfolio",
   },
   {
-    id: 3,
-    title: "Marketing",
-    name: "Digital Ads Campaign",
-    image: "/assets/digitalmarketing.png",
-    link: "/portfolio",
-  },
-  {
     id: 4,
     title: "Apps",
     name: "AI Crop Detector",
     image: "/assets/addapp2.jpg",
+    link: "/portfolio",
+  },
+  {
+    id: 3,
+    title: "Marketing",
+    name: "Digital Ads Campaign",
+    image: "/assets/digitalmarketing.png",
     link: "/portfolio",
   },
 ];
@@ -39,7 +47,7 @@ export const Masterpieces = () => {
   return (
     <section className="w-full py-24 bg-transparent text-white relative overflow-hidden">
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -47,13 +55,12 @@ export const Masterpieces = () => {
             viewport={{ once: true }}
             className="max-w-2xl"
           >
-            <h6 className="text-primaryOne font-bold tracking-widest text-xs uppercase mb-4">Our Gallery</h6>
+            <h6 className="text-primaryOne font-bold tracking-widest text-xs uppercase mb-4">SO FAR THIS IS OUR</h6>
             <h2 className="text-4xl lg:text-6xl font-mina font-bold leading-tight">
-              Selected <br />
-              <span className="italic">Masterpieces.</span>
+              Portfolio
             </h2>
           </motion.div>
-          
+
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -88,21 +95,30 @@ export const Masterpieces = () => {
                   className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-70 group-hover:opacity-100"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
-                
+
                 <div className="absolute bottom-0 left-0 right-0 p-8">
-                  <span className="inline-block px-3 py-1 bg-primaryOne text-white rounded-full text-[10px] font-bold tracking-wider mb-2">
-                    {item.title}
-                  </span>
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="inline-block px-3 py-1 bg-primaryOne text-white rounded-full text-[10px] font-bold tracking-wider">
+                      {item.title}
+                    </span>
+                    {/* @ts-ignore */}
+                    {item.isRecent && (
+                      <span className="inline-block px-3 py-1 bg-white text-black rounded-full text-[10px] font-bold tracking-wider animate-pulse">
+                        New
+                      </span>
+                    )}
+                  </div>
                   <h3 className="text-2xl font-mina font-bold mb-4">{item.name}</h3>
-                  <Link href={item.link} className="inline-flex items-center gap-2 text-sm font-medium text-white group-hover:text-primaryOne transition-colors">
+                  <Link href={item.link} target={item.link.startsWith("http") ? "_blank" : "_self"} className="inline-flex items-center gap-2 text-sm font-medium text-white group-hover:text-primaryOne transition-colors">
                     View Details
                     <div className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-primaryOne/20 group-hover:border-primaryOne transition-all">
-                       <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                      <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
                     </div>
                   </Link>
                 </div>
               </div>
             </motion.div>
+
           ))}
           {/* End Spacer */}
           <div className="w-[10vw] shrink-0" />

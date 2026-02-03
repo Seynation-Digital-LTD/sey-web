@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Inter, Mina } from "next/font/google"
+import { Inter, Mina, Silkscreen, Oleo_Script } from "next/font/google"
 import "./globals.css"
 import { Navbar } from "@/components/Navbar"
 import { Footer } from "@/components/Footer"
@@ -15,6 +15,20 @@ const mina = Mina({
   weight: ["400", "700"],
   subsets: ["latin"],
   variable: "--font-mina",
+  display: "swap",
+})
+
+const silkscreen = Silkscreen({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  variable: "--font-silkscreen",
+  display: "swap",
+})
+
+const oleoScript = Oleo_Script({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  variable: "--font-oleo",
   display: "swap",
 })
 
@@ -140,7 +154,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${mina.variable}`}>
+    <html lang="en" className={`${inter.variable} ${mina.variable} ${silkscreen.variable} ${oleoScript.variable}`}>
       <head>
         <StructuredData type="organization" />
         <StructuredData type="website" />

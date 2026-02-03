@@ -1,58 +1,136 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { branding2, web, mobile, digitalstrategy, ecom2, digitalmarketing } from "../app/index.js";
+import { branding2, web, mobile, digitalstrategy, ecom2, digitalmarketing, seoimg, graphicsimg, socialmediaimg, aiimg } from "../app/index.js";
+
+// const servicesData = [
+//   {
+//     id: 1,
+//     title: "Website Development",
+//     description: "From stunning landing pages to complex web applications, we engineer digital experiences that convert.",
+//     image1: web,
+//     colSpan: "md:col-span-2",
+//     bg: "bg-gradient-to-br from-primaryOne/20 to-primaryOne/5"
+//   },
+//   {
+//     id: 2,
+//    title: "Digital Marketing",
+//     description: "Data-driven strategies to amplify your voice and reach your target audience.",
+//     image1: digitalmarketing,
+//     colSpan: "md:col-span-1",
+//     bg: "bg-white/5"
+//   },
+//   {
+//     id: 3,
+//     title: "Mobile Apps",
+//     description: "Native and cross-platform mobile solutions that live in your users' pockets.",
+//     image1: mobile,
+//     colSpan: "md:col-span-1",
+//     bg: "bg-white/5"
+
+    
+//   },
+//   {
+//     id: 4,
+//     title: "E-Commerce",
+//     description: "Scalable online stores built for speed, security, and sales growth.",
+//     image1: ecom2,
+//     colSpan: "md:col-span-2",
+//     bg: "bg-gradient-to-br from-primaryThree/20 to-primaryThree/5"
+//   },
+//   {
+//     id: 5,
+//     title: "Branding",
+//     description: "Crafting memorable brand identities that resonate and remain.",
+//     image1: branding2,
+//     colSpan: "md:col-span-1",
+//     bg: "bg-white/5"
+//   },
+//   {
+//     id: 6,
+//     title: "Content Strategy",
+//     description: "Compelling narratives that engage, educate, and inspire action.",
+//     image1: digitalstrategy,
+//     colSpan: "md:col-span-2",
+//     bg: "bg-white/5"
+//   },
+//   {
+//     id: 7,
+//     title: "Content Strategy",
+//     description: "Compelling narratives that engage, educate, and inspire action.",
+//     image1: digitalstrategy,
+//     colSpan: "md:col-span-2",
+//     bg: "bg-white/5"
+//   },
+// ];
 
 const servicesData = [
   {
     id: 1,
-    title: "Web Development",
-    description: "From stunning landing pages to complex web applications, we engineer digital experiences that convert.",
+    title: "Web Design & Development",
+    description: "Websites designed and built to represent brands clearly, work smoothly, and hold up as the business grows.",
     image1: web,
     colSpan: "md:col-span-2",
-    bg: "bg-gradient-to-br from-primaryOne/20 to-primaryOne/5"
+    bg: "bg-gradient-to-br from-primaryOne/20 to-primaryOne/5",
   },
   {
     id: 2,
-    title: "Mobile Apps",
-    description: "Native and cross-platform mobile solutions that live in your users' pockets.",
-    image1: mobile,
+    title: "UX / UI Design",
+    description: "User experience and interface design focused on clarity, usability, and how people actually move through a product.",
+    image1: branding2,
     colSpan: "md:col-span-1",
-    bg: "bg-white/5"
+    bg: "bg-white/5",
   },
   {
     id: 3,
     title: "Digital Marketing",
-    description: "Data-driven strategies to amplify your voice and reach your target audience.",
+    description: "Digital marketing built around clear messaging, realistic goals, and consistency over quick wins.",
     image1: digitalmarketing,
     colSpan: "md:col-span-1",
-    bg: "bg-white/5"
+    bg: "bg-white/5",
   },
   {
     id: 4,
-    title: "E-Commerce",
-    description: "Scalable online stores built for speed, security, and sales growth.",
-    image1: ecom2,
+    title: "Mobile App Development",
+    description: "Mobile apps built with usability and stability in mind, native or cross-platform, depending on what fits the product.",
+    image1: mobile,
     colSpan: "md:col-span-2",
-    bg: "bg-gradient-to-br from-primaryThree/20 to-primaryThree/5"
+    bg: "bg-gradient-to-br from-primaryThree/20 to-primaryThree/5",
   },
   {
     id: 5,
-    title: "Branding",
-    description: "Crafting memorable brand identities that resonate and remain.",
-    image1: branding2,
+    title: "Graphic Design",
+    description: "Visual design for digital use — layouts, assets, and graphics that stay consistent with the brand.",
+    image1: graphicsimg,
     colSpan: "md:col-span-1",
-    bg: "bg-white/5"
+    bg: "bg-white/5",
   },
   {
     id: 6,
-    title: "Content Strategy",
-    description: "Compelling narratives that engage, educate, and inspire action.",
-    image1: digitalstrategy,
+    title: "Social Media Management",
+    description: "Managing social channels with a focus on consistency, tone, and content that makes sense for the brand.",
+    image1: socialmediaimg,
     colSpan: "md:col-span-2",
-    bg: "bg-white/5"
+    bg: "bg-white/5",
+  },
+  {
+    id: 7,
+    title: "AI Solutions",
+    description: "Practical AI tools and integrations designed to support products, workflows, or customer interaction — where it actually adds value.",
+    image1: aiimg,
+    colSpan: "md:col-span-2",
+    bg: "bg-white/5",
+  },
+  {
+    id: 8,
+    title: "SEO (Foundational)",
+    description: "Search optimisation focused on structure, content, and technical basics — built for long-term visibility, not quick tricks.",
+    image1: seoimg,
+    colSpan: "md:col-span-1",
+    bg: "bg-white/5",
   },
 ];
+
 
 export const ServicesSection = () => {
   return (
@@ -72,7 +150,7 @@ export const ServicesSection = () => {
             viewport={{ once: true }}
             className="font-mina font-bold text-4xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-gray-500"
           >
-            Capabilities
+          Our Services
           </motion.h6>
           <motion.div 
             initial={{ opacity: 0, y: 20 }}

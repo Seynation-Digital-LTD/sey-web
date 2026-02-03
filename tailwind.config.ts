@@ -22,7 +22,8 @@ export default {
       fontFamily: {
         sans: ["var(--font-inter)", "sans-serif"],
         inter: ["var(--font-inter)", "sans-serif"],
-        silk: ["Silkscreen", "sans-serif"],
+        silk: ["var(--font-silkscreen)", "sans-serif"],
+        oleo: ["var(--font-oleo)", "sans-serif"],
         mina: ["var(--font-mina)", "sans-serif"],
       },
       screens: {
