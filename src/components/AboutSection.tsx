@@ -60,7 +60,7 @@ export const AboutSection = () => {
             <div className="absolute -inset-1 bg-gradient-to-r from-primaryOne to-primaryThree rounded-2xl blur opacity-20 group-hover:opacity-40 transition-opacity duration-500" />
             <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black">
               <video
-                src="/assets/aboutvd.mp4"
+                src="/assets/digitalside.mp4"
                 autoPlay
                 loop
                 muted

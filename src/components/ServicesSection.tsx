@@ -68,7 +68,7 @@ const servicesData = [
   {
     id: 1,
     title: "Web Design & Development",
-    description: "Websites designed and built to represent brands clearly, work smoothly, and hold up as the business grows.",
+    description: "We design and build high-performing websites that turn visitors into customers and support real business growth.",
     image1: web,
     colSpan: "md:col-span-2",
     bg: "bg-gradient-to-br from-primaryOne/20 to-primaryOne/5",
@@ -76,7 +76,7 @@ const servicesData = [
   {
     id: 2,
     title: "UX / UI Design",
-    description: "User experience and interface design focused on clarity, usability, and how people actually move through a product.",
+    description: "We design user experiences that remove friction, improve clarity, and guide people naturally toward action.",
     image1: branding2,
     colSpan: "md:col-span-1",
     bg: "bg-white/5",
@@ -84,7 +84,7 @@ const servicesData = [
   {
     id: 3,
     title: "Digital Marketing",
-    description: "Digital marketing built around clear messaging, realistic goals, and consistency over quick wins.",
+    description: "We plan and execute digital marketing strategies that increase visibility, engagement, and measurable growth.",
     image1: digitalmarketing,
     colSpan: "md:col-span-1",
     bg: "bg-white/5",
@@ -92,7 +92,7 @@ const servicesData = [
   {
     id: 4,
     title: "Mobile App Development",
-    description: "Mobile apps built with usability and stability in mind, native or cross-platform, depending on what fits the product.",
+    description: "We build reliable mobile applications focused on usability, performance, and long-term scalability.",
     image1: mobile,
     colSpan: "md:col-span-2",
     bg: "bg-gradient-to-br from-primaryThree/20 to-primaryThree/5",
@@ -100,7 +100,7 @@ const servicesData = [
   {
     id: 5,
     title: "Graphic Design",
-    description: "Visual design for digital use — layouts, assets, and graphics that stay consistent with the brand.",
+    description: "We create professional digital visuals that strengthen brand presence across platforms.",
     image1: graphicsimg,
     colSpan: "md:col-span-1",
     bg: "bg-white/5",
@@ -108,7 +108,7 @@ const servicesData = [
   {
     id: 6,
     title: "Social Media Management",
-    description: "Managing social channels with a focus on consistency, tone, and content that makes sense for the brand.",
+    description: "We manage social media with clear strategy, consistent content, and focused audience growth.",
     image1: socialmediaimg,
     colSpan: "md:col-span-2",
     bg: "bg-white/5",
@@ -116,7 +116,7 @@ const servicesData = [
   {
     id: 7,
     title: "AI Solutions",
-    description: "Practical AI tools and integrations designed to support products, workflows, or customer interaction — where it actually adds value.",
+    description: "We implement practical AI solutions that automate processes, improve user experience, and unlock efficiency.",
     image1: aiimg,
     colSpan: "md:col-span-2",
     bg: "bg-white/5",
@@ -124,12 +124,13 @@ const servicesData = [
   {
     id: 8,
     title: "SEO (Foundational)",
-    description: "Search optimisation focused on structure, content, and technical basics — built for long-term visibility, not quick tricks.",
+    description: "We strengthen your digital foundation with SEO built for long-term visibility and organic growth.",
     image1: seoimg,
     colSpan: "md:col-span-1",
     bg: "bg-white/5",
   },
 ];
+
 
 
 export const ServicesSection = () => {
