@@ -3,51 +3,26 @@ import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { HadrajPreview } from "./HadrajPreview";
-
-
-const portfolioItems = [
-  {
-    id: 5,
-    title: "Websites",
-    name: "Hadraj Safaris",
-    image: "/assets/hero1.png", // Placeholder
-    link: "https://www.hadrajsafaris.com",
-    isRecent: true,
-  },
-  {
-    id: 1,
-    title: "Websites",
-    name: "Oltau Safaris",
-    image: "/assets/oltau1.png",
-    link: "/portfolio",
-  },
-  {
-    id: 2,
-    title: "Systems",
-    name: "Winga POS",
-    image: "/assets/winga1.png",
-    link: "/portfolio",
-  },
-  {
-    id: 4,
-    title: "Apps",
-    name: "AI Crop Detector",
-    image: "/assets/addapp2.jpg",
-    link: "/portfolio",
-  },
-  {
-    id: 3,
-    title: "Marketing",
-    name: "Digital Ads Campaign",
-    image: "/assets/digitalmarketing.png",
-    link: "/portfolio",
-  },
-];
+import { ProjectPreview } from "./ProjectPreview";
+import { portfolioData } from "../data/portfolioData";
 
 export const Masterpieces = () => {
-  const featuredItem = portfolioItems.find((item) => item.name === "Hadraj Safaris");
-  const otherItems = portfolioItems.filter((item) => item.name !== "Hadraj Safaris");
+  const featuredItem = portfolioData.find((item) => item.name === "Hadraj Safaris");
+
+  // Choose which other items to show in the carousel
+  const showcaseIds = [
+    "oltau-safaris",
+    "winga-pos",
+    "addapp",
+    "digital-marketing",
+    "ghala-app",
+    "neurotech-hq",
+    "sumosa-logistics",
+    "kujengana-social",
+    "sadakalawe-social"
+  ];
+
+  const otherItems = portfolioData.filter((item) => showcaseIds.includes(item.id));
 
   return (
     <section className="w-full py-24 bg-transparent text-white relative overflow-hidden">
@@ -72,7 +47,7 @@ export const Masterpieces = () => {
             viewport={{ once: true }}
           >
             <Link href="/portfolio" className="group flex items-center gap-4 text-white hover:text-primaryOne transition-colors font-medium">
-              View All Work
+              View More Works
               <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:border-primaryOne transition-colors">
                 <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
               </div>
@@ -89,7 +64,7 @@ export const Masterpieces = () => {
             className="mb-16 md:mb-24"
           >
             <div className="relative w-full aspect-[4/3] md:aspect-[16/9] lg:aspect-[21/9] rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl bg-white/5 group">
-              <HadrajPreview />
+              <ProjectPreview images={featuredItem.previewImages || []} />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent pointer-events-none" />
 
               <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 z-20">
@@ -145,7 +120,7 @@ export const Masterpieces = () => {
                     </span>
                   </div>
                   <h3 className="text-2xl font-mina font-bold mb-4">{item.name}</h3>
-                  <Link href={item.link} target={item.link.startsWith("http") ? "_blank" : "_self"} className="inline-flex items-center gap-2 text-sm font-medium text-white group-hover:text-primaryOne transition-colors">
+                  <Link href={`/portfolio/${item.slug}`} className="inline-flex items-center gap-2 text-sm font-medium text-white group-hover:text-primaryOne transition-colors">
                     View Details
                     <div className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-primaryOne/20 group-hover:border-primaryOne transition-all">
                       <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
