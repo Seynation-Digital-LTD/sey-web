@@ -19,6 +19,10 @@ export default function Error({
       <h2 className="mb-4 text-2xl font-bold font-mina">Something went wrong!</h2>
       <p className="mb-8 text-gray-400 font-inter text-center max-w-md">
         We encountered an unexpected error. Our team has been notified.
+        <br />
+        <span className="text-red-500 text-sm mt-4 block p-4 border border-red-500/20 rounded-lg bg-red-500/5">
+          {error.message || "Unknown Error"}
+        </span>
       </p>
       <button
         onClick={

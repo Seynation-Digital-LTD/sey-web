@@ -14,38 +14,40 @@ export const ContactSection = () => {
     setStatus({ type: null, message: '' });
 
     const form = e.currentTarget;
-    
-    // NOTE: Replace these with your actual EmailJS Service ID, Template ID, and Public Key
-    // You can get these from https://dashboard.emailjs.com/admin
-    const SERVICE_ID = 'service_id'; 
-    const TEMPLATE_ID = 'template_id';
-    const PUBLIC_KEY = 'public_key'; 
+
+    // EmailJS Configuration - Sends to seynationdigital@gmail.com
+    // Template variables: {{user_name}}, {{user_email}}, {{project_type}}, {{message}}
+    const SERVICE_ID = 'service_ozv8srd';
+    const TEMPLATE_ID = 'template_geonc4x';
+    const PUBLIC_KEY = 'pZlt-k_XIMYLNGSxE';
 
     try {
-        // If credentials are not set/placeholder, simulate success for demo purposes to avoid crashing
-        if (SERVICE_ID === 'service_id') {
-            await new Promise(resolve => setTimeout(resolve, 1500)); // Fake delay
-            setStatus({ type: 'success', message: 'Message sent successfully! We will contact you soon.' });
-            form.reset();
-        } else {
-             await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form, PUBLIC_KEY);
-             setStatus({ type: 'success', message: 'Message sent successfully! We will contact you soon.' });
-             form.reset();
-        }
-    } catch (error) {
-        console.error("EmailJS Error:", error);
-        setStatus({ type: 'error', message: 'Something went wrong. Please try again or email us directly.' });
+      await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form, PUBLIC_KEY);
+      setStatus({ type: 'success', message: 'Message sent successfully! We will contact you soon.' });
+      form.reset();
+    } catch (error: any) {
+      console.error("EmailJS Error Details:", {
+        error,
+        message: error?.text || error?.message,
+        status: error?.status,
+        serviceId: SERVICE_ID,
+        templateId: TEMPLATE_ID
+      });
+      setStatus({
+        type: 'error',
+        message: `Something went wrong. ${error?.text || error?.message || 'Please try again or email us directly at seynationdigital@gmail.com'}`
+      });
     } finally {
-        setIsSubmitting(false);
+      setIsSubmitting(false);
     }
   };
   return (
     <section className="w-full py-24 bg-transparent text-white relative overflow-hidden">
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          
+
           {/* Left Content */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -53,34 +55,34 @@ export const ContactSection = () => {
           >
             <div className="space-y-4">
               <h2 className="text-4xl lg:text-6xl font-mina font-bold leading-tight">
-                Let’s Forge <br />
+                Let’s Create <br />
                 <span className="text-primaryOne italic">Something Iconic.</span>
               </h2>
               <div className="h-1 w-20 bg-primaryOne rounded-full" />
             </div>
-            
+
             <p className="text-gray-400 text-lg leading-relaxed max-w-md">
               Whether you have a concrete project or just a spark of an idea, we’re here to engineer the brilliance you need.
             </p>
 
             <div className="space-y-6 text-gray-300">
-               <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-primaryOne">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L22 8m-2 11H4a2 2 0 01-2-2V8a2 2 0 012-2h16a2 2 0 012 2v11a2 2 0 01-2 2z" /></svg>
-                  </div>
-                  <span>info@seynation.co</span>
-               </div>
-               <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-primaryOne">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-                  </div>
-                  <span>Arusha, Tanzania</span>
-               </div>
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-primaryOne">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L22 8m-2 11H4a2 2 0 01-2-2V8a2 2 0 012-2h16a2 2 0 012 2v11a2 2 0 01-2 2z" /></svg>
+                </div>
+                <span>info@seynation.co</span>
+              </div>
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-primaryOne">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                </div>
+                <span>Arusha, Tanzania</span>
+              </div>
             </div>
           </motion.div>
 
           {/* Right Content - Form */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -88,30 +90,30 @@ export const ContactSection = () => {
           >
             {/* Loading Overlay */}
             {isSubmitting && (
-                <div className="absolute inset-0 z-20 bg-black/60 backdrop-blur-sm flex items-center justify-center">
-                    <div className="w-10 h-10 border-4 border-primaryOne border-t-transparent rounded-full animate-spin" />
-                </div>
+              <div className="absolute inset-0 z-20 bg-black/60 backdrop-blur-sm flex items-center justify-center">
+                <div className="w-10 h-10 border-4 border-primaryOne border-t-transparent rounded-full animate-spin" />
+              </div>
             )}
-            
+
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-gray-400">Full Name</label>
-                  <input 
-                      required
-                      name="user_name"
-                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primaryOne transition-colors placeholder:text-neutral-700" 
-                      placeholder="John Doe" 
+                  <input
+                    required
+                    name="user_name"
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primaryOne transition-colors placeholder:text-neutral-700"
+                    placeholder="John Doe"
                   />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-gray-400">Email</label>
-                  <input 
-                      required
-                      type="email"
-                      name="user_email"
-                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primaryOne transition-colors placeholder:text-neutral-700" 
-                      placeholder="john@example.com" 
+                  <input
+                    required
+                    type="email"
+                    name="user_email"
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primaryOne transition-colors placeholder:text-neutral-700"
+                    placeholder="john@example.com"
                   />
                 </div>
               </div>
@@ -127,26 +129,26 @@ export const ContactSection = () => {
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-medium text-gray-400">Message</label>
-                <textarea 
-                    required
-                    name="message"
-                    rows={4} 
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primaryOne transition-colors placeholder:text-neutral-700 resize-none" 
-                    placeholder="Tell us about your masterpiece..." 
+                <textarea
+                  required
+                  name="message"
+                  rows={4}
+                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-primaryOne transition-colors placeholder:text-neutral-700 resize-none"
+                  placeholder="Tell us about your masterpiece..."
                 />
               </div>
 
               {status.message && (
-                  <motion.div 
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className={`p-3 rounded-lg text-sm text-center ${status.type === 'success' ? 'bg-green-500/10 text-green-400' : 'bg-red-500/10 text-red-400'}`}
-                  >
-                      {status.message}
-                  </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className={`p-3 rounded-lg text-sm text-center ${status.type === 'success' ? 'bg-green-500/10 text-green-400' : 'bg-red-500/10 text-red-400'}`}
+                >
+                  {status.message}
+                </motion.div>
               )}
 
-              <Button 
+              <Button
                 disabled={isSubmitting}
                 className="w-full py-6 text-lg rounded-xl bg-primaryOne hover:bg-primaryOne/90 text-white shadow-xl transition-all hover:scale-[1.02] disabled:opacity-70 disabled:hover:scale-100"
               >

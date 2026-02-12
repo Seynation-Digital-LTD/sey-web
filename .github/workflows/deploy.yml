@@ -1,0 +1,37 @@
+name: Deploy to VPS
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Deploy to VPS
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        script: |
+          # Navigate to CloudPanel project directory
+          cd /home/seynation/htdocs/seynation.co
+          
+          # Pull latest changes
+          git pull origin main
+          
+          # Install dependencies
+          npm install
+          
+          # Build application
+          npm run build
+          
+          # Restart application via PM2 (CloudPanel uses PM2 by default for Node.js sites)
+          # We use the ecosystem file to ensure environment variables are loaded
+          pm2 startOrReload ecosystem.config.js

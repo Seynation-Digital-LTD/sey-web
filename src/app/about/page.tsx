@@ -3,36 +3,31 @@ import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  mastery,
-  innovation,
-  impact,
-  collaboration,
-} from "../../app/index.js";
+import { mastery, innovation, impact, collaboration } from "../../app/index.js";
 
 const valueData = [
   {
     id: 1,
-    title: "Mastery",
-    description: "We believe in perfecting every detail, ensuring every pixel and line of code serves a purpose.",
+    title: "Clarity",
+    description: "We keep things simple on purpose. Clear structure, clear messaging, clear decisions.",
     icon: mastery,
   },
   {
     id: 2,
-    title: "Innovation",
-    description: "Every project is a chance to redefine the norm and push the boundaries of what's possible.",
+    title: "Taste",
+    description: "Details matter. We design with restraint and intention — not trends.",
     icon: innovation,
   },
   {
     id: 3,
-    title: "Collaboration",
-    description: "Partnerships are the foundation of our success. We build with you, not just for you.",
+    title: "Ownership",
+    description: "We treat your project like it’s ours. We communicate, we deliver, we don’t disappear.",
     icon: collaboration,
   },
   {
     id: 4,
-    title: "Impact",
-    description: "We measure our success by the tangible value and growth we create for our clients.",
+    title: "Results",
+    description: "The goal is work that performs — people understand it, use it, and take action.",
     icon: impact,
   },
 ];
@@ -41,33 +36,32 @@ const processData = [
   {
     id: 1,
     title: "Discovery",
-    description: "We dive deep into your brand's DNA, understanding your goals, challenges, and vision.",
-    step: "01"
+    description: "We learn the business, the audience, and what success should look like for this project.",
+    step: "01",
   },
   {
     id: 2,
     title: "Strategy",
-    description: "We blueprint a data-driven roadmap, identifying the optimal path to your digital dominance.",
-    step: "02"
+    description: "We define the direction — what to say, what to build, and what to prioritize first.",
+    step: "02",
   },
   {
     id: 3,
     title: "Execution",
-    description: "Our engineers and designers build with surgical precision, turning concepts into code.",
-    step: "03"
+    description: "We design and build the work with care, then refine it until it feels right and works properly.",
+    step: "03",
   },
   {
     id: 4,
     title: "Launch",
-    description: "We deploy, monitor, and optimize, ensuring your digital debut makes a lasting impact.",
-    step: "04"
-  }
+    description: "We ship cleanly, test properly, and stay available for fixes and improvements after launch.",
+    step: "04",
+  },
 ];
 
 export default function About() {
   return (
     <div className="relative min-h-screen bg-[#050505] text-white overflow-hidden">
-
       {/* Universal Dynamic Background */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <div className="absolute top-[-20%] left-[-10%] w-[800px] h-[800px] bg-primaryOne/10 rounded-full blur-[150px] mix-blend-screen opacity-40 animate-pulse" />
@@ -77,7 +71,6 @@ export default function About() {
       </div>
 
       <div className="relative z-10">
-
         {/* Cinematic Hero */}
         <section className="container max-w-7xl mx-auto px-4 pt-32 pb-24 lg:pt-48 lg:pb-32">
           <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
@@ -88,15 +81,18 @@ export default function About() {
               className="flex-1 space-y-8"
             >
               <div className="space-y-4">
-                <h6 className="text-primaryOne font-bold tracking-[0.3em] uppercase text-xs">Since 2015</h6>
+                <h6 className="text-primaryOne font-bold tracking-[0.3em] uppercase text-xs">
+                  Since 2015
+                </h6>
                 <h1 className="text-4xl lg:text-6xl font-mina font-bold leading-tight">
-                  Engineering <br />
-                  <span className="italic text-primaryOne">Digital Revolutions.</span>
+                  We build the <br />
+                  <span className="italic text-primaryOne">digital side</span> of brands.
                 </h1>
                 <div className="h-1 w-24 bg-gradient-to-r from-primaryOne to-transparent rounded-full" />
               </div>
               <p className="font-inter text-gray-400 text-lg leading-relaxed max-w-xl">
-                We don't just build websites or campaigns; we architect future-proof digital ecosystems. merging human imagination with raw technical power to redefine what's possible for your brand.
+                Web design, UX/UI, marketing, AI solutions, and content are offered as focused services depending on what you need.
+                The work is simple: make your brand clear online, make it easy to use, and make it ready to grow.
               </p>
             </motion.div>
 
@@ -110,7 +106,10 @@ export default function About() {
               <div className="relative aspect-square rounded-3xl overflow-hidden border border-white/10 bg-black shadow-2xl">
                 <video
                   src="/assets/storyvd3.mp4"
-                  autoPlay loop muted playsInline
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
                   className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
@@ -131,7 +130,10 @@ export default function About() {
               >
                 <video
                   src="/assets/storyvd1.mp4"
-                  autoPlay loop muted playsInline
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
                   className="w-full h-full object-cover opacity-50"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
@@ -143,12 +145,20 @@ export default function About() {
                 viewport={{ once: true }}
                 className="flex-1 space-y-8"
               >
-                <h2 className="text-3xl lg:text-5xl font-mina font-bold">The Seynation <span className="text-primaryOne tracking-widest uppercase text-base block mt-2">Legacy</span></h2>
+                <h2 className="text-3xl lg:text-5xl font-mina font-bold">
+                  About{" "}
+                  <span className="text-primaryOne tracking-widest uppercase text-base block mt-2">
+                    Seynation
+                  </span>
+                </h2>
                 <p className="font-inter text-gray-400 text-lg leading-relaxed">
-                  It started with a vision by <b className="text-white">Omega Seyongwe</b>—to create not just an agency, but a movement.
-                  From a solo dream to a collective of strategists and creators, we've evolved into a powerhouse that refuses to settle for "good enough."
-                  <br /><br />
-                  We don't chase trends; we set them. Our obsession with excellence drives us to architect the future of digital interaction, one masterpiece at a time.
+                  Seynation started as a simple idea: businesses deserve digital work that feels clear, looks right, and actually works.
+                  <br />
+                  <br />
+                  Since then, we’ve worked with founders and teams who want the same thing, a strong online presence that people understand fast, trust quickly, and enjoy using.
+                  <br />
+                  <br />
+                  We’re not here for noise. We’re here to do the work properly, website, UX, marketing, or AI, depending on what you need.
                 </p>
               </motion.div>
             </div>
@@ -158,8 +168,10 @@ export default function About() {
         {/* Values - Glass Bento Grid */}
         <section className="container max-w-7xl mx-auto px-4 py-32">
           <div className="text-center mb-20 space-y-4">
-            <h2 className="text-4xl lg:text-5xl font-mina font-bold">The Sey <span className="text-primaryOne">Code.</span></h2>
-            <p className="text-gray-500 uppercase tracking-widest text-sm">Fundamental Pillars of Excellence</p>
+            <h2 className="text-4xl lg:text-5xl font-mina font-bold">
+              The Sey <span className="text-primaryOne">Code.</span>
+            </h2>
+            <p className="text-gray-500 uppercase tracking-widest text-sm">How we work</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -187,11 +199,15 @@ export default function About() {
         <section className="container max-w-7xl mx-auto px-4 py-32">
           <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8 border-b border-white/5 pb-12">
             <div className="space-y-4">
-              <h6 className="text-primaryOne font-bold uppercase tracking-widest text-xs">Methodology</h6>
-              <h2 className="text-4xl lg:text-5xl font-mina font-bold">How We <br /> <span className="italic">Create Magic.</span></h2>
+              <h6 className="text-primaryOne font-bold uppercase tracking-widest text-xs">
+                Methodology
+              </h6>
+              <h2 className="text-4xl lg:text-5xl font-mina font-bold">
+                How we <br /> <span className="italic">work.</span>
+              </h2>
             </div>
             <p className="text-gray-400 max-w-md text-lg">
-              A refined process designed to turn complex challenges into elegant digital solutions.
+              A simple process that keeps the work clear, fast to review, and easy to build on.
             </p>
           </div>
 
@@ -208,10 +224,10 @@ export default function About() {
                 <div className="text-6xl font-bold font-mina text-white/5 group-hover:text-primaryOne/20 transition-colors mb-6">
                   {step.step}
                 </div>
-                <h3 className="text-2xl font-bold mb-4 group-hover:text-primaryOne transition-colors">{step.title}</h3>
-                <p className="text-gray-400 leading-relaxed text-sm">
-                  {step.description}
-                </p>
+                <h3 className="text-2xl font-bold mb-4 group-hover:text-primaryOne transition-colors">
+                  {step.title}
+                </h3>
+                <p className="text-gray-400 leading-relaxed text-sm">{step.description}</p>
               </motion.div>
             ))}
           </div>
@@ -227,11 +243,13 @@ export default function About() {
               className="p-12 rounded-[3rem] bg-gradient-to-br from-white/10 to-transparent border border-white/10 backdrop-blur-2xl relative overflow-hidden group"
             >
               <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
-                <svg className="w-32 h-32" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z" /></svg>
+                <svg className="w-32 h-32" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z" />
+                </svg>
               </div>
               <h3 className="text-3xl font-mina font-bold mb-6 text-primaryOne">Our Mission</h3>
               <p className="text-xl font-inter text-white leading-relaxed italic">
-                &quot;To weaponize digital excellence for businesses, shaping brands that don't just survive but dominate in the modern world.&quot;
+                &quot;To help brands show up clearly online, through work that looks right, works smoothly, and supports growth.&quot;
               </p>
             </motion.div>
 
@@ -242,11 +260,13 @@ export default function About() {
               className="p-12 rounded-[3rem] bg-gradient-to-bl from-white/10 to-transparent border border-white/10 backdrop-blur-2xl relative overflow-hidden group"
             >
               <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
-                <svg className="w-32 h-32" fill="currentColor" viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" /></svg>
+                <svg className="w-32 h-32" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" />
+                </svg>
               </div>
               <h3 className="text-3xl font-mina font-bold mb-6 text-primaryOne">Our Vision</h3>
               <p className="text-xl font-inter text-white leading-relaxed italic">
-                &quot;To be the invisible hand behind the world's most transformative brands, inspiring growth and driving meaningful progress.&quot;
+                &quot;To be the team people trust when the digital side of their brand needs to be done properly.&quot;
               </p>
             </motion.div>
           </div>
@@ -261,15 +281,16 @@ export default function About() {
             className="p-16 rounded-[4rem] bg-gradient-to-r from-primaryOne/20 to-primaryThree/20 border border-white/10 relative overflow-hidden"
           >
             <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 pointer-events-none" />
-            <h2 className="text-4xl lg:text-5xl font-mina font-bold mb-8">Ready to Write Your <br /> <span className="italic text-primaryOne">Next Chapter?</span></h2>
+            <h2 className="text-4xl lg:text-5xl font-mina font-bold mb-8">
+              Want to build something <br /> <span className="italic text-primaryOne">that holds up?</span>
+            </h2>
             <Link href="/contact">
               <button className="px-10 py-5 bg-white text-black font-bold rounded-full hover:bg-primaryOne hover:text-white transition-all transform hover:scale-110 active:scale-95 shadow-2xl">
-                Engineer Your Future
+                Let’s talk
               </button>
             </Link>
           </motion.div>
         </section>
-
       </div>
     </div>
   );

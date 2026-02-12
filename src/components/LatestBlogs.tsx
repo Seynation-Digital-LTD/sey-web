@@ -2,7 +2,7 @@ import { client } from "@/sanity/lib/client";
 import BlogList from "./BlogList";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { MOCK_POSTS } from "@/app/blog/mockPosts";
+
 
 async function getLatestPosts() {
   try {
@@ -24,9 +24,9 @@ async function getLatestPosts() {
 
 export default async function LatestBlogs() {
   const sanityPosts = await getLatestPosts();
-  
+
   // Use mock posts if sanity is empty
-  const posts = sanityPosts.length > 0 ? sanityPosts : MOCK_POSTS;
+  const posts = sanityPosts;
 
   return (
     <section className="relative py-24 md:py-32 bg-[#050505] overflow-hidden">
@@ -41,13 +41,13 @@ export default async function LatestBlogs() {
               Latest <span className="text-transparent bg-clip-text bg-gradient-to-r from-primaryOne to-primaryThree">Insights</span>
             </h2>
             <p className="font-inter text-lg text-white/60 leading-relaxed">
-              Explore our latest thoughts on technology, design, and innovation. 
+              Explore our latest thoughts on technology, design, and innovation.
               We share what we learn to help you grow.
             </p>
           </div>
-          
-          <Link 
-            href="/blog" 
+
+          <Link
+            href="/blog"
             className="group flex items-center gap-2 px-6 py-3 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-all hover:scale-105 active:scale-95"
           >
             <span className="text-white font-medium">View all posts</span>

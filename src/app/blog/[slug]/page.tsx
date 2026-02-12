@@ -6,6 +6,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { notFound } from "next/navigation";
 import { Metadata, ResolvingMetadata } from 'next';
+import BlogCTA from "@/components/BlogCTA";
 
 type Props = {
   params: Promise<{ slug: string }>
@@ -43,40 +44,37 @@ export async function generateMetadata(
   }
 }
 
-import { MOCK_POSTS } from "../mockPosts";
+
 
 export default async function BlogPostPage(props: Props) {
   const params = await props.params;
   let post = await getPost(params.slug);
 
-  // Fallback to mock posts if not found in Sanity
-  if (!post) {
-    post = MOCK_POSTS.find(p => p.slug.current === params.slug);
-  }
+
 
   if (!post) {
     notFound();
   }
 
-  const isMock = post.isPlaceholder;
+
 
   return (
     <article className="min-h-screen bg-[#050505] text-white pt-24 pb-16 relative overflow-hidden">
       {/* Background Elements */}
       <div className="fixed inset-0 z-0 pointer-events-none">
-         <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-primaryThree/10 rounded-full blur-[150px] opacity-40 animate-pulse" />
-         <div className="absolute bottom-[10%] left-[-10%] w-[500px] h-[500px] bg-primaryOne/10 rounded-full blur-[150px] opacity-30" />
+        <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-primaryThree/10 rounded-full blur-[150px] opacity-40 animate-pulse" />
+        <div className="absolute bottom-[10%] left-[-10%] w-[500px] h-[500px] bg-primaryOne/10 rounded-full blur-[150px] opacity-30" />
       </div>
 
       <div className="container relative z-10 mx-auto px-4 md:px-6 max-w-4xl">
-        <Link 
-          href="/blog" 
+        <Link
+          href="/blog"
           className="inline-flex items-center text-white/60 hover:text-white mb-8 transition-colors group"
         >
           <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
           Back to Journal
         </Link>
-        
+
         <header className="mb-8 md:mb-12">
           <div className="flex items-center text-sm text-white/40 mb-4">
             <time dateTime={post.publishedAt}>
@@ -99,7 +97,7 @@ export default async function BlogPostPage(props: Props) {
           {post.mainImage && (
             <div className="relative aspect-video w-full rounded-2xl overflow-hidden shadow-2xl border border-white/10">
               <Image
-                src={isMock ? post.mainImage : urlFor(post.mainImage).url()}
+                src={urlFor(post.mainImage).url()}
                 alt={post.title}
                 fill
                 className="object-cover"
@@ -111,11 +109,11 @@ export default async function BlogPostPage(props: Props) {
         </header>
 
         <div className="prose prose-lg dark:prose-invert max-w-none prose-headings:font-mina prose-headings:text-white prose-p:text-white/70 prose-strong:text-white prose-a:text-primaryThree">
-          <PortableText 
-            value={post.body} 
+          <PortableText
+            value={post.body}
             components={{
               types: {
-                image: ({value}) => {
+                image: ({ value }) => {
                   if (!value?.asset?._ref) {
                     return null;
                   }
@@ -134,6 +132,8 @@ export default async function BlogPostPage(props: Props) {
             }}
           />
         </div>
+
+        <BlogCTA />
       </div>
     </article>
   );

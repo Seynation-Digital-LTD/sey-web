@@ -9,11 +9,11 @@ import { ArrowRight } from "lucide-react";
 interface Post {
   _id: string;
   title: string;
-  slug: { current: string };
+  slug?: { current: string };
   mainImage: any;
   publishedAt: string;
   author: string;
-  isPlaceholder?: boolean;
+
 }
 
 const itemVariants = {
@@ -22,18 +22,19 @@ const itemVariants = {
 };
 
 export default function BlogList({ posts }: { posts: Post[] }) {
+  if (!posts) return null;
   return (
-    <motion.div 
+    <motion.div
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
       transition={{ staggerChildren: 0.1 }}
       className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
     >
-      {posts.map((post) => (
+      {posts?.filter(post => post?.slug?.current).map((post) => (
         <motion.div variants={itemVariants} key={post._id}>
-          <Link 
-            href={`/blog/${post.slug.current}`} 
+          <Link
+            href={`/blog/${post.slug.current}`}
             className="group relative flex flex-col h-full bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 transition-colors duration-500"
           >
             {/* Image Container */}
@@ -53,7 +54,7 @@ export default function BlogList({ posts }: { posts: Post[] }) {
                   <span className="text-sm">No Image Available</span>
                 </div>
               )}
-              
+
               {/* Category/Date Tag */}
               <div className="absolute top-4 left-4">
                 <span className="px-3 py-1 text-xs font-medium bg-black/50 backdrop-blur-md text-white/90 rounded-full border border-white/10">
@@ -68,7 +69,7 @@ export default function BlogList({ posts }: { posts: Post[] }) {
             {/* Content */}
             <div className="p-6 flex flex-col flex-grow relative">
               <div className="mb-4">
-                 {post.author && (
+                {post.author && (
                   <span className="text-xs font-medium text-primaryOne mb-2 block uppercase tracking-wider">
                     {post.author}
                   </span>
@@ -77,12 +78,12 @@ export default function BlogList({ posts }: { posts: Post[] }) {
                   {post.title}
                 </h3>
               </div>
-              
+
               <div className="mt-auto flex items-center text-sm font-medium text-white/60 group-hover:text-white transition-colors">
-                {post.isPlaceholder ? "Sample Post" : "Read Article"}
+                Read Article
                 <ArrowRight className="ml-2 h-4 w-4 transform transition-transform duration-300 group-hover:translate-x-1" />
               </div>
-              
+
               {/* Glow Effect */}
               <div className="absolute -bottom-2 -right-2 w-20 h-20 bg-primaryOne/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
             </div>

@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 
 // Service options
 const services = [
@@ -86,7 +86,7 @@ export default function GetQuotePage() {
 
   return (
     <div className="relative min-h-screen bg-[#050505] text-white overflow-hidden">
-      
+
       {/* Background */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <div className="absolute top-[-10%] left-[-10%] w-[800px] h-[800px] bg-primaryOne/10 rounded-full blur-[150px] opacity-30 animate-pulse" />
@@ -96,9 +96,9 @@ export default function GetQuotePage() {
 
       <div className="relative z-10 pt-32 pb-24">
         <div className="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           {/* Header */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -116,18 +116,16 @@ export default function GetQuotePage() {
           <div className="flex items-center justify-center gap-3 mb-12">
             {[1, 2, 3].map((num) => (
               <div key={num} className="flex items-center">
-                <div 
-                  className={`w-10 h-10 rounded-full flex items-center justify-center font-semibold transition-all ${
-                    step >= num ? "bg-primaryOne text-white" : "bg-white/10 text-gray-500"
-                  }`}
+                <div
+                  className={`w-10 h-10 rounded-full flex items-center justify-center font-semibold transition-all ${step >= num ? "bg-primaryOne text-white" : "bg-white/10 text-gray-500"
+                    }`}
                 >
                   {num}
                 </div>
                 {num < 3 && (
-                  <div 
-                    className={`w-12 h-1 mx-2 rounded ${
-                      step > num ? "bg-primaryOne" : "bg-white/10"
-                    }`}
+                  <div
+                    className={`w-12 h-1 mx-2 rounded ${step > num ? "bg-primaryOne" : "bg-white/10"
+                      }`}
                   />
                 )}
               </div>
@@ -136,7 +134,7 @@ export default function GetQuotePage() {
 
           {/* Form Steps */}
           <AnimatePresence mode="wait">
-            
+
             {/* Step 1: Select Services */}
             {step === 1 && (
               <motion.div
@@ -159,11 +157,10 @@ export default function GetQuotePage() {
                       onClick={() => toggleService(service.id)}
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className={`p-6 rounded-2xl border-2 transition-all text-left ${
-                        selectedServices.includes(service.id)
+                      className={`p-6 rounded-2xl border-2 transition-all text-left ${selectedServices.includes(service.id)
                           ? "bg-primaryOne/10 border-primaryOne shadow-lg shadow-primaryOne/20"
                           : "bg-white/5 border-white/10 hover:bg-white/10"
-                      }`}
+                        }`}
                     >
                       <div className="text-4xl mb-3">{service.icon}</div>
                       <h3 className="text-xl font-semibold mb-2">{service.name}</h3>
@@ -176,11 +173,10 @@ export default function GetQuotePage() {
                   <button
                     onClick={() => setStep(2)}
                     disabled={!canProceedToStep2}
-                    className={`px-10 py-4 rounded-full font-semibold text-lg transition-all ${
-                      canProceedToStep2
+                    className={`px-10 py-4 rounded-full font-semibold text-lg transition-all ${canProceedToStep2
                         ? "bg-primaryOne hover:bg-primaryOne/90 hover:scale-105 shadow-xl shadow-primaryOne/20"
                         : "bg-white/10 text-gray-500 cursor-not-allowed"
-                    }`}
+                      }`}
                   >
                     Continue to Details →
                   </button>
@@ -230,7 +226,7 @@ export default function GetQuotePage() {
                       />
                     </div>
                   </div>
-                  
+
                   <div>
                     <label className="block text-sm font-medium text-gray-400 mb-2">Email Address *</label>
                     <input
@@ -267,11 +263,10 @@ export default function GetQuotePage() {
                   <button
                     onClick={() => setStep(3)}
                     disabled={!canProceedToStep3}
-                    className={`px-10 py-4 rounded-full font-semibold text-lg transition-all ${
-                      canProceedToStep3
+                    className={`px-10 py-4 rounded-full font-semibold text-lg transition-all ${canProceedToStep3
                         ? "bg-primaryOne hover:bg-primaryOne/90 hover:scale-105 shadow-xl shadow-primaryOne/20"
                         : "bg-white/10 text-gray-500 cursor-not-allowed"
-                    }`}
+                      }`}
                   >
                     Continue to Project →
                   </button>
